@@ -194,8 +194,13 @@
 <pre><code class="language-text">GET ALL
 `api/&lt;resources&gt;`
 
+HTTP status code 200 OK for a successful GET of resource, or empty results.
+
 GET BY ID
 `api/&lt;resources&gt;/&lt;id&gt;`
+
+HTTP status code 200 OK for a successful GET of resource.
+HTTP status code 404 KO for a KO GET of a not found resource.
 
 POST
 `api/&lt;resources&gt;`
@@ -214,9 +219,16 @@ HTTP status code 400 Bad Request for an unsuccessful PUT, with natural-language 
 in the response body that explains why the PUT failed. (RFC 2616 Section 10.4)
 </code></pre>
 <h2 id="http-status-code">HTTP Status Code</h2>
+<ul>
+<li>2XX -&gt; success codes range</li>
+<li>3XX -&gt; redirect codes range</li>
+<li>4XX -&gt; client error codes range</li>
+<li>5XX -&gt; server error codes range</li>
+</ul>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">More details</a></p>
 <h2 id="secrets">Secrets</h2>
 <p>Never store unencrypted secrets in <code>.git</code> repositories. If a secret enters a repository, private or public, then it should be considered compromised.</p>
-<p><strong>Add sensitive files in <code>.gitignore</code></strong></p>
+<p><strong>Add sensitive files in <a href="https://github.com/github/gitignore/blob/main/Python.gitignore">.gitignore</a></strong></p>
 <p>Store secrets safely. Encrypting your secrets using common tools, such as git secret. Storing them within a git repository can be beneficial when working in teams as it keeps secrets synced.</p>
 <p>Or use "Secrets as a service" solutions, such as AWS Secrets Manager, Vault, Google Secrets Manager...</p>
 <h2 id="references">References</h2>
