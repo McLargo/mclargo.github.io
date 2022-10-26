@@ -95,6 +95,10 @@
 <li>
     <a href="../../project-management/waterfall-methodology/" class="dropdown-item">Waterfall Methodoloy</a>
 </li>
+                                    
+<li>
+    <a href="../../project-management/work-remotely/" class="dropdown-item">Work Remotely</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -171,6 +175,10 @@
             
             <li class="nav-item" data-level="1"><a href="#kubernetes" class="nav-link">Kubernetes</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#local-k8s-cluster" class="nav-link">Local k8s cluster</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#helm-charts" class="nav-link">Helm charts</a>
               <ul class="nav flex-column">
               </ul>
@@ -208,6 +216,10 @@ Storage or persistent</p>
 - cpu
 - rback
 -namespaces</p>
+<h2 id="local-k8s-cluster">Local k8s cluster</h2>
+<p>minikube quickly sets up a local Kubernetes cluster on macOS, Linux, and Windows. Easy to install and start working.</p>
+<p>Install and run minikube to have a local cluster for k8s in local. If minikube is running, automatically context/namespace is updated to use then one's from minikube. If you are working with other k8s cluster, keep in mind this change. Always doble-check for namespace or context before deploying to the cluster. To work with cluster outside local, either you stop minikube or change namespace. Careful, when you stop minikube, context/namespace are set to null, so your kube commands won't be pointing to any context. You need to explicitly set again context.</p>
+<p><code>minikube</code> command is just a proxy of <code>kubectl</code> commands, with a different command format but doing the same underneath.</p>
 <h2 id="helm-charts">Helm charts</h2>
 <p>Each object requires a custom yaml configuration file.
 Helm charts provides an abstractions of the objects to deploy.
@@ -219,6 +231,8 @@ This values can be reuse in each object.yaml file. Maximizing reusability and re
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://gist.github.com/McLargo/87380a47a148f6b4c2964db96e876e8e">k9s commands</a></li>
+<li><a href="https://minikube.sigs.k8s.io/docs/handbook/">minikube handbook</a></li>
+<li><a href="https://gist.github.com/McLargo/8bc84ec8a312106233a1f77cbfa6f010">minikube/kubectl commands</a></li>
 </ul></div>
             </div>
         </div>

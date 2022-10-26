@@ -71,6 +71,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://mclargo.github.io/project-management/work-remotely/</loc>
+         <lastmod>2022-10-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://mclargo.github.io/utils/daemon/</loc>
          <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
