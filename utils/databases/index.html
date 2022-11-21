@@ -39,6 +39,10 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
+    <a href="../../devops/docker/" class="dropdown-item">Docker</a>
+</li>
+                                    
+<li>
     <a href="../../devops/features-toggles/" class="dropdown-item">Features Toggles</a>
 </li>
                                     
@@ -132,6 +136,10 @@
 <li>
     <a href="../working-environment/" class="dropdown-item">Working environment</a>
 </li>
+                                    
+<li>
+    <a href="../ubuntu/" class="dropdown-item">Ubuntu</a>
+</li>
                                 </ul>
                             </li>
                             <li class="navitem">
@@ -175,6 +183,18 @@
             
             <li class="nav-item" data-level="1"><a href="#databases" class="nav-link">Databases</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#postgresql" class="nav-link">PostgreSQL</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#google-cloud-sql" class="nav-link">Google cloud SQL</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#firestore" class="nav-link">Firestore</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#references" class="nav-link">References</a>
               <ul class="nav flex-column">
               </ul>
@@ -187,11 +207,32 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="databases">Databases</h1>
+<h2 id="postgresql">PostgreSQL</h2>
+<p>Relational database, similar to MySql. Once installed, run <code>psql</code> to access via command line to the instances.
+An instance of postgresql can have multiple databases.</p>
+<p>Another interesting command is <code>pg_dump</code>, it helps you to generate a backup of your tables into a .sql file.</p>
+<pre><code>Connection options:
+  -h, --host=HOSTNAME      database server host or socket directory (default: &quot;/var/run/postgresql&quot;)
+  -p, --port=PORT          database server port (default: &quot;5432&quot;)
+  -U, --username=USERNAME  database user name (default: &quot;&lt;user&gt;&quot;)
+  -w, --no-password        never prompt for password
+  -W, --password           force password prompt (should happen automatically)
+</code></pre>
+<h2 id="google-cloud-sql">Google cloud SQL</h2>
+<p>From Google cloud you can create an instance of mysql/postgres for you desire database.</p>
+<p>You can connect via socket or url to database. Online configuration, require code changes.</p>
+<p>In addition, you can have a connection using the <a href="https://cloud.google.com/sql/docs/postgres/connect-admin-proxy">Cloud SQL Auth proxy</a></p>
+<h2 id="firestore">Firestore</h2>
+<p>NoSQL database from Google cloud. python libraries to use and access documents.</p>
 <h2 id="references">References</h2>
 <ul>
+<li><a href="https://thomaslarock.com/2018/07/databases-101/">Database 101</a></li>
 <li><a href="https://gist.github.com/McLargo/ae633d1ff481c20c21433074169d283c#file-postgresql-md">PostgreSQL</a></li>
 <li><a href="https://www.postgresqltutorial.com/postgresql-cheat-sheet/">PostgreSQL Cheatsheet</a></li>
+<li><a href="https://www.postgresqltutorial.com/postgresql-administration/postgresql-backup-database/">PostgreSQL Backup</a></li>
 <li><a href="https://gist.github.com/McLargo/ae633d1ff481c20c21433074169d283c#file-mongodb-md">MongoDB</a></li>
+<li>[Google Cloud Postgres]https://cloud.google.com/sql/docs/postgres</li>
+<li><a href="https://firebase.google.com/docs/firestore">Firestore</a></li>
 </ul></div>
             </div>
         </div>

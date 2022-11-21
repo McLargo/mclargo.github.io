@@ -2,112 +2,122 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://mclargo.github.io/</loc>
-         <lastmod>2022-11-09</lastmod>
+         <lastmod>2022-11-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/template/</loc>
-         <lastmod>2022-11-09</lastmod>
+         <lastmod>2022-11-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://mclargo.github.io/devops/docker/</loc>
+         <lastmod>2022-11-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/devops/features-toggles/</loc>
-         <lastmod>2022-11-09</lastmod>
+         <lastmod>2022-11-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/devops/k8s/</loc>
-         <lastmod>2022-11-09</lastmod>
+         <lastmod>2022-11-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/devops/serverless/</loc>
-         <lastmod>2022-11-09</lastmod>
+         <lastmod>2022-11-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/programming/django/</loc>
-         <lastmod>2022-11-09</lastmod>
+         <lastmod>2022-11-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/programming/openapi/</loc>
-         <lastmod>2022-11-09</lastmod>
+         <lastmod>2022-11-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/programming/python/</loc>
-         <lastmod>2022-11-09</lastmod>
+         <lastmod>2022-11-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/programming/virtualenvs/</loc>
-         <lastmod>2022-11-09</lastmod>
+         <lastmod>2022-11-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/project-management/architecture-decision-record/</loc>
-         <lastmod>2022-11-09</lastmod>
+         <lastmod>2022-11-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/project-management/c4-model/</loc>
-         <lastmod>2022-11-09</lastmod>
+         <lastmod>2022-11-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/project-management/scrum/</loc>
-         <lastmod>2022-11-09</lastmod>
+         <lastmod>2022-11-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/project-management/tech-lead/</loc>
-         <lastmod>2022-11-09</lastmod>
+         <lastmod>2022-11-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/project-management/waterfall-methodology/</loc>
-         <lastmod>2022-11-09</lastmod>
+         <lastmod>2022-11-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/project-management/work-remotely/</loc>
-         <lastmod>2022-11-09</lastmod>
+         <lastmod>2022-11-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/utils/daemon/</loc>
-         <lastmod>2022-11-09</lastmod>
+         <lastmod>2022-11-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/utils/databases/</loc>
-         <lastmod>2022-11-09</lastmod>
+         <lastmod>2022-11-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/utils/developing-api/</loc>
-         <lastmod>2022-11-09</lastmod>
+         <lastmod>2022-11-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/utils/regex/</loc>
-         <lastmod>2022-11-09</lastmod>
+         <lastmod>2022-11-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/utils/supervisor/</loc>
-         <lastmod>2022-11-09</lastmod>
+         <lastmod>2022-11-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/utils/transmission/</loc>
-         <lastmod>2022-11-09</lastmod>
+         <lastmod>2022-11-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://mclargo.github.io/utils/ubuntu/</loc>
+         <lastmod>2022-11-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/utils/working-environment/</loc>
-         <lastmod>2022-11-09</lastmod>
+         <lastmod>2022-11-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
