@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="Javier Gil">
-        <link rel="canonical" href="https://mclargo.github.io/project-management/scrum/">
+        <link rel="canonical" href="https://mclargo.github.io/utils/ide/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>SCRUM - My technical wiki</title>
+        <title>IDE - My technical wiki</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -76,73 +76,73 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Project Management <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../architecture-decision-record/" class="dropdown-item">Architecture Decision Records</a>
+    <a href="../../project-management/architecture-decision-record/" class="dropdown-item">Architecture Decision Records</a>
 </li>
                                     
 <li>
-    <a href="../c4-model/" class="dropdown-item">C4 Model</a>
+    <a href="../../project-management/c4-model/" class="dropdown-item">C4 Model</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">SCRUM</a>
+    <a href="../../project-management/scrum/" class="dropdown-item">SCRUM</a>
 </li>
                                     
 <li>
-    <a href="../tech-lead/" class="dropdown-item">Technical Leader</a>
+    <a href="../../project-management/tech-lead/" class="dropdown-item">Technical Leader</a>
 </li>
                                     
 <li>
-    <a href="../waterfall-methodology/" class="dropdown-item">Waterfall Methodoloy</a>
+    <a href="../../project-management/waterfall-methodology/" class="dropdown-item">Waterfall Methodoloy</a>
 </li>
                                     
 <li>
-    <a href="../work-remotely/" class="dropdown-item">Work Remotely</a>
+    <a href="../../project-management/work-remotely/" class="dropdown-item">Work Remotely</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Utils <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../utils/daemon/" class="dropdown-item">Daemon</a>
+    <a href="../daemon/" class="dropdown-item">Daemon</a>
 </li>
                                     
 <li>
-    <a href="../../utils/databases/" class="dropdown-item">Databases</a>
+    <a href="../databases/" class="dropdown-item">Databases</a>
 </li>
                                     
 <li>
-    <a href="../../utils/developing-api/" class="dropdown-item">Developing an API</a>
+    <a href="../developing-api/" class="dropdown-item">Developing an API</a>
 </li>
                                     
 <li>
-    <a href="../../utils/ide/" class="dropdown-item">IDE</a>
+    <a href="./" class="dropdown-item active">IDE</a>
 </li>
                                     
 <li>
-    <a href="../../utils/regex/" class="dropdown-item">Regex</a>
+    <a href="../regex/" class="dropdown-item">Regex</a>
 </li>
                                     
 <li>
-    <a href="../../utils/supervisor/" class="dropdown-item">Supervisor</a>
+    <a href="../supervisor/" class="dropdown-item">Supervisor</a>
 </li>
                                     
 <li>
-    <a href="../../utils/transmission/" class="dropdown-item">Transmission</a>
+    <a href="../transmission/" class="dropdown-item">Transmission</a>
 </li>
                                     
 <li>
-    <a href="../../utils/ubuntu/" class="dropdown-item">Ubuntu</a>
+    <a href="../ubuntu/" class="dropdown-item">Ubuntu</a>
 </li>
                                     
 <li>
-    <a href="../../utils/working-environment/" class="dropdown-item">Working environment</a>
+    <a href="../working-environment/" class="dropdown-item">Working environment</a>
 </li>
                                 </ul>
                             </li>
@@ -158,12 +158,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../c4-model/" class="nav-link">
+                                <a rel="prev" href="../developing-api/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../tech-lead/" class="nav-link">
+                                <a rel="next" href="../regex/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -185,17 +185,17 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#scrum" class="nav-link">SCRUM</a>
+            <li class="nav-item" data-level="1"><a href="#ide-integrated-development-environment" class="nav-link">IDE (Integrated Development Environment)</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#daily" class="nav-link">Daily</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#planning-next-sprint" class="nav-link">Planning next sprint</a>
+            <li class="nav-item" data-level="2"><a href="#sublime" class="nav-link">Sublime</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#after-sprint-is-complete" class="nav-link">After sprint is complete</a>
+            <li class="nav-item" data-level="2"><a href="#vs-code" class="nav-link">VS Code</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">References</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -206,25 +206,17 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="scrum">SCRUM</h1>
-<p>Objectives, TBD</p>
-<p>Not everything is closed at the beginning of the sprint. Flexibility to learn.
-Focus on objective of the sprint, complete task and give value to the product.
-Communication is key. It is not about the person, is the team.</p>
-<h2 id="daily">Daily</h2>
+<h1 id="ide-integrated-development-environment">IDE (Integrated Development Environment)</h1>
+<p>An IDE, or Integrated Development Environment, enables programmers to consolidate the different aspects of writing a computer program. It helps you editing your source code, debugging, and auto-completing.</p>
+<h2 id="sublime">Sublime</h2>
+<p>Simple, light and robust. It has everything I need to work with python. Installation by default on <a href="../ubuntu/#dotfiles">my .dotfiles</a></p>
+<h2 id="vs-code">VS Code</h2>
+<p>New, popular and complete. Let's give it a try to this IDE.</p>
+<h2 id="references">References</h2>
 <ul>
-<li>Avoid doing reporting. Discussion should be based on meeting the objective of the sprint.</li>
-</ul>
-<h2 id="planning-next-sprint">Planning next sprint</h2>
-<ul>
-<li>Refinement session for task planed for next sprint is required, so during sprint there is no mismatch. Discussion can happens at this stage, but it should be as clear for everyone.</li>
-<li>Clear Acceptance Criteria from the business point of view. Add value to the project.</li>
-<li>Planning, where estimation of tickets come to place. Define a Goal for the sprint. Capacity of the team, is goal of sprint achievable.</li>
-</ul>
-<h2 id="after-sprint-is-complete">After sprint is complete</h2>
-<ul>
-<li>Reviews, with stakeholder and after sprint. Show delivery, progress and value during the sprint.</li>
-<li>Retro, discussion about what happened in last sprint.</li>
+<li><a href="https://runme.dev/">VSCode Runme</a></li>
+<li><a href="https://fredrikaverpil.github.io/posts/2016-05-20-my-sublime-3-setup/">Sublime setup</a></li>
+<li><a href="https://gist.github.com/McLargo/ae633d1ff481c20c21433074169d283c#file-sublime-cheatsheet">Sublime cheatsheet</a></li>
 </ul></div>
             </div>
         </div>
