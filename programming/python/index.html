@@ -35,6 +35,19 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Architecture <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../architecture/architecture-decision-record/" class="dropdown-item">Architecture Decision Records</a>
+</li>
+                                    
+<li>
+    <a href="../../architecture/microservices/" class="dropdown-item">Microservices</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">DevOps <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -60,15 +73,27 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active">Python</a>
-</li>
-                                    
-<li>
     <a href="../django/" class="dropdown-item">Django</a>
 </li>
                                     
 <li>
+    <a href="../fastapi/" class="dropdown-item">FastApi</a>
+</li>
+                                    
+<li>
+    <a href="../flask/" class="dropdown-item">Flask</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Python</a>
+</li>
+                                    
+<li>
     <a href="../openapi/" class="dropdown-item">Open API</a>
+</li>
+                                    
+<li>
+    <a href="../sqlalchemy/" class="dropdown-item">SQLAlchemy</a>
 </li>
                                     
 <li>
@@ -79,10 +104,6 @@
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Project Management <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../project-management/architecture-decision-record/" class="dropdown-item">Architecture Decision Records</a>
-</li>
                                     
 <li>
     <a href="../../project-management/c4-model/" class="dropdown-item">C4 Model</a>
@@ -158,12 +179,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../devops/serverless/" class="nav-link">
+                                <a rel="prev" href="../flask/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../django/" class="nav-link">
+                                <a rel="next" href="../openapi/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -196,6 +217,18 @@
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#description" class="nav-link">description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#async" class="nav-link">async</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#reference" class="nav-link">Reference</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#diferentes-tipos-de-variables" class="nav-link">Diferentes tipos de variables:</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -259,15 +292,26 @@ https://pythonbasics.org/virtualenv/</p>
 <p>Learn python in 10 minutes
 https://www.stavros.io/tutorials/python/
 https://learnxinyminutes.com/docs/python/</p>
-<p>Diferentes tipos de variables:
-- integer: 2
-- float: 2.1
-- string/unicode: 'hello' / u'Hola Raúl'
-- list: [1, 2, 3]
-- tuple: (1, 2,3, )
-- dictionary: {'key': 'value'}
-- boolean
-- custom objects</p>
+<h2 id="async">async</h2>
+<p>When normally running python code, code is executing sequentially in the same process/thread. That means, process is blocked until code execution stopped. If another process enters, it acts like a queue. Until process 1 doesn't end, process 2 won't start execution. Can causes performance problem, as if for any reason process 1 is waiting (db connection, external request), those milliseconds CPU is waiting doing nothing.</p>
+<p>Problem is solved with concurrence. In python, is called <code>async</code>, allowing parallel execution of process, within the same CPU. Even, executing is lineal in the code, whatever you build, order is respect.</p>
+<p>Async works when there are many execution of the same code, each goes to a different thread inside the same process/CPU.</p>
+<p><a href="https://realpython.com/async-io-python/#the-asyncio-package-and-asyncawait">Sample of async vs sync</a></p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://realpython.com/async-io-python/">async python</a></li>
+</ul>
+<h2 id="diferentes-tipos-de-variables">Diferentes tipos de variables:</h2>
+<ul>
+<li>integer: 2</li>
+<li>float: 2.1</li>
+<li>string/unicode: 'hello' / u'Hola Raúl'</li>
+<li>list: [1, 2, 3]</li>
+<li>tuple: (1, 2,3, )</li>
+<li>dictionary: {'key': 'value'}</li>
+<li>boolean</li>
+<li>custom objects</li>
+</ul>
 <p>Condicionales:
 - if 1 == 1:
 - if 1 != 1:

@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="Javier Gil">
-        <link rel="canonical" href="https://mclargo.github.io/programming/django/">
+        <link rel="canonical" href="https://mclargo.github.io/architecture/architecture-decision-record/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Django - My technical wiki</title>
+        <title>Architecture Decision Records - My technical wiki</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -34,16 +34,16 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Architecture <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../architecture/architecture-decision-record/" class="dropdown-item">Architecture Decision Records</a>
+    <a href="./" class="dropdown-item active">Architecture Decision Records</a>
 </li>
                                     
 <li>
-    <a href="../../architecture/microservices/" class="dropdown-item">Microservices</a>
+    <a href="../microservices/" class="dropdown-item">Microservices</a>
 </li>
                                 </ul>
                             </li>
@@ -68,36 +68,36 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Programming <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active">Django</a>
+    <a href="../../programming/django/" class="dropdown-item">Django</a>
 </li>
                                     
 <li>
-    <a href="../fastapi/" class="dropdown-item">FastApi</a>
+    <a href="../../programming/fastapi/" class="dropdown-item">FastApi</a>
 </li>
                                     
 <li>
-    <a href="../flask/" class="dropdown-item">Flask</a>
+    <a href="../../programming/flask/" class="dropdown-item">Flask</a>
 </li>
                                     
 <li>
-    <a href="../python/" class="dropdown-item">Python</a>
+    <a href="../../programming/python/" class="dropdown-item">Python</a>
 </li>
                                     
 <li>
-    <a href="../openapi/" class="dropdown-item">Open API</a>
+    <a href="../../programming/openapi/" class="dropdown-item">Open API</a>
 </li>
                                     
 <li>
-    <a href="../sqlalchemy/" class="dropdown-item">SQLAlchemy</a>
+    <a href="../../programming/sqlalchemy/" class="dropdown-item">SQLAlchemy</a>
 </li>
                                     
 <li>
-    <a href="../virtualenvs/" class="dropdown-item">Virtualenvs</a>
+    <a href="../../programming/virtualenvs/" class="dropdown-item">Virtualenvs</a>
 </li>
                                 </ul>
                             </li>
@@ -179,12 +179,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../devops/serverless/" class="nav-link">
+                                <a rel="prev" class="nav-link disabled">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../fastapi/" class="nav-link">
+                                <a rel="next" href="../microservices/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -206,33 +206,20 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#django" class="nav-link">Django</a>
+            <li class="nav-item" data-level="1"><a href="#architecture-decision-record" class="nav-link">Architecture decision record</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#components" class="nav-link">Components</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
-            <li class="nav-item" data-level="2"><a href="#installation" class="nav-link">Installation</a>
+            <li class="nav-item" data-level="2"><a href="#tips-for-using-lightweight-adr" class="nav-link">Tips for using Lightweight ADR</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
-            <li class="nav-item" data-level="2"><a href="#starting-new-project" class="nav-link">Starting new project</a>
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">References</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
-            <li class="nav-item" data-level="2"><a href="#basic-schema-of-django-app" class="nav-link">basic schema of django app</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#migrations" class="nav-link">Migrations</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#django-admin-basic-commands" class="nav-link">django admin - basic commands</a>
-              <ul class="nav flex-column">
               </ul>
             </li>
         </ul>
@@ -240,50 +227,33 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="django">Django</h2>
-<h2 id="installation">Installation</h2>
-<p>to install django, lets create a requirements.txt file, with desired version of django</p>
-<p><code>django==1.11.13</code></p>
-<p>then, install libraries in file</p>
-<p><code>pip install -r requirements.txt</code></p>
-<p>check everything went ok:</p>
-<p><code>django-admin -h</code></p>
-<h2 id="starting-new-project">Starting new project</h2>
-<p>First, on Django, you'll need to create a project by:</p>
-<p><code>django-admin startproject &lt;project&gt;</code></p>
-<p>that's basic configuration. To check evertyhing looks good, run:</p>
-<p><code>python manage.py runserver</code></p>
-<p>if we want to test via shell, run:</p>
-<p><code>python manage.py shell</code></p>
-<h2 id="basic-schema-of-django-app">basic schema of django app</h2>
-<p>a project can contains one or more apps. Also, an app can be used in several projects</p>
-<p>To create a new app in our project:</p>
-<p><code>python manage.py startapp &lt;app&gt;</code></p>
-<p>New folder is created. It contains basic schema:</p>
-<p><code>&lt;app&gt;/views.py</code>
-    represents the controller. One function per view. get data, processed it, and render template if needed</p>
-<p><code>&lt;app&gt;/urls.py</code>
-    where url is mapped to corresponding function in views file</p>
-<p><code>&lt;app&gt;/models.py</code>
-    represent the models. Django use an ORM, that means, tables and database corresponds to Model classes.</p>
-<p>Add app configuration to <code>project/settings.py</code>:</p>
-<pre><code class="language-python">    INSTALLED_APPS = [
-        '&lt;app&gt;.apps.&lt;App&gt;Config',
-</code></pre>
-<h2 id="migrations">Migrations</h2>
-<p>Every changes on models, needs to be migrate to database schema.
-After add/update information to models.py file, changes needs to be done on database level</p>
-<p>Make migrations:</p>
-<p><code>python manage.py makemigrations &lt;app&gt;</code></p>
-<p>See migration on sql:</p>
-<p><code>python manage.py sqlmigrate &lt;app&gt; &lt;number&gt;</code></p>
-<p>Run migrations:</p>
-<p><code>python manage.py migrate</code></p>
-<h2 id="django-admin-basic-commands">django admin - basic commands</h2>
-<p>Creating an admin user:</p>
-<p><code>python manage.py createsuperuser</code></p>
-<p>Tests needs to be created. Run with:</p>
-<p><code>python manage.py test &lt;app&gt;</code></p></div>
+<h1 id="architecture-decision-record">Architecture decision record</h1>
+<p>Usually, decision on a project are made verbally, or during a discussion in chat/email, across few people (colleagues, customer...) inside a context. If we don't document these decisions, it is going to be hard to remember why decision was made in few months.</p>
+<p>If those documents are missing, next generation of developers can just blindly accept it (team will be afraid of make any changes they don't understand) or blindly change it (project can be damage or have side effects). With these documents included inside the project, makes them easier to related and maintain. These documents needs to be simply (low effort is put, but very agile), and devs don't get lazy to create them. Help onboarding people to get up to speed in a asynchronous way.</p>
+<p>A missing decision can be identify during PR review, when new patter/library is added without corresponding ADR document. Even enough small decisions can compound into a future problem that requires a large process or effort</p>
+<h2 id="components">Components</h2>
+<ul>
+<li><strong>Title:</strong> brief description of the decision</li>
+<li><strong>Context:</strong> explains the context and facts behind the decision</li>
+<li><strong>Decision:</strong> longer statements of the decision made</li>
+<li><strong>Status:</strong> [Proposed, Accepted, Deprecated, Superseded]</li>
+<li><strong>Consequences:</strong> how it will impact the project itself</li>
+</ul>
+<h2 id="tips-for-using-lightweight-adr">Tips for using Lightweight ADR</h2>
+<ul>
+<li>Use markdown and store along with the component it relates to in source control</li>
+<li>Number the files sequentially, don't reuse it (just update if required)</li>
+<li>Keep it brief and use plain, easy to understand language</li>
+<li>Peer review as you would code</li>
+<li>For cross cutting decisions that affect multiple components consider making a separate "architecture" repository</li>
+<li>When you make a decision document it immediately!</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://github.com/peter-evans/lightweight-architecture-decision-records">Lightweight decision records</a></li>
+<li><a href="https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions">Documenting architecture decision</a></li>
+<li><a href="https://engineering.atspotify.com/2020/04/when-should-i-write-an-architecture-decision-record/">Write decision record</a></li>
+</ul></div>
             </div>
         </div>
 
