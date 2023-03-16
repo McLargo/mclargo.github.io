@@ -216,6 +216,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#readiness-and-liveness-startup-probes" class="nav-link">Readiness and liveness, startup probes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#references" class="nav-link">References</a>
               <ul class="nav flex-column">
               </ul>
@@ -237,18 +241,22 @@
 Quorum, master-node must be a odd number of instances.
 Cluster between master/worker nodes</p>
 <p>Service - &gt; deployment -&gt; replicaset -&gt; POD</p>
-<p>Service can be:
-- cluster IP (DNS)
-- load balancer
-- node ports</p>
+<p>Service can be:</p>
+<ul>
+<li>cluster IP (DNS)</li>
+<li>load balancer</li>
+<li>node ports</li>
+</ul>
 <p>Ingress, it is like a callback.
 Storage or persistent</p>
-<p>Other concepts:
-- label
-- memory
-- cpu
-- rback
--namespaces</p>
+<p>Other concepts:</p>
+<ul>
+<li>label</li>
+<li>memory</li>
+<li>cpu</li>
+<li>rback
+-namespaces</li>
+</ul>
 <h2 id="local-k8s-cluster">Local k8s cluster</h2>
 <p>minikube quickly sets up a local Kubernetes cluster on macOS, Linux, and Windows. Easy to install and start working.</p>
 <p>Install and run minikube to have a local cluster for k8s in local. If minikube is running, automatically context/namespace is updated to use then one's from minikube. If you are working with other k8s cluster, keep in mind this change. Always doble-check for namespace or context before deploying to the cluster. To work with cluster outside local, either you stop minikube or change namespace. Careful, when you stop minikube, context/namespace are set to null, so your kube commands won't be pointing to any context. You need to explicitly set again context.</p>
@@ -261,11 +269,34 @@ It provides a <code>values.yaml</code> with default stuff required.
 Also templates to a more complex logic.
 All this parametrization is embembed in the configuration files, creating new templates.
 This values can be reuse in each object.yaml file. Maximizing reusability and reducing error-prone</p>
+<h2 id="readiness-and-liveness-startup-probes">Readiness and liveness, startup probes</h2>
+<p>Kubernetes simply observes the pod's lifecycle and starts to route traffic to
+the pod when the containers move from the Pending to Succeeded state. That
+means, Kubernetes mark a pod as healthy and ready to get request as soon as this
+happens. But application may receive traffic before is actually ready, because
+it needs to make database connection or load some data. There is a gap between
+when the app is ready and when Kubernetes thinks is ready. Risk of receive
+traffic and return 500 errors. Similar case happens when Kubelet watches for
+application crashes and restarts the pod to recover.</p>
+<p>3 different probes:</p>
+<ul>
+<li>Readiness probes are used to let kubelet know when the application is ready to
+  accept new traffic. It runs during the pod's entire lifecycle, to deal when
+  the application is temporarily unavailable (wait for it to recover).</li>
+<li>Liveness probe, determines the health, and kills the pod if it fails the
+  liveness check (deadlock situation, since the underlying process continues to
+  run from Kubernetes's perspective).</li>
+<li>Startup probes are similar to readiness probes but only executed at startup.
+  They are optimized for slow starting containers or applications with
+  unpredictable initialization processes.</li>
+</ul>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://gist.github.com/McLargo/ae633d1ff481c20c21433074169d283c#file-k9s-md">k9s commands</a></li>
 <li><a href="https://minikube.sigs.k8s.io/docs/handbook/">minikube handbook</a></li>
 <li><a href="https://gist.github.com/McLargo/ae633d1ff481c20c21433074169d283c#file-minikube-md">minikube/kubectl commands</a></li>
+<li><a href="https://blog.devgenius.io/understanding-kubernetes-probes-5daaff67599a">kubernetes probes</a></li>
+<li><a href="https://srcco.de/posts/kubernetes-liveness-probes-are-dangerous.html">liveness probes tips</a></li>
 </ul></div>
             </div>
         </div>

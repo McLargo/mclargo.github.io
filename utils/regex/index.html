@@ -244,65 +244,118 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="regex">REGEX</h1>
-<p>Regex is short for Regular Expression. It helps to match, find or manage text. Start by typing OK in the Regex field to proceed to the first step and access the more detailed description.</p>
+<p>Regex is short for Regular Expression. It helps to match, find or manage text.
+Start by typing OK in the Regex field to proceed to the first step and access
+the more detailed description.</p>
 <h2 id="what-is-regular-expressions-regex">What is Regular Expressions Regex?</h2>
-<p>Regular Expressions are a string of characters that express a search pattern. Often abbreviated as Regex or Regexp. It is especially used to find or replace words in texts. In addition, we can test whether a text complies with the rules we set.</p>
-<p>For example, let's say you have a list of filenames. And you only want to find files with the pdf extension. Following typing an expression <code>^\w+\.pdf$</code> will work. The meaning of the definitions in this expression will become clearer as the steps progress.</p>
+<p>Regular Expressions are a string of characters that express a search pattern.
+Often abbreviated as Regex or Regexp. It is especially used to find or replace
+words in texts. In addition, we can test whether a text complies with the rules
+we set.</p>
+<p>For example, let's say you have a list of filenames. And you only want to find
+files with the pdf extension. Following typing an expression <code>^\w+\.pdf$</code> will
+work. The meaning of the definitions in this expression will become clearer as
+the steps progress.</p>
 <h2 id="basic-matchers">Basic Matchers</h2>
-<p>The character or word we want to find is written directly. It is similar to a normal search process. For example, to find the word curious in the text, type the same.</p>
+<p>The character or word we want to find is written directly. It is similar to a
+normal search process. For example, to find the word curious in the text, type
+the same.</p>
 <p>The period <code>.</code> allows selecting any character, including special characters and spaces.</p>
 <h3 id="character-sets-abc">Character Sets [abc]</h3>
-<p>If one of the characters in a word can be various characters, we write it in square brackets <code>[]</code> with all alternative characters. For example, to write an expression that can find all the words in the text, type the characters <code>a, e, i, o, u</code> adjacently within square brackets <code>[]</code>.</p>
+<p>If one of the characters in a word can be various characters, we write it in
+square brackets <code>[]</code> with all alternative characters. For example, to write an
+expression that can find all the words in the text, type the characters
+<code>a, e, i, o, u</code> adjacently within square brackets <code>[]</code>.</p>
 <h3 id="negated-character-sets-abc">Negated Character Sets [^abc]</h3>
-<p>To find all words in the text below, except for ber and bor, type e and o side by side after the caret <code>^</code> character inside square brackets <code>[]</code>.</p>
+<p>To find all words in the text below, except for ber and bor, type e and o side
+by side after the caret <code>^</code> character inside square brackets <code>[]</code>.</p>
 <h3 id="character-sets-alphanumeric-range">Character Sets: Alphanumeric Range</h3>
 <p>Letter Range <code>[a-z]</code></p>
-<p>To find the letters in the specified range, the starting letter and the ending letter are written in square brackets <code>[]</code> with a dash between them <code>-</code>. It is case-sensitive. Type the expression that will select all lowercase letters between <code>e</code> and <code>o</code>, including themselves.</p>
+<p>To find the letters in the specified range, the starting letter and the ending
+letter are written in square brackets <code>[]</code> with a dash between them <code>-</code>. It is
+case-sensitive. Type the expression that will select all lowercase letters
+between <code>e</code> and <code>o</code>, including themselves.</p>
 <h3 id="character-sets-digit-range">Character Sets: Digit Range</h3>
 <p>Number Range <code>[0-9]</code></p>
-<p>To find the numbers in the specified range, the starting number and the ending number are written in square brackets <code>[]</code> with a dash <code>-</code> between them. Write an expression that will select all numbers between 3 and 6, including themselves.</p>
+<p>To find the numbers in the specified range, the starting number and the ending
+number are written in square brackets <code>[]</code> with a dash <code>-</code> between them. Write
+an expression that will select all numbers between 3 and 6, including
+themselves.</p>
 <h2 id="repetitions">Repetitions</h2>
-<p>Some special characters are used to specify how many times a character will be repeated in the text. These special characters are the plus <code>+</code>, the asterisk <code>*</code>, and the question mark <code>?</code>.</p>
+<p>Some special characters are used to specify how many times a character will be
+repeated in the text. These special characters are the plus <code>+</code>, the asterisk
+<code>*</code>, and the question mark <code>?</code>.</p>
 <h3 id="repetitions-asterisk">Repetitions: Asterisk</h3>
 <p>Asterisk <code>*</code></p>
-<p>We put an asterisk <code>*</code> after a character to indicate that the character may either not match at all or can match many times. For example, indicate that the letter <code>e</code> should never occur in the text, or it can occur once or more side by side.</p>
+<p>We put an asterisk <code>*</code> after a character to indicate that the character may
+either not match at all or can match many times. For example, indicate that the
+letter <code>e</code> should never occur in the text, or it can occur once or more side by
+side.</p>
 <h3 id="repetitions-the-plus">Repetitions: The Plus</h3>
 <p>Plus Sign <code>+</code></p>
-<p>To indicate that a character can occur one or more times, we put a plus sign <code>+</code> after a character. For example, indicate that the letter <code>e</code> can occur one or more times in the text.</p>
+<p>To indicate that a character can occur one or more times, we put a plus sign <code>+</code>
+after a character. For example, indicate that the letter <code>e</code> can occur one or
+more times in the text.</p>
 <h3 id="repetitions-the-question-mark">Repetitions: The Question Mark</h3>
 <p>Question Mark <code>?</code></p>
-<p>To indicate that a character is optional, we put a <code>?</code> question mark after a character. For example, indicate that the following letter <code>u</code> is optional.</p>
+<p>To indicate that a character is optional, we put a <code>?</code> question mark after a
+character. For example, indicate that the following letter <code>u</code> is optional.</p>
 <h3 id="repetitions-curly-braces">Repetitions: Curly Braces</h3>
-<p>To express a certain number of occurrences of a character, we write curly braces <code>{n}</code> along with how many times we want it to occur at the end. For example, indicate that the following letter <code>e</code> can occur only 2 times.</p>
-<p>To express at least a certain number of occurrences of a character, we write the end of the character at least how many times we want it to occur, with a comma <code>,</code> at the end, and inside curly braces <code>{n, }</code>. For example, indicate that the following letter <code>e</code> can occur at least 3 times.</p>
-<p>To express the occurrence of a character in a certain number range, we write curly braces <code>{x,y}</code> with the interval we want to go to the end. For example, indicate that the following letter <code>e</code> can only occur between 1 and 3.</p>
+<p>To express a certain number of occurrences of a character, we write curly braces
+<code>{n}</code> along with how many times we want it to occur at the end. For example,
+indicate that the following letter <code>e</code> can occur only 2 times.</p>
+<p>To express at least a certain number of occurrences of a character, we write the
+end of the character at least how many times we want it to occur, with a comma
+<code>,</code> at the end, and inside curly braces <code>{n, }</code>. For example, indicate that the
+following letter <code>e</code> can occur at least 3 times.</p>
+<p>To express the occurrence of a character in a certain number range, we write
+curly braces <code>{x,y}</code> with the interval we want to go to the end. For example,
+indicate that the following letter <code>e</code> can only occur between 1 and 3.</p>
 <h2 id="grouping">Grouping</h2>
 <h3 id="parentheses-grouping">Parentheses ( ): Grouping</h3>
-<p>We can group an expression and use these groups to reference or enforce some rules. To group an expression, we enclose <code>()</code> in parentheses. For now just group <code>haa</code> below.</p>
+<p>We can group an expression and use these groups to reference or enforce some
+rules. To group an expression, we enclose <code>()</code> in parentheses. For now just
+group <code>haa</code> below.</p>
 <h3 id="group-reference">Group Reference</h3>
 <p>Referencing a Group</p>
-<p>The words <code>ha</code> and <code>haa</code> are grouped below. The first group is used by writing <code>\1</code> to avoid rewriting. Here 1 denotes the order of grouping. Type <code>\2</code> at the end of the expression to refer to the second group.</p>
+<p>The words <code>ha</code> and <code>haa</code> are grouped below. The first group is used by writing
+<code>\1</code> to avoid rewriting. Here 1 denotes the order of grouping. Type <code>\2</code> at the
+end of the expression to refer to the second group.</p>
 <h3 id="non-capturing-groupping">Non-capturing Groupping</h3>
 <p>Parentheses <code>(?: )</code>: Non-capturing Grouping</p>
-<p>You can group an expression and ensure that it is not captured by references. For example, below are two groups. However, the first group reference we denote with <code>\1</code> actually indicates the second group, as the first is a non-capturing group.</p>
+<p>You can group an expression and ensure that it is not captured by references.
+For example, below are two groups. However, the first group reference we denote
+with <code>\1</code> actually indicates the second group, as the first is a non-capturing
+group.</p>
 <h3 id="pipe-character">Pipe Character |</h3>
-<p>It allows to specify that an expression can be in different expressions. Thus, all possible statements are written separated by the pipe sign <code>|</code>. This differs from charset <code>[abc]</code>, charsets operate at the character level. Alternatives are at the expression level. For example, the following expression would select both cat and Cat. Add another pipe sign <code>|</code> to the end of the expression and type rat so that all words are selected.</p>
-<p>### Escape Character \
-There are special characters that we use when writing regex. <code>{ } [ ] / \ + * . $^ | ?</code> Before we can select these characters themselves, we need to use an escape character <code>\</code>. For example, to select the dot . and asterisk <code>*</code> characters in the text, let's add an escape character <code>\</code> before it.</p>
+<p>It allows to specify that an expression can be in different expressions. Thus,
+all possible statements are written separated by the pipe sign <code>|</code>. This differs
+from charset <code>[abc]</code>, charsets operate at the character level. Alternatives are
+at the expression level. For example, the following expression would select both
+cat and Cat. Add another pipe sign <code>|</code> to the end of the expression and type rat
+so that all words are selected.</p>
+<p>### Escape Character \</p>
+<p>There are special characters that we use when writing regex.
+<code>{ } [ ] / \ + * . $^ | ?</code> Before we can select these characters themselves, we
+need to use an escape character <code>\</code>. For example, to select the dot . and
+asterisk <code>*</code> characters in the text, let's add an escape character <code>\</code> before
+it.</p>
 <h3 id="start-of-the-string">Start of The String</h3>
 <p>Caret Sign <code>^</code>:</p>
-<p>Selecting by Line Start
-We were using <code>[0-9]</code> to find numbers. To find only numbers at the beginning of a line, prefix this expression with the <code>^</code> sign.</p>
+<p>Selecting by Line Start. We were using <code>[0-9]</code> to find numbers. To find only
+numbers at the beginning of a line, prefix this expression with the <code>^</code> sign.</p>
 <h3 id="end-of-the-string">End of The String</h3>
 <p>Dollar Sign <code>$</code>:</p>
-<p>Selecting by End of Line
-Let's use the <code>$</code> sign after the html value to find the html texts only at the end of the line.</p>
+<p>Selecting by End of Line. Let's use the <code>$</code> sign after the html value to find
+the html texts only at the end of the line.</p>
 <h3 id="alphanumeric">Alphanumeric</h3>
 <p>Word Character <code>\w</code>: Letter, Number and Underscore</p>
-<p>The expression <code>\w</code> is used to find letters, numbers and underscore characters. Let's use the expression <code>\w</code> to find word characters in the text.</p>
+<p>The expression <code>\w</code> is used to find letters, numbers and underscore characters.
+Let's use the expression <code>\w</code> to find word characters in the text.</p>
 <h3 id="non-alphanumeric">Non-alphanumeric</h3>
 <p>Except Word Character <code>\W</code></p>
-<p>The expression <code>\W</code> is used to find characters other than letters, numbers, and underscores.</p>
+<p>The expression <code>\W</code> is used to find characters other than letters, numbers, and
+underscores.</p>
 <h3 id="digits">Digits</h3>
 <p>Number Character <code>\d</code></p>
 <p><code>\d</code> is used to find only number characters.</p>
@@ -316,34 +369,62 @@ Let's use the <code>$</code> sign after the html value to find the html texts on
 <p>Except Space Character <code>\S</code></p>
 <p><code>\S</code> is used to find non-space characters.</p>
 <h2 id="lookarounds">Lookarounds</h2>
-<p>If we want the phrase we're writing to come before or after another phrase, we need to "lookaround". Take the next step to learn how to "lookaround".</p>
+<p>If we want the phrase we're writing to come before or after another phrase, we
+need to "lookaround". Take the next step to learn how to "lookaround".</p>
 <h3 id="lookarounds-positive-lookahead">Lookarounds: Positive Lookahead</h3>
 <p>Positive Lookahead: <code>(?=)</code></p>
-<p>For example, we want to select the hour value in the text. Therefore, to select only the numerical values that have PM after them, we need to write the positive look-ahead expression <code>(?=)</code> after our expression. Include PM after the <code>=</code> sign inside the parentheses.</p>
+<p>For example, we want to select the hour value in the text. Therefore, to select
+only the numerical values that have PM after them, we need to write the positive
+look-ahead expression <code>(?=)</code> after our expression. Include PM after the <code>=</code> sign
+inside the parentheses.</p>
 <h3 id="lookarounds-negative-lookahead">Lookarounds: Negative Lookahead</h3>
 <p>Negative Lookahead: <code>(?!)</code></p>
-<p>For example, we want to select numbers other than the hour value in the text. Therefore, we need to write the negative look-ahead <code>(?!)</code> expression after our expression to select only the numerical values that do not have PM after them. Include PM after the <code>!</code> sign inside the parentheses.</p>
+<p>For example, we want to select numbers other than the hour value in the text.
+Therefore, we need to write the negative look-ahead <code>(?!)</code> expression after our
+expression to select only the numerical values that do not have PM after them.
+Include PM after the <code>!</code> sign inside the parentheses.</p>
 <h3 id="lookarounds-positive-lookbehind">Lookarounds: Positive Lookbehind</h3>
 <p>Positive Lookbehind: <code>(?&lt;=)</code></p>
-<p>For example, we want to select the price value in the text. Therefore, to select only the number values that preceded by <code>$</code>, we need to write the positive lookbehind expression <code>(?&lt;=)</code> before our expression. Add <code>\$</code> after the <code>=</code> sign inside the brackets.</p>
+<p>For example, we want to select the price value in the text. Therefore, to select
+only the number values that preceded by <code>$</code>, we need to write the positive
+lookbehind expression <code>(?&lt;=)</code> before our expression. Add <code>\$</code> after the <code>=</code> sign
+inside the brackets.</p>
 <h3 id="lookarounds-negative-lookbehind">Lookarounds: Negative Lookbehind</h3>
 <p>Negative Lookbehind: <code>(?&lt;!)</code></p>
-<p>For example, we want to select numbers in the text other than the price value. Therefore, to select only numeric values that are not preceded by <code>$</code>, we need to write the negative lookbehind <code>(?&lt;!)</code> before our expression. Add <code>\$</code> after the <code>!</code> inside the brackets.</p>
+<p>For example, we want to select numbers in the text other than the price value.
+Therefore, to select only numeric values that are not preceded by <code>$</code>, we need
+to write the negative lookbehind <code>(?&lt;!)</code> before our expression. Add <code>\$</code> after
+the <code>!</code> inside the brackets.</p>
 <h2 id="flags">Flags</h2>
-<p>Flags change the output of the expression. That's why flags are also called modifiers. Determines whether the typed expression treats text as separate lines, is case sensitive, or finds all matches. Continue to the next step to learn the flags.</p>
+<p>Flags change the output of the expression. That's why flags are also called
+modifiers. Determines whether the typed expression treats text as separate
+lines, is case sensitive, or finds all matches. Continue to the next step to
+learn the flags.</p>
 <h3 id="flags-global">Flags: Global</h3>
-<p>The global flag causes the expression to select all matches. If not used it will only select the first match. Now enable the global flag to be able to select all matches.</p>
+<p>The global flag causes the expression to select all matches. If not used it will
+only select the first match. Now enable the global flag to be able to select all
+matches.</p>
 <p><code>/g all matches</code></p>
 <h3 id="flags-multiline">Flags: Multiline</h3>
-<p>Regex sees all text as one line. But we use the multiline flag to handle each line separately. In this way, the expressions we write according to the end of the linework separately for each line. Now enable the multiline flag to find all matches.</p>
+<p>Regex sees all text as one line. But we use the multiline flag to handle each
+line separately. In this way, the expressions we write according to the end of
+the linework separately for each line. Now enable the multiline flag to find all
+matches.</p>
 <p><code>/m multiline</code></p>
 <h3 id="flags-case-insensitive">Flags: Case Insensitive</h3>
-<p>In order to remove the case-sensitiveness of the expression we have written, we must activate the case-insensitive flag.</p>
+<p>In order to remove the case-sensitiveness of the expression we have written, we
+must activate the case-insensitive flag.</p>
 <p><code>/i case insensitve</code></p>
 <h3 id="greedy-matching">Greedy Matching</h3>
-<p>Regex does a greedy match by default. This means that the matchmaking will be as long as possible. Check out the example below. It refers to any match that ends in <code>r</code> and can be any character preceded by it. But it does not stop at the first letter <code>r</code>.</p>
+<p>Regex does a greedy match by default. This means that the matchmaking will be as
+long as possible. Check out the example below. It refers to any match that ends
+in <code>r</code> and can be any character preceded by it. But it does not stop at the
+first letter <code>r</code>.</p>
 <h3 id="lazy-matching">Lazy Matching</h3>
-<p>Lazy matchmaking, unlike greedy matching, stops at the first matching. For example, in the example below, add a <code>?</code> after <code>*</code> to find the first match that ends with the letter <code>r</code> and is preceded by any character. It means that this match will stop at the first letter <code>r</code>.</p>
+<p>Lazy matchmaking, unlike greedy matching, stops at the first matching. For
+example, in the example below, add a <code>?</code> after <code>*</code> to find the first match that
+ends with the letter <code>r</code> and is preceded by any character. It means that this
+match will stop at the first letter <code>r</code>.</p>
 <h2 id="reference">Reference</h2>
 <ul>
 <li><a href="https://regexlearn.com/learn/regex101">Learn Regex</a></li>

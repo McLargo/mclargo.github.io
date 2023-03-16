@@ -206,33 +206,28 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#django" class="nav-link">Django</a>
+            <li class="nav-item" data-level="1"><a href="#django" class="nav-link">Django</a>
               <ul class="nav flex-column">
-              </ul>
-            </li>
-            
             <li class="nav-item" data-level="2"><a href="#installation" class="nav-link">Installation</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
             <li class="nav-item" data-level="2"><a href="#starting-new-project" class="nav-link">Starting new project</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
             <li class="nav-item" data-level="2"><a href="#basic-schema-of-django-app" class="nav-link">basic schema of django app</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
             <li class="nav-item" data-level="2"><a href="#migrations" class="nav-link">Migrations</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
             <li class="nav-item" data-level="2"><a href="#django-admin-basic-commands" class="nav-link">django admin - basic commands</a>
               <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -240,23 +235,24 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="django">Django</h2>
+<h1 id="django">Django</h1>
 <h2 id="installation">Installation</h2>
-<p>to install django, lets create a requirements.txt file, with desired version of django</p>
+<p>to install django, lets create a requirements.txt file, with desired version of
+django.</p>
 <p><code>django==1.11.13</code></p>
-<p>then, install libraries in file</p>
+<p>then, install libraries in file:</p>
 <p><code>pip install -r requirements.txt</code></p>
 <p>check everything went ok:</p>
 <p><code>django-admin -h</code></p>
 <h2 id="starting-new-project">Starting new project</h2>
 <p>First, on Django, you'll need to create a project by:</p>
 <p><code>django-admin startproject &lt;project&gt;</code></p>
-<p>that's basic configuration. To check evertyhing looks good, run:</p>
+<p>that's basic configuration. To check everything looks good, run:</p>
 <p><code>python manage.py runserver</code></p>
 <p>if we want to test via shell, run:</p>
 <p><code>python manage.py shell</code></p>
 <h2 id="basic-schema-of-django-app">basic schema of django app</h2>
-<p>a project can contains one or more apps. Also, an app can be used in several projects</p>
+<p>A project can contains one or more apps. Also, an app can be used in several projects</p>
 <p>To create a new app in our project:</p>
 <p><code>python manage.py startapp &lt;app&gt;</code></p>
 <p>New folder is created. It contains basic schema:</p>
@@ -271,8 +267,9 @@
         '&lt;app&gt;.apps.&lt;App&gt;Config',
 </code></pre>
 <h2 id="migrations">Migrations</h2>
-<p>Every changes on models, needs to be migrate to database schema.
-After add/update information to models.py file, changes needs to be done on database level</p>
+<p>Every changes on models, needs to be migrate to database schema. After
+add/update information to models.py file, changes needs to be done on database
+level</p>
 <p>Make migrations:</p>
 <p><code>python manage.py makemigrations &lt;app&gt;</code></p>
 <p>See migration on sql:</p>

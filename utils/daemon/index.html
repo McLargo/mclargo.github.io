@@ -226,11 +226,13 @@
 <h1 id="linux-daemon">Linux Daemon</h1>
 <h2 id="how-to-create-a-daemon-in-linux">How to create a daemon in linux</h2>
 <p>Create new file in path <code>/etc/init.d/</code></p>
-<p>Open and copy sample in url. Update some of the variables, like name description and path to python file. On python path, point to the python created in the virtualenv, so it will have installed corresponding libraries</p>
+<p>Open and copy sample in url. Update some of the variables, like name description
+and path to python file. On python path, point to the python created in the
+virtualenv, so it will have installed corresponding libraries. <strong>All operations
+below may be required to be executed with sudo</strong></p>
 <p>Give writes privilegies <code>chmod +x /etc/init.d/&lt;daemon-name&gt; -v</code></p>
 <p>Reload daemon configuration <code>systemctl daemon-reload</code></p>
 <p>Start service <code>service &lt;daemon-name&gt; start</code></p>
-<p><em>All operations below may be required to be executed with sudo</em></p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://www.scalescale.com/tips/nginx/create-linux-daemon-service/">Instructions</a></li>

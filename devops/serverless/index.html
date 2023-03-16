@@ -220,12 +220,21 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="serverless-computing">Serverless Computing</h1>
-<p>Instead of run our application in our servers, this approach is focus on let others run (and charge depending on how many resource are used) our code.</p>
-<p>Servers are hard to maintain, needs to be up-to-date, always up and running. Serverless is less headache. We can forget about security, upgrade, scalability...</p>
-<p>Some providers of <strong>Functions as a Service (FaaS)</strong> are AWS, Google and Azure. They can handle out of the box most of the events, including http requests, database events, queuing services, monitoring alerts, file uploads, scheduled events, cronjobs...</p>
-<p>It is based on a microservice architecture, not monolith. There is no context shared among them.</p>
-<p>Cold start is the bigger cons. As the cointainer is brought up alive when there is a request, there may be some latency between request and execution.</p>
-<p>Today, this time has improved a lot. It depends on language, size of the function...</p>
+<p>Instead of run our application in our servers, this approach is focus on let
+others run (and charge depending on how many resource are used) our code.</p>
+<p>Servers are hard to maintain, needs to be up-to-date, always up and running.
+Serverless is less headache. We can forget about security, upgrade,
+scalability...</p>
+<p>Some providers of <strong>Functions as a Service (FaaS)</strong> are AWS, Google and Azure.
+They can handle out of the box most of the events, including http requests,
+database events, queuing services, monitoring alerts, file uploads, scheduled
+events, cronjobs...</p>
+<p>It is based on a microservice architecture, not monolith. There is no context
+shared among them.</p>
+<p>Cold start is the bigger cons. As the container is brought up alive when there
+is a request, there may be some latency between request and execution.</p>
+<p>Today, this time has improved a lot. It depends on language, size of the
+function...</p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://serverless-stack.com/chapters/what-is-serverless.html">Serveless</a></li>

@@ -208,7 +208,7 @@
             
             <li class="nav-item" data-level="1"><a href="#python" class="nav-link">Python</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#cursos-pyhon" class="nav-link">Cursos pyhon</a>
+            <li class="nav-item" data-level="2"><a href="#cursos-python" class="nav-link">Cursos python</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -228,7 +228,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#diferentes-tipos-de-variables" class="nav-link">Diferentes tipos de variables:</a>
+            <li class="nav-item" data-level="2"><a href="#diferentes-tipos-de-variables" class="nav-link">Diferentes tipos de variables</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -241,7 +241,7 @@
 
 <h1 id="python">Python</h1>
 <p>TODO: REVIEW</p>
-<h2 id="cursos-pyhon">Cursos pyhon</h2>
+<h2 id="cursos-python">Cursos python</h2>
 <p>python 3.7</p>
 <pre><code>https://www.udacity.com/course/introduction-to-python--ud1110
 https://www.stavros.io/tutorials/python/
@@ -252,25 +252,25 @@ https://www.hackerrank.com/challenges/py-set-add/problem
 https://www.djangoproject.com/
 </code></pre>
 <h2 id="pep8">pep8</h2>
-<p>https://www.python.org/dev/peps/pep-0008/</p>
+<p><a href="https://www.python.org/dev/peps/pep-0008/">pep8</a></p>
 <ul>
 <li>use 4 spaces, instad of tab</li>
-<li>use two line breack to separate class or methods</li>
-<li>use one line breack between methods inside a class</li>
-<li>
-<p>how to import library</p>
-<ul>
+<li>use two line breaks to separate class or methods</li>
+<li>use one line breaks between methods inside a class</li>
+<li>how to import library</li>
 <li>standard libraries</li>
 <li>3pp libraries</li>
 <li>django libraries</li>
-<li>local importation</li>
-</ul>
+<li>
+<p>local importation</p>
 <p><strong>CAREFUL while doing import</strong></p>
-<ul>
-<li>it is relative import if it is same app: <em>.{class}</em></li>
+</li>
+<li>
+<p>it is relative import if it is same app: <em>.{class}</em></p>
+</li>
 <li>better use absolute import: <em>{app}.{class}</em></li>
-<li>avoid using <em>from something import *</em></li>
-</ul>
+<li>
+<p>avoid using <em>from something import *</em></p>
 </li>
 <li>
 <p>use <code>_</code> instead of <code>-</code></p>
@@ -282,26 +282,29 @@ https://www.djangoproject.com/
 </ul>
 <h2 id="description">description</h2>
 <p>python es un lenguaje (maravilloso) de programación. Es un lenguage interpretado (no necesita compilación de un ejecutable como java). Eso permite que podamos jugar con él, bien desde la línea de comandos, hasta ficheros más complejos o aplicaciones que soporten servicios web.</p>
-<p>Tutorial base en castellano
-https://www.learnpython.org/es/</p>
-<p>Basic tutorial from python (english)
-https://docs.python.org/3/tutorial/index.html</p>
-<p>virtualenvs
-As your python application may in most of the cases specific libraries versions, having all of them installed at once in your machine could be problematic.
-https://pythonbasics.org/virtualenv/</p>
-<p>Learn python in 10 minutes
-https://www.stavros.io/tutorials/python/
-https://learnxinyminutes.com/docs/python/</p>
+<p><a href="https://www.learnpython.org/es/">Tutorial base en castellano</a></p>
+<p><a href="https://docs.python.org/3/tutorial/index.html">Basic tutorial from python (english)</a></p>
+<p><a href="../../utils/virtualenv">virtualenvs</a></p>
+<p><a href="https://www.stavros.io/tutorials/python/">Learn python in 10 minutes</a>
+<a href="https://learnxinyminutes.com/docs/python/">Learn python in 10 minutes</a></p>
 <h2 id="async">async</h2>
-<p>When normally running python code, code is executing sequentially in the same process/thread. That means, process is blocked until code execution stopped. If another process enters, it acts like a queue. Until process 1 doesn't end, process 2 won't start execution. Can causes performance problem, as if for any reason process 1 is waiting (db connection, external request), those milliseconds CPU is waiting doing nothing.</p>
-<p>Problem is solved with concurrence. In python, is called <code>async</code>, allowing parallel execution of process, within the same CPU. Even, executing is lineal in the code, whatever you build, order is respect.</p>
-<p>Async works when there are many execution of the same code, each goes to a different thread inside the same process/CPU.</p>
+<p>When normally running python code, code is executing sequentially in the same
+process/thread. That means, process is blocked until code execution stopped. If
+another process enters, it acts like a queue. Until process 1 doesn't end,
+process 2 won't start execution. Can causes performance problem, as if for any
+reason process 1 is waiting (db connection, external request), those
+milliseconds CPU is waiting doing nothing.</p>
+<p>Problem is solved with concurrence. In python, is called <code>async</code>, allowing
+parallel execution of process, within the same CPU. Even, executing is lineal in
+the code, whatever you build, order is respect.</p>
+<p>Async works when there are many execution of the same code, each goes to a
+different thread inside the same process/CPU.</p>
 <p><a href="https://realpython.com/async-io-python/#the-asyncio-package-and-asyncawait">Sample of async vs sync</a></p>
 <h2 id="reference">Reference</h2>
 <ul>
 <li><a href="https://realpython.com/async-io-python/">async python</a></li>
 </ul>
-<h2 id="diferentes-tipos-de-variables">Diferentes tipos de variables:</h2>
+<h2 id="diferentes-tipos-de-variables">Diferentes tipos de variables</h2>
 <ul>
 <li>integer: 2</li>
 <li>float: 2.1</li>
@@ -312,16 +315,20 @@ https://learnxinyminutes.com/docs/python/</p>
 <li>boolean</li>
 <li>custom objects</li>
 </ul>
-<p>Condicionales:
-- if 1 == 1:
-- if 1 != 1:
-- if 1 in [1,2]:
-- if 1 not in [1,2]:
-- else
-- elif</p>
-<p>Bucles:
-- for item in items:
-- while i &lt; 6:</p></div>
+<p>Condicionales:</p>
+<ul>
+<li>if 1 == 1:</li>
+<li>if 1 != 1:</li>
+<li>if 1 in [1,2]:</li>
+<li>if 1 not in [1,2]:</li>
+<li>else</li>
+<li>elif</li>
+</ul>
+<p>Bucles:</p>
+<ul>
+<li>for item in items:</li>
+<li>while i &lt; 6:</li>
+</ul></div>
             </div>
         </div>
 
