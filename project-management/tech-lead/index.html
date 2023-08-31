@@ -212,23 +212,11 @@
             
             <li class="nav-item" data-level="1"><a href="#technical-leader" class="nav-link">Technical leader</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#responsability" class="nav-link">Responsability</a>
+            <li class="nav-item" data-level="2"><a href="#responsibilities" class="nav-link">Responsibilities</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#motivation" class="nav-link">Motivation</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#good-practices" class="nav-link">Good practices</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#agilescrum-methodology" class="nav-link">agile/scrum methodology</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#benefits-to-customer" class="nav-link">Benefits to Customer</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -244,16 +232,57 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="technical-leader">Technical leader</h1>
-<p>TODO: review A tech lead job is to make sure the team work with quality. Part of
-this job is to plan, design, lean and execute technical solutions and
-improvements. Interact with other tech leads, sharing information and good
-practices.</p>
-<h2 id="responsability">Responsability</h2>
+<p>The job of a tech lead is to make sure the team work with quality. Part of this
+job is to plan, design, learn and execute technical solutions and improvements.
+Interact with other tech leads, sharing information and good practices. Also,
+clarifying technical doubts with stakeholders. Aside from that, a tech lead is
+also responsible for the team, understanding member’s strengths, weaknesses.
+Mentoring and guide them.</p>
+<p>Some actions that a tech lead can do are:</p>
 <ul>
-<li>Code quality assurance. Testing, coverage...</li>
-<li>Make sure style guide matches. pre-commit, sonar, jenkins, github action....</li>
-<li>Provide design direction. Follow SOLID principles</li>
-<li>Good pull request practices</li>
+<li>Keep in touch with popular tech conferences and events</li>
+<li>Read tech blogs daily <a href="https://cult.honeypot.io/">cult.honeypot</a></li>
+<li>Attend meet-ups and also maintain constant communication with other Tech Leads
+  around you.</li>
+</ul>
+<p><img alt="Tech Lead" src="../../assets/img/tech-lead.png" /></p>
+<h2 id="responsibilities">Responsibilities</h2>
+<h3 id="code-quality-assurance">Code quality assurance</h3>
+<ul>
+<li>No style guide mismatch, using same for the all team. Follow
+  <a href="https://peps.python.org/pep-0008/">PEP8</a>.</li>
+<li>No linters issues. Find bugs, duplicity of code, bad practices, TODO and
+  FIXME... use tools like <a href="https://pre-commit.com/hooks.html">pre-commit hooks</a>, jenkins, sonarqube, etc.</li>
+<li>Good test code coverage with unit and functional test. Over 95% if possible.</li>
+</ul>
+<h3 id="provide-architectural-and-design-direction">Provide architectural and design direction</h3>
+<ul>
+<li>Follow SOLID principles.</li>
+<li>Avoid code rewritten or delete not long after creation.</li>
+<li>Reduce code smells by refactoring code.</li>
+</ul>
+<h3 id="control-technical-debt">Control Technical Debt</h3>
+<ul>
+<li>Keeping a low number of technical debt.</li>
+</ul>
+<h3 id="ensure-code-review-healthiness">Ensure code review healthiness</h3>
+<ul>
+<li>Applying good pull request practices.</li>
+<li>Reducing time to merge.</li>
+<li>
+<p>Avoid huge pull request.</p>
+</li>
+<li>
+<p><a href="https://commitlint.io/">Commit lint online</a></p>
+</li>
+<li><a href="https://www.datacamp.com/tutorial/docstrings-python">Docstring pydoc</a></li>
+</ul>
+<h3 id="ship-good-quality-code-fast">Ship good quality code fast</h3>
+<ul>
+<li>Deploying to production frequently.</li>
+<li>SMall deployments.</li>
+<li>Keep a relation of bugs per deployment. Are detected fast by the team or user? Are
+  fixed fast?</li>
 </ul>
 <h2 id="motivation">Motivation</h2>
 <ul>
@@ -265,45 +294,9 @@ practices.</p>
   the best possible.</li>
 <li>We as external need to be lead</li>
 </ul>
-<h2 id="good-practices">Good practices</h2>
-<ul>
-<li>TODO: Redact a generic definition of DONE</li>
-</ul>
-<pre><code class="language-bash">- before creating a new class or method, be sure there isn't such similar functionality already in the code
-- do unit tests
-- do functional tests
-- validate flake8, mypy and isort
-- poetry vs pipenv
-- close contracts
-- fill with more tools
-</code></pre>
-<ul>
-<li><a href="https://commitlint.io/">Commit lint online</a></li>
-<li><a href="https://www.datacamp.com/tutorial/docstrings-python">Docstring pydoc</a></li>
-</ul>
-<p>What is a tech lead</p>
-<p>tech leads are software engineers that enable the team to work with quality.</p>
-<h2 id="agilescrum-methodology">agile/scrum methodology</h2>
-<p><a href="https://www.cprime.com/resources/what-is-agile-what-is-scrum/">What is agile</a></p>
-<p>Scrum significantly increases productivity and reduces time to benefits relative to classic “waterfall” processes. Scrum processes enable organizations to adjust smoothly to rapidly-changing requirements, and produce a product that meets evolving business goals.</p>
-<p>Increase the quality of the deliverables
-Cope better with change (and expect the changes)
-Provide better estimates while spending less time creating them
-Be more in control of the project schedule and state</p>
-<h2 id="benefits-to-customer">Benefits to Customer</h2>
-<p>Customers find that the vendor is more responsive to development requests.
-High-value features are developed and delivered more quickly with short cycles,
-than with the longer cycles favored by classic “waterfall” processes. Benefits
-to Vendors.</p>
-<p>Vendors reduce wastage by focusing development effort on high-value features,
-and reduce time-to-market relative to waterfall processes due to decreased
-overhead and increased efficiency. Improved customer satisfaction translates to
-better customer retention and more positive customer references. Benefits to
-Development Teams</p>
-<p>Team members enjoy development work, and like to see their work used and valued. Scrum benefits Team</p>
 <h2 id="references">References</h2>
 <ul>
-<li><a href="https://sourcelevel.io/blog/5-responsibilities-of-a-tech-lead-and-17-metrics-to-track-their-performance">5 responsibilities of a Tech Lead and 17 metrics to track their performance</a></li>
+<li><a href="https://sourcelevel.io/blog/5-responsibilities-of-a-tech-lead-and-17-metrics-to-track-their-performance">Responsibilities of a Tech Lead</a></li>
 </ul></div>
             </div>
         </div>
