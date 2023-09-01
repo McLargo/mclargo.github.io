@@ -21,6 +21,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://mclargo.github.io/devops/continuous-integration/</loc>
+         <lastmod>2023-09-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://mclargo.github.io/devops/docker/</loc>
          <lastmod>2023-09-01</lastmod>
          <changefreq>daily</changefreq>

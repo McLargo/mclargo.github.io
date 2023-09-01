@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="Javier Gil">
-        <link rel="canonical" href="https://mclargo.github.io/programming/django/">
+        <link rel="canonical" href="https://mclargo.github.io/devops/continuous-integration/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Django - My technical wiki</title>
+        <title>Continuous integration - My technical wiki</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -47,73 +47,73 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">DevOps <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../devops/continuous-integration/" class="dropdown-item">Continuous integration</a>
+    <a href="./" class="dropdown-item active">Continuous integration</a>
 </li>
                                     
 <li>
-    <a href="../../devops/docker/" class="dropdown-item">Docker</a>
+    <a href="../docker/" class="dropdown-item">Docker</a>
 </li>
                                     
 <li>
-    <a href="../../devops/features-toggles/" class="dropdown-item">Features Toggles</a>
+    <a href="../features-toggles/" class="dropdown-item">Features Toggles</a>
 </li>
                                     
 <li>
-    <a href="../../devops/k8s/" class="dropdown-item">Kubernetes</a>
+    <a href="../k8s/" class="dropdown-item">Kubernetes</a>
 </li>
                                     
 <li>
-    <a href="../../devops/serverless/" class="dropdown-item">Serverless Computing</a>
+    <a href="../serverless/" class="dropdown-item">Serverless Computing</a>
 </li>
                                     
 <li>
-    <a href="../../devops/versioning/" class="dropdown-item">Versioning</a>
+    <a href="../versioning/" class="dropdown-item">Versioning</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Programming <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../conventional-commits/" class="dropdown-item">Conventional commits</a>
+    <a href="../../programming/conventional-commits/" class="dropdown-item">Conventional commits</a>
 </li>
                                     
 <li>
-    <a href="../development-workflows/" class="dropdown-item">Development workflows</a>
+    <a href="../../programming/development-workflows/" class="dropdown-item">Development workflows</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Django</a>
+    <a href="../../programming/django/" class="dropdown-item">Django</a>
 </li>
                                     
 <li>
-    <a href="../fastapi/" class="dropdown-item">FastApi</a>
+    <a href="../../programming/fastapi/" class="dropdown-item">FastApi</a>
 </li>
                                     
 <li>
-    <a href="../flask/" class="dropdown-item">Flask</a>
+    <a href="../../programming/flask/" class="dropdown-item">Flask</a>
 </li>
                                     
 <li>
-    <a href="../python/" class="dropdown-item">Python</a>
+    <a href="../../programming/python/" class="dropdown-item">Python</a>
 </li>
                                     
 <li>
-    <a href="../openapi/" class="dropdown-item">Open API</a>
+    <a href="../../programming/openapi/" class="dropdown-item">Open API</a>
 </li>
                                     
 <li>
-    <a href="../sqlalchemy/" class="dropdown-item">SQLAlchemy</a>
+    <a href="../../programming/sqlalchemy/" class="dropdown-item">SQLAlchemy</a>
 </li>
                                     
 <li>
-    <a href="../virtualenvs/" class="dropdown-item">Virtualenvs</a>
+    <a href="../../programming/virtualenvs/" class="dropdown-item">Virtualenvs</a>
 </li>
                                 </ul>
                             </li>
@@ -195,12 +195,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../development-workflows/" class="nav-link">
+                                <a rel="prev" href="../../architecture/microservices/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../fastapi/" class="nav-link">
+                                <a rel="next" href="../docker/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -222,25 +222,13 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#django" class="nav-link">Django</a>
+            <li class="nav-item" data-level="1"><a href="#continuous-integration" class="nav-link">Continuous integration</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#installation" class="nav-link">Installation</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#starting-new-project" class="nav-link">Starting new project</a>
+            <li class="nav-item" data-level="2"><a href="#automated-testing" class="nav-link">Automated testing</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#basic-schema-of-django-app" class="nav-link">basic schema of django app</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#migrations" class="nav-link">Migrations</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#django-admin-basic-commands" class="nav-link">django admin - basic commands</a>
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">References</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -251,52 +239,41 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="django">Django</h1>
-<h2 id="installation">Installation</h2>
-<p>to install django, lets create a requirements.txt file, with desired version of
-django.</p>
-<p><code>django==1.11.13</code></p>
-<p>then, install libraries in file:</p>
-<p><code>pip install -r requirements.txt</code></p>
-<p>check everything went ok:</p>
-<p><code>django-admin -h</code></p>
-<h2 id="starting-new-project">Starting new project</h2>
-<p>First, on Django, you'll need to create a project by:</p>
-<p><code>django-admin startproject &lt;project&gt;</code></p>
-<p>that's basic configuration. To check everything looks good, run:</p>
-<p><code>python manage.py runserver</code></p>
-<p>if we want to test via shell, run:</p>
-<p><code>python manage.py shell</code></p>
-<h2 id="basic-schema-of-django-app">basic schema of django app</h2>
-<p>A project can contains one or more apps. Also, an app can be used in several projects</p>
-<p>To create a new app in our project:</p>
-<p><code>python manage.py startapp &lt;app&gt;</code></p>
-<p>New folder is created. It contains basic schema:</p>
-<p><code>&lt;app&gt;/views.py</code>
-    represents the controller. One function per view. get data, processed it, and render template if needed</p>
-<p><code>&lt;app&gt;/urls.py</code>
-    where url is mapped to corresponding function in views file</p>
-<p><code>&lt;app&gt;/models.py</code>
-    represent the models. Django use an ORM, that means, tables and database corresponds to Model classes.</p>
-<p>Add app configuration to <code>project/settings.py</code>:</p>
-<pre><code class="language-python">    INSTALLED_APPS = [
-        '&lt;app&gt;.apps.&lt;App&gt;Config',
-</code></pre>
-<h2 id="migrations">Migrations</h2>
-<p>Every changes on models, needs to be migrate to database schema. After
-add/update information to models.py file, changes needs to be done on database
-level</p>
-<p>Make migrations:</p>
-<p><code>python manage.py makemigrations &lt;app&gt;</code></p>
-<p>See migration on sql:</p>
-<p><code>python manage.py sqlmigrate &lt;app&gt; &lt;number&gt;</code></p>
-<p>Run migrations:</p>
-<p><code>python manage.py migrate</code></p>
-<h2 id="django-admin-basic-commands">django admin - basic commands</h2>
-<p>Creating an admin user:</p>
-<p><code>python manage.py createsuperuser</code></p>
-<p>Tests needs to be created. Run with:</p>
-<p><code>python manage.py test &lt;app&gt;</code></p></div>
+<h1 id="continuous-integration">Continuous integration</h1>
+<p>Continuous integration (CI) is an agile and DevOps best practice where
+developers integrate their code changes early and often to the main branch or
+code repository. The goal is to reduce the risk of seeing "integration hell" by
+waiting for the end of a project or a sprint to merge the work of all
+developers. Since it automates deployment, it helps teams meet business
+requirements, improve code quality, and increase security.</p>
+<p>CI is responsible of maintenance of all team. It is not the responsibility of a
+single person.</p>
+<h2 id="automated-testing">Automated testing</h2>
+<p>To get the full benefits of CI, you will need to automate your tests to be able
+to run them for every change that is made to the main repository. We insist on
+running tests on every branch of your repository and not just focus on the main
+branch. This way you will be able to capture issues early and minimize
+disruptions for your team. Different types of tests, no need to cover all at
+starter.</p>
+<ul>
+<li>Unit tests are narrow in scope and typically verify the behavior of
+  individual methods or functions.</li>
+<li>Integration tests make sure that multiple components behave correctly
+  together. This can involve several classes as well as testing the integration
+  with other services.</li>
+<li>Acceptance tests are similar to the integration tests but they focus on the
+  business cases rather than the components themselves.</li>
+<li>UI tests will make sure that the application functions correctly from a user
+  perspective.</li>
+</ul>
+<p>Run your tests automatically in each commits with a jenkins pipeline. Goal is to
+keep build green all the time, writing tests as part of the user stories and
+bugs. No merge is allowed if pipeline is not green.</p>
+<p>Keep good coverage of your code, at least 80% of your code should be covered by tests.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.atlassian.com/continuous-delivery/continuous-integration">Continuous integration</a></li>
+</ul></div>
             </div>
         </div>
 
