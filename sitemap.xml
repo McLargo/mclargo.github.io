@@ -11,7 +11,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://mclargo.github.io/architecture/api-design/</loc>
+         <lastmod>2023-09-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://mclargo.github.io/architecture/architecture-decision-record/</loc>
+         <lastmod>2023-09-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://mclargo.github.io/architecture/grpc/</loc>
          <lastmod>2023-09-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -127,11 +137,6 @@
     </url>
     <url>
          <loc>https://mclargo.github.io/utils/databases/</loc>
-         <lastmod>2023-09-01</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://mclargo.github.io/utils/developing-api/</loc>
          <lastmod>2023-09-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
