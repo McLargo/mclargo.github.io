@@ -34,7 +34,9 @@
         
         var pageToc = [
           {title: "Microservices", url: "#_top", children: [
-              {title: "Events", url: "#events" },
+              {title: "Principles", url: "#principles" },
+              {title: "Orchestration", url: "#orchestration" },
+              {title: "Choreography", url: "#choreography" },
               {title: "References", url: "#references" },
           ]},
         ];
@@ -62,20 +64,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../../devops/continuous-integration/" class="btn btn-xs btn-default pull-right">
+      <a href="../solid/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../../devops/continuous-integration/" class="btn btn-xs btn-link">
-        Continuous integration
+      <a href="../solid/" class="btn btn-xs btn-link">
+        Solid Principles
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../grpc/" class="btn btn-xs btn-default pull-left">
+      <a href="../monolithic/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../grpc/" class="btn btn-xs btn-link">
-        gRPC
+        Previous</a><a href="../monolithic/" class="btn btn-xs btn-link">
+        Monolithic Architecture
       </a>
     </div>
     
@@ -84,22 +86,87 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     
 
     <h1 id="microservices">Microservices</h1>
-<h2 id="events">Events</h2>
-<p>Generally speaking, a microservice architecture needs that some service talk to
-each other, trigger some actions in response to other service... THis is achieve
-with events.</p>
-<p>A domain event is, something that happened in the domain that you want other
-parts of the same domain (in-process) to be aware of. More into details, we can
-distinguish between:</p>
+<p>It is architectural style that focuses on discrete services instead of a
+ <a href="../monolithic/">monolithic design</a>. Microservices architecture breaks down an
+ application into smaller, independent services that each serve a specific
+ business capability or function. These services are developed and deployed
+ independently, often with their own codebase and database.</p>
+<h2 id="principles">Principles</h2>
 <ul>
-<li>Events represent a past, something that already happened and can’t be undone.</li>
-<li>Commands, on the other hand, represent a wish, an action in the future which
-  can be rejected.</li>
+<li>
+<p>Independent development and scaling of individual services. Developers can
+  work on small, focused teams, and each service can be scaled independently
+  based on its specific requirements and on demand, making resource allocation
+  more efficient.</p>
+</li>
+<li>
+<p>Each microservice can se different technology stacks and databases for each
+  service, depending on the requirements. This flexibility allows you to choose
+  the best tool for each job.</p>
+</li>
+<li>
+<p>Microservices can be deployed independently, making it easier to implement
+  CI/CD pipelines for each service. This results in faster and more frequent
+  deployments with less risk.</p>
+</li>
+<li>
+<p>More resilient than a monolithic system. If one service fails, it doesn't
+  necessarily impact the entire system, as long as other services can continue
+  to function.</p>
+</li>
+<li>
+<p>Managing the interactions between multiple services can introduce complexity
+  in terms of service discovery, communication, and monitoring.</p>
+</li>
 </ul>
-<p>An event has typically multiple consumers, but a command is addressed to only one.</p>
+<h2 id="orchestration">Orchestration</h2>
+<p>Orchestration is an approach where one of the services acts as the coordinator
+and orchestrator of the overall distributed state change, managing the execution
+of tasks or services It defines the order and flow of activities and often
+involves a central point of control that dictates what should happen next.</p>
+<p>The orchestrator is responsible for making decisions and ensuring that each
+component of the system performs its tasks in the prescribed sequence. It can be
+simpler to design and implement for relatively small-scale systems with a
+limited number of components. However, as the system grows in complexity, the
+central orchestrator can become a bottleneck and may make the system less
+scalable and more challenging to maintain.</p>
+<p>It is easier to implement fault tolerance and error handling because the central
+orchestrator can monitor the execution of tasks and react to failures by
+rerouting or retrying steps. It also provides a central point for monitoring and
+logging, making it easier to track the progress of tasks and diagnose issues.</p>
+<p>There is less direct communication between services since most interactions are
+mediated by the orchestrator. This can reduce the need for services to be aware
+of each other's existence.</p>
+<p><img alt="Orchestration" src="../../assets/img/orchestration.png" /></p>
+<h2 id="choreography">Choreography</h2>
+<p>Choreography is an approach of service coordination where participants exchange
+events without a centralized point of control. With this pattern, each service
+performs a local transaction and publishes events that trigger local
+transactions in other services. Each component of the system participates in
+decision-making about a business transaction's workflow, instead of relying on a
+central point of control.</p>
+<p>The interaction and coordination between services are determined by a set of
+predefined rules or contracts. There is no single point of control, and the
+overall behavior of the system emerges from the interactions between the
+participating components. It can be more suitable for large-scale and complex
+distributed systems because it distributes the decision-making and control among
+individual components. As new services are added or existing ones are modified,
+the system can remain more flexible and scalable.</p>
+<p>However, choreographed systems can be harder to visualize and debug, especially
+as the number of interactions between services increases. Also, relies on the
+individual services to handle errors and failures gracefully, making it more
+challenging to ensure consistent error-handling strategies across the entire
+system. It may require more advanced monitoring and tracing tools to gain
+insights into the interactions between services and to identify bottlenecks or
+errors.</p>
+<p>Finally, it requires services to communicate directly with each other, which can
+lead to more inter-service communication. This increased communication can
+result in more complex service discovery and network traffic management.</p>
+<p><img alt="Choreography" src="../../assets/img/choreography.png" /></p>
 <h2 id="references">References</h2>
 <ul>
-<li><a href="https://serialized.io/ddd/domain-event/">Domain event</a></li>
+<li><a href="https://www.accionlabs.com/microservices-orchestration-vs-choreography-what-to-prefer">Orchestration vs choreography</a></li>
+<li><a href="https://microservices.io/patterns/data/saga.html">Saga pattern</a></li>
 </ul>
 
   <br>
@@ -113,20 +180,20 @@ distinguish between:</p>
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../../devops/continuous-integration/" class="btn btn-xs btn-default pull-right">
+      <a href="../solid/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../../devops/continuous-integration/" class="btn btn-xs btn-link">
-        Continuous integration
+      <a href="../solid/" class="btn btn-xs btn-link">
+        Solid Principles
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../grpc/" class="btn btn-xs btn-default pull-left">
+      <a href="../monolithic/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../grpc/" class="btn btn-xs btn-link">
-        gRPC
+        Previous</a><a href="../monolithic/" class="btn btn-xs btn-link">
+        Monolithic Architecture
       </a>
     </div>
     

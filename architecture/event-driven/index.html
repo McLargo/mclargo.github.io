@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta name="author" content="Javier Gil">
-    <link rel="canonical" href="https://mclargo.github.io/architecture/grpc/">
+    <link rel="canonical" href="https://mclargo.github.io/architecture/event-driven/">
     <link rel="shortcut icon" href="../../img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>gRPC - My technical wiki</title>
+    <title>Event Driven - My technical wiki</title>
     <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="../../css/base.css" rel="stylesheet">
@@ -33,7 +33,10 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "How does gRPC work?", url: "#_top", children: [
+          {title: "Event-driven architecture", url: "#_top", children: [
+              {title: "Domain events", url: "#domain-events" },
+              {title: "Database events", url: "#database-events" },
+              {title: "References", url: "#references" },
           ]},
         ];
 
@@ -60,20 +63,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../monolithic/" class="btn btn-xs btn-default pull-right">
+      <a href="../grpc/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../monolithic/" class="btn btn-xs btn-link">
-        Monolithic Architecture
+      <a href="../grpc/" class="btn btn-xs btn-link">
+        gRPC
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../event-driven/" class="btn btn-xs btn-default pull-left">
+      <a href="../design-patterns/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../event-driven/" class="btn btn-xs btn-link">
-        Event Driven
+        Previous</a><a href="../design-patterns/" class="btn btn-xs btn-link">
+        Design Patterns
       </a>
     </div>
     
@@ -81,13 +84,30 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     
 
-    <h1 id="how-does-grpc-work">How does gRPC work?</h1>
-<p>RPC (Remote Procedure Call) is called "remote" because it enables
-communications between remote services when services are deployed to different
-servers under microservice architecture. From the user’s point of view, it acts
-like a local function call.</p>
-<p>The diagram below illustrates the overall data flow for gRPC.</p>
-<p><img alt="How gRPC works" src="../../assets/img/grpc.png" /></p>
+    <h1 id="event-driven-architecture">Event-driven architecture</h1>
+<p>Generally speaking, a microservice architecture needs that services talk to each
+other. No matter what approach is used, if
+<a href="../microservices/#orchestration">Orchestration</a> or
+<a href="../microservices/#choreography">Choreography</a>, both can use an
+Event-driven architecture to communicate with the difference services involved.
+Events are trigger from services and other services can subscribe to them, and
+react upon the event information.</p>
+<h2 id="domain-events">Domain events</h2>
+<p>A domain event is, something that happened in the domain that you want other
+parts of the same domain (in-process) to be aware of. More into details, we can
+distinguish between:</p>
+<ul>
+<li>Events represent a past, something that already happened and can’t be undone.</li>
+<li>Commands, on the other hand, represent a wish, an action in the future which
+  can be rejected.</li>
+</ul>
+<h2 id="database-events">Database events</h2>
+<p>Changes in database can also be used as events. For example, a database trigger
+when a row is inserted, updated or deleted, called CDC (Change Data Capture).</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://serialized.io/ddd/domain-event/">Domain event</a></li>
+</ul>
 
   <br>
     
@@ -100,20 +120,20 @@ like a local function call.</p>
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../monolithic/" class="btn btn-xs btn-default pull-right">
+      <a href="../grpc/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../monolithic/" class="btn btn-xs btn-link">
-        Monolithic Architecture
+      <a href="../grpc/" class="btn btn-xs btn-link">
+        gRPC
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../event-driven/" class="btn btn-xs btn-default pull-left">
+      <a href="../design-patterns/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../event-driven/" class="btn btn-xs btn-link">
-        Event Driven
+        Previous</a><a href="../design-patterns/" class="btn btn-xs btn-link">
+        Design Patterns
       </a>
     </div>
     
