@@ -21,6 +21,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://mclargo.github.io/architecture/asynchronous-messaging/</loc>
+         <lastmod>2023-09-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://mclargo.github.io/architecture/design-patterns/</loc>
          <lastmod>2023-09-04</lastmod>
          <changefreq>daily</changefreq>
