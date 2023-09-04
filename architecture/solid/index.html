@@ -34,6 +34,11 @@
         
         var pageToc = [
           {title: "SOLID Principles", url: "#_top", children: [
+              {title: "Single-Responsibility Principle", url: "#single-responsibility-principle" },
+              {title: "Open/Closed Principle", url: "#openclosed-principle" },
+              {title: "Liskov Substitution Principle", url: "#liskov-substitution-principle" },
+              {title: "Interface Segregation Principle", url: "#interface-segregation-principle" },
+              {title: "Dependency Inversion Principle", url: "#dependency-inversion-principle" },
               {title: "References", url: "#references" },
           ]},
         ];
@@ -83,8 +88,34 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     
 
     <h1 id="solid-principles">SOLID Principles</h1>
-<p>TODO</p>
+<p>SOLID is an acronym of the first five object-oriented design (OOD) principles.
+These principles establish practices that lend to developing software with
+considerations for maintaining and extending as the project grows. Adopting
+these practices can also contribute to avoiding code smells, refactoring code,
+and Agile or Adaptive software development. TODO</p>
+<h2 id="single-responsibility-principle">Single-Responsibility Principle</h2>
+<p>A class should have only a single responsibility. Only one potential change in the software’s specification should be able to affect the specification of the class.</p>
+<h2 id="openclosed-principle">Open/Closed Principle</h2>
+<p>Software entities should be open for EXTENSION, but closed for MODIFICATION. Allow behavior to be extended without modifying the source code.</p>
+<h2 id="liskov-substitution-principle">Liskov Substitution Principle</h2>
+<p>Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program.</p>
+<h2 id="interface-segregation-principle">Interface Segregation Principle</h2>
+<p>Many client-specific interfaces are better than one general-purpose interface. No client should be forced to depend on methods it does not use.</p>
+<h2 id="dependency-inversion-principle">Dependency Inversion Principle</h2>
+<p>One should depend upon abstractions, not concretions.</p>
+<ul>
+<li>High-level modules should not depend on low-level modules. Both should depend on abstractions.</li>
+<li>Abstractions should not depend on details. Details should depend on abstractions.</li>
+</ul>
 <h2 id="references">References</h2>
+<ul>
+<li>
+<p>SOLID Principles Around You</p>
+</li>
+<li>
+<p><a href="https://okso.app/showcase/solid">Skteches for the Solid principles</a></p>
+</li>
+</ul>
 
   <br>
     
