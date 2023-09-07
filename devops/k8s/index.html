@@ -34,9 +34,26 @@
         
         var pageToc = [
           {title: "Kubernetes", url: "#_top", children: [
+              {title: "Concepts", url: "#concepts" },
+              {title: "Pod", url: "#pod" },
+              {title: "Services", url: "#services" },
+              {title: "Deployments", url: "#deployments" },
+              {title: "StatefulSet", url: "#statefulset" },
+              {title: "Labels", url: "#labels" },
+              {title: "Architecture", url: "#architecture" },
+              {title: "Networking", url: "#networking" },
+              {title: "Resource organization", url: "#resource-organization" },
+              {title: "kubeconfig", url: "#kubeconfig" },
+              {title: "Volume", url: "#volume" },
+              {title: "Secrets and dynamic configuration", url: "#secrets-and-dynamic-configuration" },
+              {title: "Network policies", url: "#network-policies" },
+              {title: "Workloads", url: "#workloads" },
+              {title: "Security context", url: "#security-context" },
+              {title: "Service account", url: "#service-account" },
+              {title: "Role-based access control", url: "#role-based-access-control" },
               {title: "Local k8s cluster", url: "#local-k8s-cluster" },
-              {title: "Helm charts", url: "#helm-charts" },
               {title: "Readiness and liveness, startup probes", url: "#readiness-and-liveness-startup-probes" },
+              {title: "Resource management", url: "#resource-management" },
               {title: "References", url: "#references" },
           ]},
         ];
@@ -64,20 +81,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../serverless/" class="btn btn-xs btn-default pull-right">
+      <a href="../observability/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../serverless/" class="btn btn-xs btn-link">
-        Serverless Computing
+      <a href="../observability/" class="btn btn-xs btn-link">
+        Observability
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../features-toggles/" class="btn btn-xs btn-default pull-left">
+      <a href="../helm/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../features-toggles/" class="btn btn-xs btn-link">
-        Features Toggles
+        Previous</a><a href="../helm/" class="btn btn-xs btn-link">
+        Helm Charts
       </a>
     </div>
     
@@ -86,43 +103,213 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     
 
     <h1 id="kubernetes">Kubernetes</h1>
-<p>It is a high-disponiblity platform. It support different application available to be consume</p>
-<p>Instead of monolithic application, microservices oriented.</p>
-<p>1 Pod -&gt; 1 or more docker container -&gt; 1 image -&gt; 1 service</p>
-<p>If a pod dies, controller (object) automatically enable another with configuration expected.</p>
-<p>Main concept is objects. It can be of several types.</p>
-<p>Master-node, it has the control .
-Quorum, master-node must be a odd number of instances.
-Cluster between master/worker nodes</p>
-<p>Service - &gt; deployment -&gt; replicaset -&gt; POD</p>
-<p>Service can be:</p>
+<p>It is a high-disponiblity platform. It support different application available
+to be consume. You can use <code>kubectl</code> (core k8s cli tool) to give instructions to
+k8s. Instructions can be imperative and declarative (prefer approach).
+Declarative is where k8s take the lead regarding which are the actions needed to
+reach the desire state.</p>
+<p><strong>Act -&gt; observe -&gt; diff -&gt; Act</strong>
+or
+<strong>Desire vs Actual state</strong></p>
+<p>k8s uses reconciliation to make the actual state looks like the desire state via
+control loop. Or by using imperative actions.</p>
+<p>k8s is usually the deployment tool for a
+<a href="../../architecture/microservices/">microservices</a> architecture, instead of
+<a href="../../architecture/monolithic/">monolithic application</a>.</p>
+<h2 id="concepts">Concepts</h2>
+<p>Data is send to k8s through a yaml file, which is a declarative way to describe.
+Kind is equal to the object being described.
+Name must unique within the namespace for each Kind.</p>
+<p>spec information regarding this object representation.</p>
+<p>Create new or update resource with <code>kubectl apply -f &lt;file.yaml&gt;</code></p>
+<h2 id="pod">Pod</h2>
+<p>Can be reusable. It is a group of containers. It is the smallest unit in k8s.
+All containers for a pod will run in the same mode. They can talk to each other
+via localhost, and can share volume resources.</p>
+<p>A pod can have a container to run a web server application, where the code is
+located inside the image. But any time there is typo or a fix, it needs to build
+a new image and restart the container. This is called main container.</p>
+<p>Using side containers, we can have a shared volume between the main container to
+read the content from, separation od concern isolating and reusing. Each
+container can have different resources, like memory, cpu, etc.</p>
+<h2 id="services">Services</h2>
+<p>Load balancing for Pods. Use labels to determine target pods. Like a load
+balancer in front opf our pods. Service are not process running in k8s, is not
+consuming resources, is more like configuration or metadata.</p>
+<h2 id="deployments">Deployments</h2>
+<p>Deployments are an objects in k8s designed to avoid declaring the exact same pod
+metadata (except by the name, as it must be unique) when you need to deploy X
+instance of the same pod.</p>
+<p>Deployments does not create actually any pods, Instead, deployment create an object in
+the middle call replica sets.. Replica sets are
+used to make it easy to roll from one version of a deployment to another. Each
+time we update a deployment, a new replica set is created that contains the
+latest configuration. Replica set actually create the pods.</p>
+<p>Two type of strategies:</p>
 <ul>
-<li>cluster IP (DNS)</li>
-<li>load balancer</li>
-<li>node ports</li>
+<li>RollingUpdate: value by default. new ReplicaSet is created, then scaled up as
+  old one is scaled down.</li>
+<li>Recreate: remove all existing pods in the existing ReplicaSet before creating
+  new ones from new ReplicaSet.</li>
 </ul>
-<p>Ingress, it is like a callback.
-Storage or persistent</p>
-<p>Other concepts:</p>
+<p>Also, it is possible to configure another different deployment strategies as
+canary releases and blue/green.</p>
+<p>In a deployment, each endpoint is the IP address of a pod that is backing that
+service. In case of multiple replicas, we should see 1 endpoint for each pod
+created for a deployment.</p>
+<p>More configuration available in the official k8s documentation.</p>
+<h2 id="statefulset">StatefulSet</h2>
+<p>It is an extension of deployment. It is used to manage stateful applications.
+Name is stable, unique pod identifiers and DNS names. Also, possible to set
+Persistent Storage and one Persistent Volumen per VolumeClaim template. Stick to
+pod as long as the pod is declared.</p>
+<p>Pods created in asc order and deleted in desc order. It is possible to scale up,
+but all pods must be in Running or Read.</p>
+<h2 id="labels">Labels</h2>
+<p>Characteristics are:</p>
 <ul>
-<li>label</li>
-<li>memory</li>
-<li>cpu</li>
-<li>rback
--namespaces</li>
+<li>map of key/value pairs, try to standardize</li>
+<li>both organizational and functional (selector on services)</li>
+<li>indexes and searchable</li>
+<li>avoid compound labels values</li>
 </ul>
+<h2 id="architecture">Architecture</h2>
+<ul>
+<li>Worker nodes, where the containers are running and application. They have cpu,
+  memory to handle the application. Each of the have docker installed and
+  <strong>kubelet</strong>, which mainly determine the url of the k8s cluster.</li>
+<li>Control planes nodes: host the componentes that actually run k8s. like API
+  server. Data stored is in etcd. Scheduler, determine where to run the pods.
+  Controller manager, watch the state of the cluster and make changes to the
+  cluster to match the desire state. Cloud controller manager, manage the
+  interaction with the underlying cloud provider.</li>
+</ul>
+<h2 id="networking">Networking</h2>
+<p>Traffic can happen in a cluster within a pod, pod to pod, service to pods and
+external to cluster.</p>
+<ul>
+<li>within a pod: containers within a pod can connect to each other using
+  localhost. Containers share an IP address accesible throughout the cluster and
+  share common port space.</li>
+<li>pod to pod: each pod has a unique IP address, so they can communicate with
+  each other. IP address are routable anywhere within the cluster. Not common procedure.</li>
+<li>service to pod: service is a resource that provides layer-4 load balancing for
+  a group of pods. Service discovery using the cluster's internal DNS. Types are:</li>
+<li>ClusterIP (virtual IP address that load balance request to backend pods,
+  accessible only in the cluster).</li>
+<li>NodePort: used for external facing service, exposing a port to access
+    externally. K8s will open the port in each worker node.</li>
+<li>external to cluster: service type LoadBalancer, external IP address is
+  provisioned by the cloud provider. Creates and manages an external load
+  balancer, managing traffic across all nodes.</li>
+</ul>
+<p>Another option is <strong>Ingress</strong>. It is a layer-7 load balancer. It is a resource that
+balance the traffic for one or more services. Ingress rules to balance traffic
+to specific service. An Ingress may be configured to give Services
+externally-reachable URLs, load balance traffic, terminate SSL / TLS, and offer
+name-based virtual hosting. An Ingress controller is responsible for fulfilling
+the Ingress, usually with a load balancer, though it may also configure your
+edge router or additional frontends to help handle the traffic. Same rules as
+Nginx or Traefic can be applied to Ingress, meaning that traffic to a domain or a
+specific path can be redirect to the corresponding labelled service.</p>
+<p><img alt="Ingress flow" src="../../assets/img/k8s-ingress.png" /></p>
+<h2 id="resource-organization">Resource organization</h2>
+<p>Have multiple clusters, to have highest level of isolation. Each cluster can
+have different purposes, like security, environments (development vs uat vs
+production), by geography...</p>
+<p>Namespaces are a grouping in k8s. There is no nesting, all our objects in k8s go
+to same namespace. Namespaces are a way to organize and isolate resources. Names
+of resources must be unique within a namespace. Security and access can be set
+per namespaces. Usually 1 namespace per project.</p>
+<h2 id="kubeconfig">kubeconfig</h2>
+<p>It a file that contains all sections for k8s.</p>
+<ul>
+<li>clusters: url of the API service. Name can be use later for the kubeconfig
+  file.</li>
+<li>context: where cluster, user and name are glue together. Names are used to
+  identify the context.</li>
+<li>users: credentials to use to access the cluster. Name can be use later for the
+  kubec config file.</li>
+</ul>
+<h2 id="volume">Volume</h2>
+<p>It is a way to persist data. It is a directory that is accessible to containers.
+Volumes are exposed at pod level. By default, containers in a pod write to ephemeral storage (emptyDir), only available during the pod's lifecycle. Once pod is terminated, data is lost.</p>
+<p>But we can attach Persistent volumes to pods which persist any data written to
+them. They are network attached storage, independent of pod's life. We can
+static or dynamic volumes. Static volumes are created manually, dynamic volumes
+are created automatically when a pod is created. Storage is actually outside the
+cluster.</p>
+<p>I your k8s manifest, you will define what are your needs with a Persist Volume
+Claim. Then, when the request reaches the cluster, it will be matched with a
+Persist Volume (binding). If there is no match, it will create a new one.</p>
+<h2 id="secrets-and-dynamic-configuration">Secrets and dynamic configuration</h2>
+<p>All runtime configuration should be able to be injected and overrides. Defaults
+are ok, but we should be able to override them. Secrets are a way to store
+sensitive information, like passwords, tokens, keys... They are stored in etcd,
+encrypted at rest. They are base64 encoded, but not encrypted. We can either
+provide defaults value if no configuration is provided or required
+configuration, where startup fails if no configuration is provided.</p>
+<p>ConfigMap is the object to store configuration. It is a key/value pair. Use to
+store configuration data and properties. We can load all keys
+(envFrom.configMapRef) or individual keys (env.valueFrom.configMapKeyRef) as
+environment variables. Another option is to mount the config map as a mounted
+volume, similar all keys or individual keys (changes don´t require
+restart).</p>
+<p>For sensitive information, Secret resource stores this kind of data. Must be
+Base64 encode, and they can be exposed to pod via environment variables or
+mounted volumes (optional, other secret mechanism system).</p>
+<h2 id="network-policies">Network policies</h2>
+<p>Specification of how groups of pods are allowed to communicate with each other
+or other network endpoints. Use of labels to select pods and define rules which
+specify what traffic is allowed to the selected pods.</p>
+<p>By default, traffic is allowed by default. A pod become isolated when defining a
+network policy that selects them in the namespace. Other pods within the
+namespace will continue to receive traffic, unless a network policy is defined
+for them.</p>
+<h2 id="workloads">Workloads</h2>
+<p>A Job is a resource that runs to completion, ensure it completes or retries.
+Based on pod, and job and pod resources will remain so logs, output can be
+reviewed. Manually clean up actions are required. Possible to create parallel
+jobs too. Use cases are batch processing, data migration, backups, etc. some
+process that require large amount of data to process.</p>
+<p>Also, another interesting resource is Cronjobs. Schedules one or repeated a
+specific time or interval. It is based on job, so it is a pod. It is a way to
+automate recurrent tasks. New Job resources are created for each run. By
+default, it will clean up Jobs, by default, keeping 3 successful and 1 failed
+jobs. Jobs should be idempotent.</p>
+<p>DaemonSet is a resources that ensures that all nodes run a copy of a pod.
+Usually used for cluster-wide logging and monitor agents.</p>
+<h2 id="security-context">Security context</h2>
+<p>To give a more restrictive access to the pod. It is a way to limit access of
+the users.</p>
+<h2 id="service-account">Service account</h2>
+<p>A service account provides an identity for processes that run in a Pod, and maps
+to a ServiceAccount object. When you authenticate to the API server, you
+identify yourself as a particular user. There is a service account by default.</p>
+<h2 id="role-based-access-control">Role-based access control</h2>
+<p>Once a user is authenticated, we need to authorize the user to perform actions.</p>
+<p>a Role is a collection of permissions (rules). Roles <strong>are namespace specific</strong>.
+We can asigne rules to groups, and users belongs to groups. A more flexible way
+to assign rules.</p>
+<p>With ClusterRole, we can assign rules to cluster-wide resources instead to
+restrict to a specific namespaces. Totally reusable across entire cluster.</p>
+<p>We assign to groups and user with RoleBinding object. It is namespace specific.
+Get subjects and roles, and bind them together. Similar, but for entire cluster,
+you have the object ClusterRoleBinding.</p>
+<p>There are some built-in roles, such as <code>cluster-admin</code>, <code>admin</code>, <code>view</code> and
+<code>edit</code>.</p>
 <h2 id="local-k8s-cluster">Local k8s cluster</h2>
-<p>minikube quickly sets up a local Kubernetes cluster on macOS, Linux, and Windows. Easy to install and start working.</p>
-<p>Install and run minikube to have a local cluster for k8s in local. If minikube is running, automatically context/namespace is updated to use then one's from minikube. If you are working with other k8s cluster, keep in mind this change. Always doble-check for namespace or context before deploying to the cluster. To work with cluster outside local, either you stop minikube or change namespace. Careful, when you stop minikube, context/namespace are set to null, so your kube commands won't be pointing to any context. You need to explicitly set again context.</p>
+<p>minikube quickly sets up a local Kubernetes cluster on macOS, Linux, and
+Windows. Easy to install and start working.</p>
+<p>Install and run minikube to have a local cluster for k8s in local. If minikube
+is running, automatically context/namespace is updated to use then one's from
+minikube. If you are working with other k8s cluster, keep in mind this change.
+Always doble-check for namespace or context before deploying to the cluster. To
+work with cluster outside local, either you stop minikube or change namespace.
+Careful, when you stop minikube, context/namespace are set to null, so your kube
+commands won't be pointing to any context. You need to explicitly set again
+context.</p>
 <p><code>minikube</code> command is just a proxy of <code>kubectl</code> commands, with a different command format but doing the same underneath.</p>
-<h2 id="helm-charts">Helm charts</h2>
-<p>Each object requires a custom yaml configuration file.
-Helm charts provides an abstractions of the objects to deploy.
-Objects are different and it is like a puzzle. It needs to fit communication/labels/namespaces...
-It provides a <code>values.yaml</code> with default stuff required.
-Also templates to a more complex logic.
-All this parametrization is embembed in the configuration files, creating new templates.
-This values can be reuse in each object.yaml file. Maximizing reusability and reducing error-prone</p>
 <h2 id="readiness-and-liveness-startup-probes">Readiness and liveness, startup probes</h2>
 <p>Kubernetes simply observes the pod's lifecycle and starts to route traffic to
 the pod when the containers move from the Pending to Succeeded state. That
@@ -134,18 +321,38 @@ traffic and return 500 errors. Similar case happens when Kubelet watches for
 application crashes and restarts the pod to recover.</p>
 <p>3 different probes:</p>
 <ul>
-<li>Readiness probes are used to let kubelet know when the application is ready to
-  accept new traffic. It runs during the pod's entire lifecycle, to deal when
-  the application is temporarily unavailable (wait for it to recover).</li>
 <li>Liveness probe, determines the health, and kills the pod if it fails the
   liveness check (deadlock situation, since the underlying process continues to
   run from Kubernetes's perspective).</li>
+<li>Readiness probes are used to let kubelet know when the application is ready to
+  accept new traffic. It runs during the pod's entire lifecycle, to deal when
+  the application is temporarily unavailable (wait for it to recover).</li>
 <li>Startup probes are similar to readiness probes but only executed at startup.
   They are optimized for slow starting containers or applications with
   unpredictable initialization processes.</li>
 </ul>
+<p>3 different probe handlers:</p>
+<ul>
+<li>exec: run a command inside the container. Success if return code is 0.</li>
+<li>TCPSocket: TCP check , success if port is open and accepting connections.</li>
+<li>HTTPGet: invoke HTTP GET against url, success if 2XX or 3XX code.</li>
+</ul>
+<p>There are many options in the probe configuration, check in the official k8s
+documentation.</p>
+<h2 id="resource-management">Resource management</h2>
+<p>Units in k8s have a different rate conversion, and different units for CPU and
+Memory (can be either base 2 or 10).</p>
+<p>Resource request is the minimum amount of resources that the container needs to
+work. Helps k8s to schedule the pod in a more efficient way. Only used for
+scheduling, if the sum of the resource requests less than the capacity of the
+node.</p>
+<p>On the other hand, we have resource limits. It is the maximum amount of
+resources that a pod can get. If exceed this limits, container might be
+terminated. It is a way to protect against a runaway app.</p>
 <h2 id="references">References</h2>
 <ul>
+<li><a href="https://kube.academy/courses">K8s courses</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/">k8s concepts</a></li>
 <li><a href="https://gist.github.com/McLargo/ae633d1ff481c20c21433074169d283c#file-k9s-md">k9s commands</a></li>
 <li><a href="https://minikube.sigs.k8s.io/docs/handbook/">minikube handbook</a></li>
 <li><a href="https://gist.github.com/McLargo/ae633d1ff481c20c21433074169d283c#file-minikube-md">minikube/kubectl commands</a></li>
@@ -164,20 +371,20 @@ application crashes and restarts the pod to recover.</p>
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../serverless/" class="btn btn-xs btn-default pull-right">
+      <a href="../observability/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../serverless/" class="btn btn-xs btn-link">
-        Serverless Computing
+      <a href="../observability/" class="btn btn-xs btn-link">
+        Observability
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../features-toggles/" class="btn btn-xs btn-default pull-left">
+      <a href="../helm/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../features-toggles/" class="btn btn-xs btn-link">
-        Features Toggles
+        Previous</a><a href="../helm/" class="btn btn-xs btn-link">
+        Helm Charts
       </a>
     </div>
     

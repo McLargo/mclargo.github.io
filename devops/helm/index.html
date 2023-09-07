@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta name="author" content="Javier Gil">
-    <link rel="canonical" href="https://mclargo.github.io/devops/features-toggles/">
+    <link rel="canonical" href="https://mclargo.github.io/devops/helm/">
     <link rel="shortcut icon" href="../../img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>Features Toggles - My technical wiki</title>
+    <title>Helm Charts - My technical wiki</title>
     <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="../../css/base.css" rel="stylesheet">
@@ -33,9 +33,9 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "Features Toggles", url: "#_top", children: [
-              {title: "When to use features flags", url: "#when-to-use-features-flags" },
-              {title: "References", url: "#references" },
+          {title: "Helm", url: "#_top", children: [
+              {title: "Helm charts", url: "#helm-charts" },
+              {title: "Reference", url: "#reference" },
           ]},
         ];
 
@@ -62,20 +62,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../helm/" class="btn btn-xs btn-default pull-right">
+      <a href="../k8s/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../helm/" class="btn btn-xs btn-link">
-        Helm Charts
+      <a href="../k8s/" class="btn btn-xs btn-link">
+        Kubernetes
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../docker/" class="btn btn-xs btn-default pull-left">
+      <a href="../features-toggles/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../docker/" class="btn btn-xs btn-link">
-        Docker
+        Previous</a><a href="../features-toggles/" class="btn btn-xs btn-link">
+        Features Toggles
       </a>
     </div>
     
@@ -83,33 +83,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     
 
-    <h1 id="features-toggles">Features Toggles</h1>
-<p>When new functionality is working together another set of changes, it is hard to
-reduce the impact. For this, we can enable in our code a set of flags to enable
-certain parts of the code.</p>
-<pre><code class="language-python">useNewAlgorithm = False
-# useNewAlgorithm = True # UNCOMMENT IF YOU ARE WORKING ON THE NEW SR ALGORITHM
-if useNewAlgorithm:
-    return enhancedSplineReticulation();
-return oldFashionedSplineReticulation();
-</code></pre>
-<p>But this is quite hardcoding, and if you are in a collaborative environment, you
-will still need to deploy your code to test. For that, <strong>Toggle Router</strong> came to
-the picture. It could be something fancy with an UI, or much simple. But the
-idea is to change dynamically those values. Stored in memory, config,
-database... whatever suits you.</p>
-<p>Enables many other release feature, like canary release, A/B testing...</p>
-<h2 id="when-to-use-features-flags">When to use features flags</h2>
+    <h1 id="helm">Helm</h1>
+<h2 id="helm-charts">Helm charts</h2>
+<p>Each object requires a custom yaml configuration file.
+Helm charts provides an abstractions of the objects to deploy.
+Objects are different and it is like a puzzle. It needs to fit communication/labels/namespaces...
+It provides a <code>values.yaml</code> with default stuff required.
+Also templates to a more complex logic.
+All this parametrization is embembed in the configuration files, creating new templates.
+This values can be reuse in each object.yaml file. Maximizing reusability and reducing error-prone</p>
+<h2 id="reference">Reference</h2>
 <ul>
-<li>Improve feature rollout</li>
-<li>Operational efficiency</li>
-<li>Learn from experimentation</li>
-<li>Empower teams with entitlements</li>
-</ul>
-<h2 id="references">References</h2>
-<ul>
-<li><a href="https://martinfowler.com/articles/feature-toggles.html">Feature Toggles</a></li>
-<li><a href="https://launchdarkly.com/blog/what-are-feature-flags/">Feature Flags</a></li>
+<li><a href="https://helm.sh/docs/chart_best_practices/">Helm best practices</a></li>
+<li><a href="https://github.com/komodorio/helm-dashboard">Helm dashboard</a></li>
+<li><a href="https://kube.academy/courses/helm-101">Helm 101</a></li>
 </ul>
 
   <br>
@@ -123,20 +110,20 @@ database... whatever suits you.</p>
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../helm/" class="btn btn-xs btn-default pull-right">
+      <a href="../k8s/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../helm/" class="btn btn-xs btn-link">
-        Helm Charts
+      <a href="../k8s/" class="btn btn-xs btn-link">
+        Kubernetes
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../docker/" class="btn btn-xs btn-default pull-left">
+      <a href="../features-toggles/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../docker/" class="btn btn-xs btn-link">
-        Docker
+        Previous</a><a href="../features-toggles/" class="btn btn-xs btn-link">
+        Features Toggles
       </a>
     </div>
     
