@@ -37,6 +37,7 @@
               {title: "What is virtualenv", url: "#what-is-virtualenv" },
               {title: "Installation", url: "#installation" },
               {title: "Basic Usage", url: "#basic-usage" },
+              {title: "Poetry", url: "#poetry" },
           ]},
         ];
 
@@ -106,6 +107,16 @@ virtualenv &lt;my_project&gt; --python=/usr/bin/&lt;python-version&gt;
 this environment</p>
 <p>To deactivate a virtual environment:
 <code>deactivate</code></p>
+<h2 id="poetry">Poetry</h2>
+<p>Poetry is a dependency management. Easy installation, and management. Instead of
+a mix of files related to installation, everything is managed in file
+<strong>pyproyect.toml</strong>. Also allows to differentiate between library installation
+for dev and production.</p>
+<p>According to <a href="https://peps.python.org/pep-0518/">pep518</a>, <strong>pyproyect.toml</strong> is
+the file where the build system dependencies should be stored in
+<a href="https://realpython.com/python-toml/">TOML</a> format. Toml is basic key-vales pair
+format. It can group common configuration, and it can be use for multiple
+purposes.</p>
 
   <br>
     
