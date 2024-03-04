@@ -51,6 +51,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://mclargo.github.io/architecture/service-mesh/</loc>
+         <lastmod>2024-03-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://mclargo.github.io/architecture/solid/</loc>
          <lastmod>2024-03-04</lastmod>
          <changefreq>daily</changefreq>
@@ -142,6 +147,11 @@
     </url>
     <url>
          <loc>https://mclargo.github.io/project-management/c4-model/</loc>
+         <lastmod>2024-03-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://mclargo.github.io/project-management/diagram-flows/</loc>
          <lastmod>2024-03-04</lastmod>
          <changefreq>daily</changefreq>
     </url>

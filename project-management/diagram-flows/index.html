@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta name="author" content="Javier Gil">
-    <link rel="canonical" href="https://mclargo.github.io/architecture/monolithic/">
+    <link rel="canonical" href="https://mclargo.github.io/project-management/diagram-flows/">
     <link rel="shortcut icon" href="../../img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>Monolithic Architecture - My technical wiki</title>
+    <title>Diagram flows - My technical wiki</title>
     <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="../../css/base.css" rel="stylesheet">
@@ -33,8 +33,9 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "Monolithic architecture", url: "#_top", children: [
-              {title: "Principles", url: "#principles" },
+          {title: "Diagram flows", url: "#_top", children: [
+              {title: "Flowchart", url: "#flowchart" },
+              {title: "References", url: "#references" },
           ]},
         ];
 
@@ -61,20 +62,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../service-mesh/" class="btn btn-xs btn-default pull-right">
+      <a href="../scrum/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../service-mesh/" class="btn btn-xs btn-link">
-        Service Mesh
+      <a href="../scrum/" class="btn btn-xs btn-link">
+        SCRUM
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../microservices/" class="btn btn-xs btn-default pull-left">
+      <a href="../c4-model/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../microservices/" class="btn btn-xs btn-link">
-        Microservices
+        Previous</a><a href="../c4-model/" class="btn btn-xs btn-link">
+        C4 Model
       </a>
     </div>
     
@@ -82,36 +83,27 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     
 
-    <h1 id="monolithic-architecture">Monolithic architecture</h1>
-<p>In a monolithic architecture, the entire application is built as a single,
- tightly integrated unit. All components, modules, and functionalities are part
- of a single codebase and run within the same process. As an alternative to this
- architecture design, we can find service-oriented architecture (SOA) such as
- <a href="../microservices/">microservices</a>.</p>
-<h2 id="principles">Principles</h2>
+    <h1 id="diagram-flows">Diagram flows</h1>
+<p>Diagram flows are used to represent the flow of a process. It is a visual
+representation of the steps and decisions that are made in a process, specially
+useful for complex processes. It is a useful tool for understanding the process
+and identifying the areas that need improvement.</p>
+<p>There are many different types of diagram. Each type has its own strengths and
+weaknesses, and is best suited for different types of processes.</p>
+<h2 id="flowchart">Flowchart</h2>
+<p>Diagram that represents a workflow or process, showing the steps as boxes of
+various kinds, and their order by connecting them with arrows.</p>
+<p>The key is acknowledging your audience, so you can make simple or complex flows,
+with more or less details. See common
+<a href="https://www.lucidchart.com/pages/flowchart-symbols-meaning-explained">flowchart symbols</a>.</p>
+<h3 id="swimlane">Swimlane</h3>
+<p>Type of flowchart that delineates who does what in a process, showing connection
+and communication between different departments or individuals.</p>
+<h2 id="references">References</h2>
 <ul>
-<li>
-<p>Developers can easily share code between modules and functionalities, but
-  development and maintenance can be difficult as the application grows.
-  Understanding the entire codebase can become increasingly difficult</p>
-</li>
-<li>
-<p>Scaling can be a challenge, as entire application needs to be scaled to
-  support extra load of a single component.</p>
-</li>
-<li>
-<p>Are built using a single technology stack and database. Any changes or updates
-  of technology affects entire application.</p>
-</li>
-<li>
-<p>Deploying changes to a monolithic application often requires updating the
-  entire application, which can lead to longer deployment times and potential
-  disruptions.</p>
-</li>
-<li>
-<p>Low fault tolerance and resilience, a single component it can potentially
-  bring down the entire application.</p>
-</li>
+<li><a href="https://www.eraser.io/diagramgpt">Auto generation of diagram</a></li>
+<li><a href="https://www.lucidchart.com/pages/what-is-a-flowchart-tutorial">Flowchart</a></li>
+<li><a href="https://www.lucidchart.com/pages/tutorial/swimlane-diagram">Swimlane diagram</a></li>
 </ul>
 
   <br>
@@ -125,20 +117,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../service-mesh/" class="btn btn-xs btn-default pull-right">
+      <a href="../scrum/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../service-mesh/" class="btn btn-xs btn-link">
-        Service Mesh
+      <a href="../scrum/" class="btn btn-xs btn-link">
+        SCRUM
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../microservices/" class="btn btn-xs btn-default pull-left">
+      <a href="../c4-model/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../microservices/" class="btn btn-xs btn-link">
-        Microservices
+        Previous</a><a href="../c4-model/" class="btn btn-xs btn-link">
+        C4 Model
       </a>
     </div>
     
