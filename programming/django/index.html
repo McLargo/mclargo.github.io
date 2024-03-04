@@ -103,16 +103,19 @@ django.</p>
 <p>if we want to test via shell, run:</p>
 <p><code>python manage.py shell</code></p>
 <h2 id="basic-schema-of-django-app">basic schema of django app</h2>
-<p>A project can contains one or more apps. Also, an app can be used in several projects</p>
+<p>A project can contains one or more apps. Also, an app can be used in several
+projects.</p>
 <p>To create a new app in our project:</p>
 <p><code>python manage.py startapp &lt;app&gt;</code></p>
 <p>New folder is created. It contains basic schema:</p>
 <p><code>&lt;app&gt;/views.py</code>
-    represents the controller. One function per view. get data, processed it, and render template if needed</p>
+    represents the controller. One function per view.
+    Get data, processed it, and render template if needed.</p>
 <p><code>&lt;app&gt;/urls.py</code>
     where url is mapped to corresponding function in views file</p>
 <p><code>&lt;app&gt;/models.py</code>
-    represent the models. Django use an ORM, that means, tables and database corresponds to Model classes.</p>
+    represent the models. Django use an ORM, that means, tables and database
+    corresponds to Model classes.</p>
 <p>Add app configuration to <code>project/settings.py</code>:</p>
 <pre><code class="language-python">    INSTALLED_APPS = [
         '&lt;app&gt;.apps.&lt;App&gt;Config',

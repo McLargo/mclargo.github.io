@@ -38,7 +38,7 @@
               {title: "Basic Matchers", url: "#basic-matchers" },
               {title: "Repetitions", url: "#repetitions" },
               {title: "Grouping", url: "#grouping" },
-              {title: "Lookarounds", url: "#lookarounds" },
+              {title: "Lookaround", url: "#lookaround" },
               {title: "Flags", url: "#flags" },
               {title: "References", url: "#references" },
           ]},
@@ -166,7 +166,7 @@ group <code>haa</code> below.</p>
 <p>The words <code>ha</code> and <code>haa</code> are grouped below. The first group is used by writing
 <code>\1</code> to avoid rewriting. Here 1 denotes the order of grouping. Type <code>\2</code> at the
 end of the expression to refer to the second group.</p>
-<h3 id="non-capturing-groupping">Non-capturing Groupping</h3>
+<h3 id="non-capturing-grouping">Non-capturing Grouping</h3>
 <p>Parentheses <code>(?: )</code>: Non-capturing Grouping</p>
 <p>You can group an expression and ensure that it is not captured by references.
 For example, below are two groups. However, the first group reference we denote
@@ -213,28 +213,28 @@ underscores.</p>
 <h3 id="non-whitespace-characters">Non-whitespace Characters</h3>
 <p>Except Space Character <code>\S</code></p>
 <p><code>\S</code> is used to find non-space characters.</p>
-<h2 id="lookarounds">Lookarounds</h2>
+<h2 id="lookaround">Lookaround</h2>
 <p>If we want the phrase we're writing to come before or after another phrase, we
 need to "lookaround". Take the next step to learn how to "lookaround".</p>
-<h3 id="lookarounds-positive-lookahead">Lookarounds: Positive Lookahead</h3>
+<h3 id="lookaround-positive-lookahead">Lookaround: Positive Lookahead</h3>
 <p>Positive Lookahead: <code>(?=)</code></p>
 <p>For example, we want to select the hour value in the text. Therefore, to select
 only the numerical values that have PM after them, we need to write the positive
 look-ahead expression <code>(?=)</code> after our expression. Include PM after the <code>=</code> sign
 inside the parentheses.</p>
-<h3 id="lookarounds-negative-lookahead">Lookarounds: Negative Lookahead</h3>
+<h3 id="lookaround-negative-lookahead">Lookaround: Negative Lookahead</h3>
 <p>Negative Lookahead: <code>(?!)</code></p>
 <p>For example, we want to select numbers other than the hour value in the text.
 Therefore, we need to write the negative look-ahead <code>(?!)</code> expression after our
 expression to select only the numerical values that do not have PM after them.
 Include PM after the <code>!</code> sign inside the parentheses.</p>
-<h3 id="lookarounds-positive-lookbehind">Lookarounds: Positive Lookbehind</h3>
+<h3 id="lookaround-positive-lookbehind">Lookaround: Positive Lookbehind</h3>
 <p>Positive Lookbehind: <code>(?&lt;=)</code></p>
 <p>For example, we want to select the price value in the text. Therefore, to select
 only the number values that preceded by <code>$</code>, we need to write the positive
 lookbehind expression <code>(?&lt;=)</code> before our expression. Add <code>\$</code> after the <code>=</code> sign
 inside the brackets.</p>
-<h3 id="lookarounds-negative-lookbehind">Lookarounds: Negative Lookbehind</h3>
+<h3 id="lookaround-negative-lookbehind">Lookaround: Negative Lookbehind</h3>
 <p>Negative Lookbehind: <code>(?&lt;!)</code></p>
 <p>For example, we want to select numbers in the text other than the price value.
 Therefore, to select only numeric values that are not preceded by <code>$</code>, we need
@@ -259,7 +259,7 @@ matches.</p>
 <h3 id="flags-case-insensitive">Flags: Case Insensitive</h3>
 <p>In order to remove the case-sensitiveness of the expression we have written, we
 must activate the case-insensitive flag.</p>
-<p><code>/i case insensitve</code></p>
+<p><code>/i case insensitive</code></p>
 <h3 id="greedy-matching">Greedy Matching</h3>
 <p>Regex does a greedy match by default. This means that the matchmaking will be as
 long as possible. Check out the example below. It refers to any match that ends

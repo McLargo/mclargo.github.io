@@ -34,8 +34,11 @@
         
         var pageToc = [
           {title: "Event-driven architecture", url: "#_top", children: [
-              {title: "Domain events", url: "#domain-events" },
-              {title: "Database events", url: "#database-events" },
+              {title: "Core components of event-driven architecture", url: "#core-components-of-event-driven-architecture" },
+              {title: "Events", url: "#events" },
+              {title: "Event producers", url: "#event-producers" },
+              {title: "Event broker", url: "#event-broker" },
+              {title: "Event consumers", url: "#event-consumers" },
               {title: "References", url: "#references" },
           ]},
         ];
@@ -93,7 +96,32 @@ Event-driven architecture to communicate with the difference services involved.
 Events are trigger from services and other services can subscribe to them, and
 react upon the event information. Communication between services using events is
 <a href="../asynchronous-messaging/">asynchronous</a>.</p>
-<h2 id="domain-events">Domain events</h2>
+<h2 id="core-components-of-event-driven-architecture">Core components of event-driven architecture</h2>
+<p>The core components of an EDA are:</p>
+<ul>
+<li>
+<p>Producer: upstream service that generates events and publishes them to the
+  event broker.</p>
+</li>
+<li>
+<p>Consumers: one or more downstream services that subscribe to events from the
+  event broker.</p>
+</li>
+<li>
+<p>Brokers: a message broker that receives events from producers, storage them
+  and delivers them to consumers. Each event might be delivered to one or more
+  consumers.</p>
+</li>
+</ul>
+<h2 id="events">Events</h2>
+<p>An event is a message that represents a change in state or an action in the
+system. All events are messages, but not all messages are events.</p>
+<p>Usually are represented in a key/value format, where the key is the event type
+that identifies the event and the value is the event payload, which contains the
+information about the event.</p>
+<p>Events are immutable. Once an event is published, it can't be changed. If a
+change is needed, a new event must be published with new data.</p>
+<h3 id="domain-events">Domain events</h3>
 <p>A domain event is, something that happened in the domain that you want other
 parts of the same domain (in-process) to be aware of. More into details, we can
 distinguish between:</p>
@@ -102,9 +130,42 @@ distinguish between:</p>
 <li>Commands, on the other hand, represent a wish, an action in the future which
   can be rejected.</li>
 </ul>
-<h2 id="database-events">Database events</h2>
+<h3 id="database-events">Database events</h3>
 <p>Changes in database can also be used as events. For example, a database trigger
 when a row is inserted, updated or deleted, called CDC (Change Data Capture).</p>
+<h2 id="event-producers">Event producers</h2>
+<p>Event producer are the part of the system that generates events and publishes
+them to the event broker. They can be any part of the system, like a service, a
+database, a user interface, etc.</p>
+<p>It decides when to publish an event, serialize the event in the corresponding
+format and send it to the event broker.</p>
+<p>Events can be transmitted immediately, or in batched mode, depending on the
+configuration of the event producer.</p>
+<h2 id="event-broker">Event broker</h2>
+<p>It's an immutable log of events. It receives events from producers and stores
+them.</p>
+<p>The event broker is responsible for delivering events to consumers.</p>
+<h3 id="event-stream">Event stream</h3>
+<p>An event stream will be a sequence of events that are related to each other. It
+can be consumed by multiple consumers. Consumers can read the events in the
+stream in the order they were published, as many times as they want (in case
+consumer crashes and needs to recover to get the last picture).</p>
+<p>Messages can be deleted from the stream after a certain period of time, or after
+a certain number of messages.</p>
+<p>Kafka or Pulsar are examples of event brokers that support event streams.</p>
+<h3 id="event-queue">Event queue</h3>
+<p>Traditional message queues are used to deliver messages to a single consumer.
+Once a message is consumed, it's removed from the queue. Multiple consumers
+consume different messages from the queue.</p>
+<p>RabbitMQ and ActiveMQ are examples of event brokers that support event queues.</p>
+<h2 id="event-consumers">Event consumers</h2>
+<p>Event consumers are the part of the system that subscribes to events from the
+event broker. In case of event stream, each consumer will have a offset to know
+which event has been read (offset is the position of the last event read, and
+can be updated).</p>
+<p>On the order hand, an event queue message will be consumed and removed from the
+queue. It can send an acknowledgment to the broker to confirm that the message
+has been processed.</p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://serialized.io/ddd/domain-event/">Domain event</a></li>

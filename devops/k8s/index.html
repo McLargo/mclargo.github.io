@@ -140,11 +140,11 @@ consuming resources, is more like configuration or metadata.</p>
 <p>Deployments are an objects in k8s designed to avoid declaring the exact same pod
 metadata (except by the name, as it must be unique) when you need to deploy X
 instance of the same pod.</p>
-<p>Deployments does not create actually any pods, Instead, deployment create an object in
-the middle call replica sets.. Replica sets are
-used to make it easy to roll from one version of a deployment to another. Each
-time we update a deployment, a new replica set is created that contains the
-latest configuration. Replica set actually create the pods.</p>
+<p>Deployments does not create actually any pods, Instead, deployment create an
+object in the middle call replica sets.. Replica sets are used to make it easy
+to roll from one version of a deployment to another. Each time we update a
+deployment, a new replica set is created that contains the latest configuration.
+Replica set actually create the pods.</p>
 <p>Two type of strategies:</p>
 <ul>
 <li>RollingUpdate: value by default. new ReplicaSet is created, then scaled up as
@@ -161,7 +161,7 @@ created for a deployment.</p>
 <h2 id="statefulset">StatefulSet</h2>
 <p>It is an extension of deployment. It is used to manage stateful applications.
 Name is stable, unique pod identifiers and DNS names. Also, possible to set
-Persistent Storage and one Persistent Volumen per VolumeClaim template. Stick to
+Persistent Storage and one Persistent Volume per VolumeClaim template. Stick to
 pod as long as the pod is declared.</p>
 <p>Pods created in asc order and deleted in desc order. It is possible to scale up,
 but all pods must be in Running or Read.</p>
@@ -178,7 +178,7 @@ but all pods must be in Running or Read.</p>
 <li>Worker nodes, where the containers are running and application. They have cpu,
   memory to handle the application. Each of the have docker installed and
   <strong>kubelet</strong>, which mainly determine the url of the k8s cluster.</li>
-<li>Control planes nodes: host the componentes that actually run k8s. like API
+<li>Control planes nodes: host the components that actually run k8s. like API
   server. Data stored is in etcd. Scheduler, determine where to run the pods.
   Controller manager, watch the state of the cluster and make changes to the
   cluster to match the desire state. Cloud controller manager, manage the
@@ -189,10 +189,11 @@ but all pods must be in Running or Read.</p>
 external to cluster.</p>
 <ul>
 <li>within a pod: containers within a pod can connect to each other using
-  localhost. Containers share an IP address accesible throughout the cluster and
+  localhost. Containers share an IP address accessible throughout the cluster and
   share common port space.</li>
 <li>pod to pod: each pod has a unique IP address, so they can communicate with
-  each other. IP address are routable anywhere within the cluster. Not common procedure.</li>
+  each other. IP address are routable anywhere within the cluster. Not common
+  procedure.</li>
 <li>service to pod: service is a resource that provides layer-4 load balancing for
   a group of pods. Service discovery using the cluster's internal DNS. Types are:</li>
 <li>ClusterIP (virtual IP address that load balance request to backend pods,
@@ -203,15 +204,15 @@ external to cluster.</p>
   provisioned by the cloud provider. Creates and manages an external load
   balancer, managing traffic across all nodes.</li>
 </ul>
-<p>Another option is <strong>Ingress</strong>. It is a layer-7 load balancer. It is a resource that
-balance the traffic for one or more services. Ingress rules to balance traffic
-to specific service. An Ingress may be configured to give Services
+<p>Another option is <strong>Ingress</strong>. It is a layer-7 load balancer. It is a resource
+that balance the traffic for one or more services. Ingress rules to balance
+traffic to specific service. An Ingress may be configured to give Services
 externally-reachable URLs, load balance traffic, terminate SSL / TLS, and offer
 name-based virtual hosting. An Ingress controller is responsible for fulfilling
 the Ingress, usually with a load balancer, though it may also configure your
 edge router or additional frontends to help handle the traffic. Same rules as
-Nginx or Traefic can be applied to Ingress, meaning that traffic to a domain or a
-specific path can be redirect to the corresponding labelled service.</p>
+Nginx or Traefic can be applied to Ingress, meaning that traffic to a domain or
+a specific path can be redirect to the corresponding labelled service.</p>
 <p><img alt="Ingress flow" src="../../assets/img/k8s-ingress.png" /></p>
 <h2 id="resource-organization">Resource organization</h2>
 <p>Have multiple clusters, to have highest level of isolation. Each cluster can
@@ -233,7 +234,9 @@ per namespaces. Usually 1 namespace per project.</p>
 </ul>
 <h2 id="volume">Volume</h2>
 <p>It is a way to persist data. It is a directory that is accessible to containers.
-Volumes are exposed at pod level. By default, containers in a pod write to ephemeral storage (emptyDir), only available during the pod's lifecycle. Once pod is terminated, data is lost.</p>
+Volumes are exposed at pod level. By default, containers in a pod write to
+ephemeral storage (emptyDir), only available during the pod's lifecycle. Once
+pod is terminated, data is lost.</p>
 <p>But we can attach Persistent volumes to pods which persist any data written to
 them. They are network attached storage, independent of pod's life. We can
 static or dynamic volumes. Static volumes are created manually, dynamic volumes
@@ -289,7 +292,7 @@ identify yourself as a particular user. There is a service account by default.</
 <h2 id="role-based-access-control">Role-based access control</h2>
 <p>Once a user is authenticated, we need to authorize the user to perform actions.</p>
 <p>a Role is a collection of permissions (rules). Roles <strong>are namespace specific</strong>.
-We can asigne rules to groups, and users belongs to groups. A more flexible way
+We can assign rules to groups, and users belongs to groups. A more flexible way
 to assign rules.</p>
 <p>With ClusterRole, we can assign rules to cluster-wide resources instead to
 restrict to a specific namespaces. Totally reusable across entire cluster.</p>
@@ -304,12 +307,13 @@ Windows. Easy to install and start working.</p>
 <p>Install and run minikube to have a local cluster for k8s in local. If minikube
 is running, automatically context/namespace is updated to use then one's from
 minikube. If you are working with other k8s cluster, keep in mind this change.
-Always doble-check for namespace or context before deploying to the cluster. To
+Always double-check for namespace or context before deploying to the cluster. To
 work with cluster outside local, either you stop minikube or change namespace.
 Careful, when you stop minikube, context/namespace are set to null, so your kube
 commands won't be pointing to any context. You need to explicitly set again
 context.</p>
-<p><code>minikube</code> command is just a proxy of <code>kubectl</code> commands, with a different command format but doing the same underneath.</p>
+<p><code>minikube</code> command is just a proxy of <code>kubectl</code> commands, with a different
+command format but doing the same underneath.</p>
 <h2 id="readiness-and-liveness-startup-probes">Readiness and liveness, startup probes</h2>
 <p>Kubernetes simply observes the pod's lifecycle and starts to route traffic to
 the pod when the containers move from the Pending to Succeeded state. That

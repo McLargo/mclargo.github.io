@@ -101,7 +101,7 @@ packages that a Python project would need.</p>
 <pre><code class="language-bash">cd /home/&lt;user&gt;/.virtualenvs/
 virtualenv &lt;my_project&gt; --python=/usr/bin/&lt;python-version&gt;
 </code></pre>
-<p>To use a particual virtual env, it needs to be activated:
+<p>To use a particular virtual env, it needs to be activated:
 <code>source ~/.virtualenvs/&lt;my_project&gt;/bin/activate</code></p>
 <p>Everything you import or install in an activated virtualenv, will be just for
 this environment</p>
@@ -110,9 +110,9 @@ this environment</p>
 <h2 id="poetry">Poetry</h2>
 <p>Poetry is a dependency management. Easy installation, and management. Instead of
 a mix of files related to installation, everything is managed in file
-<strong>pyproyect.toml</strong>. Also allows to differentiate between library installation
+<strong>pyproject.toml</strong>. Also allows to differentiate between library installation
 for dev and production.</p>
-<p>According to <a href="https://peps.python.org/pep-0518/">pep518</a>, <strong>pyproyect.toml</strong> is
+<p>According to <a href="https://peps.python.org/pep-0518/">pep518</a>, <strong>pyproject.toml</strong> is
 the file where the build system dependencies should be stored in
 <a href="https://realpython.com/python-toml/">TOML</a> format. Toml is basic key-vales pair
 format. It can group common configuration, and it can be use for multiple
