@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta name="author" content="Javier Gil">
-    <link rel="canonical" href="https://mclargo.github.io/utils/supervisor/">
+    <link rel="canonical" href="https://mclargo.github.io/utils/task-runner/">
     <link rel="shortcut icon" href="../../img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>Supervisor - My technical wiki</title>
+    <title>Task runner - My technical wiki</title>
     <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="../../css/base.css" rel="stylesheet">
@@ -33,9 +33,9 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "Supervisor Service", url: "#_top", children: [
-              {title: "How to create new supervisor service", url: "#how-to-create-new-supervisor-service" },
-              {title: "References", url: "#references" },
+          {title: "Task runner", url: "#_top", children: [
+              {title: "Makefile", url: "#makefile" },
+              {title: "Task file", url: "#task-file" },
           ]},
         ];
 
@@ -62,20 +62,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../task-runner/" class="btn btn-xs btn-default pull-right">
+      <a href="../transmission/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../task-runner/" class="btn btn-xs btn-link">
-        Task runner
+      <a href="../transmission/" class="btn btn-xs btn-link">
+        Transmission
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../regex/" class="btn btn-xs btn-default pull-left">
+      <a href="../supervisor/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../regex/" class="btn btn-xs btn-link">
-        Regex
+        Previous</a><a href="../supervisor/" class="btn btn-xs btn-link">
+        Supervisor
       </a>
     </div>
     
@@ -83,32 +83,27 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     
 
-    <h1 id="supervisor-service">Supervisor Service</h1>
-<h2 id="how-to-create-new-supervisor-service">How to create new supervisor service</h2>
-<p>First of all, you need to install supervisor service:</p>
-<pre><code class="language-bash">sudo apt-get install supervisor -y
-</code></pre>
-<p>Path to copy configurations files:</p>
-<pre><code class="language-bash">/etc/supervisor/conf.d/*
-</code></pre>
-<p>After copy file, reread supervisor configuration:</p>
-<pre><code class="language-bash">sudo supervisorctl -c /etc/supervisor/supervisord.conf reread
-sudo supervisorctl -c /etc/supervisor/supervisord.conf reload
-</code></pre>
-<p>If something went wrong, sock may be deleted in /var/run/supervisor.conf, and
-supervisorctl status will show an error. To solve, check new configuration
-files, if something is buggy, fix it or remove conf and run command again.</p>
-<p>Then, run, to reload new configuration and start service again with:</p>
-<pre><code class="language-bash">sudo supervisorctl reload
-</code></pre>
-<p>Now, your supervisor service should be up and running</p>
-<h2 id="references">References</h2>
-<p>Some interesting samples and documentation</p>
-<ul>
-<li><a href="http://supervisord.org/configuration.html">Configuration</a></li>
-<li><a href="https://gist.github.com/didip/802561">Sample</a></li>
-<li><a href="https://gist.github.com/tsabat/1528270">Documentation</a></li>
-</ul>
+    <h1 id="task-runner">Task runner</h1>
+<p>A task runner is a tool that automates and simplify the execution of repetitive
+tasks. It is a command-line tool that can be used to run tasks defined in a
+configuration file. The tasks can be anything, from compiling code to running
+tests to deploying applications.</p>
+<p>As configuration file is pushed to the repository together with the code, it is
+easy to share the tasks with other members of the team, to ensure that everyone
+is running tasks in the same way. This can help to reduce errors and
+improve consistency in the way that tasks are run.</p>
+<h2 id="makefile">Makefile</h2>
+<p><a href="https://www.gnu.org/software/make/">Makefile</a> is a build automation tool that
+helps to compile and build projects. It is a simple way to define tasks and
+dependencies between them. Makefile is a good choice for simple projects, but it
+can become complex and hard to maintain as the project grows.</p>
+<p>Only supported in Linux and MacOS.</p>
+<h2 id="task-file">Task file</h2>
+<p><a href="https://taskfile.dev/">Task file</a> is a task runner that is designed to be a
+simpler version of Makefile. It is a YAML-based task runner that is easy to read
+and write. Task file is a good choice for projects that need a simple way to
+define tasks and dependencies between them.</p>
+<p>It is written in go, and supports Linux, MacOS, and Windows.</p>
 
   <br>
     
@@ -121,20 +116,20 @@ files, if something is buggy, fix it or remove conf and run command again.</p>
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../task-runner/" class="btn btn-xs btn-default pull-right">
+      <a href="../transmission/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../task-runner/" class="btn btn-xs btn-link">
-        Task runner
+      <a href="../transmission/" class="btn btn-xs btn-link">
+        Transmission
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../regex/" class="btn btn-xs btn-default pull-left">
+      <a href="../supervisor/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../regex/" class="btn btn-xs btn-link">
-        Regex
+        Previous</a><a href="../supervisor/" class="btn btn-xs btn-link">
+        Supervisor
       </a>
     </div>
     
