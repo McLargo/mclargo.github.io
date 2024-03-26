@@ -37,6 +37,7 @@
               {title: "Principles", url: "#principles" },
               {title: "Orchestration", url: "#orchestration" },
               {title: "Choreography", url: "#choreography" },
+              {title: "Architecture styles", url: "#architecture-styles" },
               {title: "References", url: "#references" },
           ]},
         ];
@@ -163,6 +164,23 @@ errors.</p>
 lead to more inter-service communication. This increased communication can
 result in more complex service discovery and network traffic management.</p>
 <p><img alt="Choreography" src="../../assets/img/choreography.png" /></p>
+<h2 id="architecture-styles">Architecture styles</h2>
+<p>Services in a microservice architecture needs to communicate between each other.
+There are different architectural styles to achieve this communication:</p>
+<ul>
+<li>
+<p><a href="../rest/">REST</a>: Representational State Transfer is an architectural
+  style that uses standard HTTP methods (GET, POST, PUT, DELETE) to interact
+  with resources. RESTful services are stateless, meaning that each request from
+  a client contains all the information needed to process the request. REST is
+  simple to understand and implement, and it can be used over any protocol that
+  supports request/response semantics.</p>
+</li>
+<li>
+<p>RPC: Remote Procedure Call is a protocol that allows a program to execute code
+  on a remote server. A popular RPC framework is <a href="../grpc/">gRPC</a>.</p>
+</li>
+</ul>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://www.accionlabs.com/microservices-orchestration-vs-choreography-what-to-prefer">Orchestration vs choreography</a></li>
