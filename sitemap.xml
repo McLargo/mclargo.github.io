@@ -2,242 +2,252 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://mclargo.github.io/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/template/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/architecture/api-gateway/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/architecture/architecture-decision-record/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/architecture/asynchronous-messaging/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://mclargo.github.io/architecture/data-storage/</loc>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/architecture/database-patterns/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/architecture/design-patterns/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/architecture/event-driven/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/architecture/grpc/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/architecture/microservices/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/architecture/monolithic/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/architecture/rest/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/architecture/service-mesh/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/architecture/solid/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/devops/continuous-integration/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/devops/docker/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/devops/features-toggles/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/devops/helm/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/devops/k8s/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/devops/observability/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/devops/serverless/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/devops/versioning/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/programming/conventional-commits/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/programming/development-workflows/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/programming/django/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/programming/fastapi/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/programming/flask/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/programming/golang/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://mclargo.github.io/programming/machine-learning/</loc>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/programming/openapi/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/programming/python/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/programming/sqlalchemy/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/programming/virtualenvs/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/project-management/c4-model/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/project-management/diagram-flows/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/project-management/scrum/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/project-management/tech-lead/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/project-management/waterfall-methodology/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/project-management/work-remotely/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/utils/daemon/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/utils/databases/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/utils/ide/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/utils/regex/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/utils/supervisor/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/utils/task-runner/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/utils/testing/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/utils/transmission/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/utils/ubuntu/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mclargo.github.io/utils/working-environment/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
