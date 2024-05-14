@@ -35,6 +35,8 @@
         var pageToc = [
           {title: "Machine Learning", url: "#_top", children: [
               {title: "Input data", url: "#input-data" },
+              {title: "Algorithms", url: "#algorithms" },
+              {title: "References", url: "#references" },
           ]},
         ];
 
@@ -83,6 +85,9 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     
 
     <h1 id="machine-learning">Machine Learning</h1>
+<p>Machine learning is a field of computer science that uses statistical techniques
+to give computer systems the ability to "learn" (e.g., progressively improve
+performance on a specific task) with data, without being explicitly programmed.</p>
 <h2 id="input-data">Input data</h2>
 <p>In order to train a machine learning model, you need to provide it with input
 data. Usually, data is divided into sets:</p>
@@ -97,6 +102,29 @@ data. Usually, data is divided into sets:</p>
 training, it can be less flexible when it comes to new data.</p>
 <p>A popular file format to store input data is
 <a href="https://parquet.apache.org/docs/">Parquet</a>.</p>
+<h2 id="algorithms">Algorithms</h2>
+<h3 id="two-tower-neural-networks">Two Tower Neural Networks</h3>
+<p>Two Tower Neural Networks are a type of neural network architecture that
+generates embedding vectors for the user and for all the content to
+retrieve/rank. An embedding vector contains the attributes and relationships of
+an item.</p>
+<p>With this architecture, called "Two Tower" because it has two separate towers:
+one for the user and one for the content. With both embedding vectors in place
+(user vector and content vector) the model can predict the probability the user
+will engage with the content.</p>
+<p>This system can be put in place outside regular business hours, and the results
+can be cached, making the inference extremely efficient.</p>
+<h3 id="collaborative-filtering">Collaborative Filtering</h3>
+<p>Collaborative filtering is a technique used by recommender systems to make
+predictions about the interests of a user by collecting preferences from many
+users (collaborating). The underlying assumption is that if a user A has the
+same opinion as a user B on an issue, A is more likely to have B's opinion on a
+different issue than that of a randomly chosen user.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.pinecone.io/learn/vector-embeddings/">Vector Embedding</a></li>
+<li><a href="https://developers.google.com/machine-learning/recommendation/collaborative/basics">Collaborative Filtering</a></li>
+</ul>
 
   <br>
     
