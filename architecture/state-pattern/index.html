@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Javier Gil">
+    <link rel="canonical" href="https://mclargo.github.io/architecture/state-pattern/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>State Patter - My technical wiki</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <link href="../../assets/css/extra.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "State pattern", url: "#_top", children: [
+              {title: "Key components", url: "#key-components" },
+              {title: "Example", url: "#example" },
+              {title: "Advantages", url: "#advantages" },
+              {title: "Use Cases", url: "#use-cases" },
+              {title: "References", url: "#references" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../websocket/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../websocket/" class="btn btn-xs btn-link">
+        Websocket
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../solid/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../solid/" class="btn btn-xs btn-link">
+        Solid Principles
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="state-pattern">State pattern</h1>
+<p>The State Pattern is a behavioral design pattern that allows an object to alter
+its behavior when its internal state changes. The object will appear to change
+its class at runtime, specially when yo have multiple conditional statements
+that switch the object behavior based on its state. You can add new states to
+your system without altering existing code.</p>
+<h2 id="key-components">Key components</h2>
+<ul>
+<li><strong>Context</strong>: The object that has a current state, delegating all
+  state-specific work to this object.</li>
+<li><strong>State</strong>: interface defining the behavior associated with a particular state
+  of the context.</li>
+<li><strong>Concrete State</strong>: classes that implement the State interface, defining the
+  behavior associated with a particular state of the context.</li>
+</ul>
+<h2 id="example">Example</h2>
+<p>Let's consider a traffic light system with three states: <code>Red</code>, <code>Yellow</code>, and
+<code>Green</code>.</p>
+<pre><code class="language-python">from abc import ABC, abstractmethod
+
+# State interface
+class TrafficLightState(ABC):
+    @abstractmethod
+    def change(self):
+        pass
+
+# Concrete states
+class RedLight(TrafficLightState):
+    def change(self):
+        return &quot;Yellow&quot;
+
+class YellowLight(TrafficLightState):
+    def change(self):
+        return &quot;Green&quot;
+
+class GreenLight(TrafficLightState):
+    def change(self):
+        return &quot;Red&quot;
+
+# Context
+class TrafficLight:
+    def __init__(self):
+        self.state = RedLight()
+
+    def change(self):
+        self.state = {
+            RedLight: YellowLight(),
+            YellowLight: GreenLight(),
+            GreenLight: RedLight()
+        }[type(self.state)]
+
+    def current_state(self):
+        return type(self.state).__name__
+
+# Usage
+traffic_light = TrafficLight()
+print(traffic_light.current_state())  # Red
+traffic_light.change()
+print(traffic_light.current_state())  # Yellow
+traffic_light.change()
+print(traffic_light.current_state())  # Green
+traffic_light.change()
+print(traffic_light.current_state())  # Red
+</code></pre>
+<h2 id="advantages">Advantages</h2>
+<ul>
+<li><strong>Simplicity</strong>: It simplifies complex conditional statements by encapsulating
+  state-specific behavior.</li>
+<li><strong>Maintainability</strong>: Adding new states or modifying existing ones is easier
+  without affecting other parts of the code.</li>
+<li><strong>Readability</strong>: The code becomes more readable and self-explanatory as state
+  transitions are clearly defined.</li>
+<li><strong>Testing</strong>: Testing individual states becomes straightforward, enhancing the
+  overall code quality.</li>
+</ul>
+<h2 id="use-cases">Use Cases</h2>
+<ul>
+<li>Document Editing</li>
+<li>Traffic Light</li>
+<li>Vending Machine</li>
+<li>Booking System</li>
+<li>eCommerce Checkout</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://medium.com/@amirm.lavasani/design-patterns-in-python-state-8916b2f65f69">State Pattern in python</a></li>
+<li><a href="https://github.com/pytransitions/transitions">Transitioning - python library</a></li>
+</ul>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../websocket/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../websocket/" class="btn btn-xs btn-link">
+        Websocket
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../solid/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../solid/" class="btn btn-xs btn-link">
+        Solid Principles
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content"><p>Copyright &copy; 2024 <a href="https://github.com/McLargo">Javier Gil</a>.</p>
+  <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>
