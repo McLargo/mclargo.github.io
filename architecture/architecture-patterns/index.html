@@ -37,6 +37,7 @@
               {title: "Vertical slice architecture", url: "#vertical-slice-architecture" },
               {title: "Domain-Driven Design", url: "#domain-driven-design" },
               {title: "Hexagonal architecture", url: "#hexagonal-architecture" },
+              {title: "BFF (Backend for Frontend)", url: "#bff-backend-for-frontend" },
               {title: "References", url: "#references" },
           ]},
         ];
@@ -136,11 +137,33 @@ center of the hexagon, and the external world is at the edges.</p>
 easily. For example you can swap out Oracle or SQL Server, for Mongo or
 something else. Or enable easily an additional entry point for a new consumer.
 Your business rules are not bound to the any of these changes outside the core.</p>
+<h2 id="bff-backend-for-frontend">BFF (Backend for Frontend)</h2>
+<p>BFF is a pattern that consists of creating a backend service customized for a
+frontend application. Backend is usually a composition of multiple services,
+each of them providing different functionalities and supporting different
+protocols. The BFF is responsible for aggregating the data from these services
+and providing a single endpoint for the frontend specific needs.</p>
+<p>Having this intermediate transformation layer between the frontend and the
+backend services, provides the following benefits:</p>
+<ul>
+<li><strong>Performance</strong>: The BFF can aggregate data from multiple services and reduce
+  the number of requests made by the frontend.</li>
+<li><strong>Security</strong>: The BFF can handle authentication and authorization to each
+  backend, so frontend can be stateless.</li>
+<li><strong>Flexibility</strong>: The BFF can be customized for each frontend, providing only
+  the data and format needed by the frontend, reducing the payload size.</li>
+<li><strong>Efficiency</strong>: The BFF can be optimized for the frontend, providing complex
+  common business logic to the frontend.</li>
+<li><strong>Cache</strong>: The BFF can cache data from the backend services, reducing the load
+  on the backend services.</li>
+</ul>
+<p><img alt="Backend-for-Frontend architecture" src="../../assets/img/bff.png" /></p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://www.qwan.eu/2020/08/20/hexagonal-architecture.html">Hexagonal architecture</a></li>
 <li><a href="https://herbertograca.com/2017/09/14/ports-adapters-architecture/#evolving-from-the-layered-architecture">Ports and adapters</a></li>
 <li><a href="https://ivanojgarcia.medium.com/vertical-slicing-a-term-for-powerful-hexagonal-architecture-3687fded1925">Vertical slice</a></li>
+<li><a href="https://blog.bitsrc.io/bff-pattern-backend-for-frontend-an-introduction-e4fa965128bf">Backend-for-Frontend</a></li>
 </ul>
 
   <br>
