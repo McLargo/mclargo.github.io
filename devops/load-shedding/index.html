@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Javier Gil">
+    <link rel="canonical" href="https://mclargo.github.io/devops/load-shedding/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Load Shedding - My technical wiki</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <link href="../../assets/css/extra.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Load shedding", url: "#_top", children: [
+              {title: "Why load shedding", url: "#why-load-shedding" },
+              {title: "How to implement load shedding", url: "#how-to-implement-load-shedding" },
+              {title: "Benefits of load shedding", url: "#benefits-of-load-shedding" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../observability/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../observability/" class="btn btn-xs btn-link">
+        Observability
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../k8s/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../k8s/" class="btn btn-xs btn-link">
+        Kubernetes
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="load-shedding">Load shedding</h1>
+<p>Load shedding is a technique used to reduce the load on a system by prioritizing
+requests and dropping the ones that are less important. This is useful when the
+system is under heavy load and needs to prioritize certain requests over others.</p>
+<h2 id="why-load-shedding">Why load shedding</h2>
+<p>When a system is under heavy load, it can become unresponsive and slow down
+their services offered. This can lead to a poor user experience and even system
+failures.</p>
+<h2 id="how-to-implement-load-shedding">How to implement load shedding</h2>
+<p>It is important to identify which requests are more important than others in
+your system.</p>
+<p>It can be implemented in different ways:</p>
+<ul>
+<li>Api Gateway: The Api Gateway can be configured to drop requests based on
+  certain criteria, like the number of requests per second, the type of request,
+  etc.</li>
+<li>Service: Each service can implement its own load shedding mechanism. This can
+  be done by using a queue to store incoming requests and processing them based
+  on their priority.</li>
+</ul>
+<h2 id="benefits-of-load-shedding">Benefits of load shedding</h2>
+<ul>
+<li><strong>Improved performance</strong>: By dropping less important requests, the system can
+  focus on processing the most important ones, like payments or critical
+  requests.</li>
+<li><strong>Better user experience</strong>: By prioritizing certain requests, the system can
+  ensure that users get a better experience, even when the system is under heavy
+  load.</li>
+<li><strong>Cost savings</strong>: If system is crashing, more and more request can come. If
+  replication is in place, more servers will be automatically added to handle
+  the load. By dropping less important requests, there is no need for this
+  replication, saving costs until system is stable again.</li>
+<li><strong>Single cluster</strong>: No need to have multiple clusters to handle different
+  types of requests. Everything can be handled by a single cluster with load
+  shedding inside the services.</li>
+<li><strong>CPU base</strong>: If the system is CPU bound, it can be configured to drop
+  requests when CPU is above a certain threshold. And start processing again
+  when CPU is below.</li>
+</ul>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../observability/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../observability/" class="btn btn-xs btn-link">
+        Observability
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../k8s/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../k8s/" class="btn btn-xs btn-link">
+        Kubernetes
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content"><p>Copyright &copy; 2024 <a href="https://github.com/McLargo">Javier Gil</a>.</p>
+  <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>
