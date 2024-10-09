@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta name="author" content="Javier Gil">
-    <link rel="canonical" href="https://mclargo.github.io/programming/machine-learning/">
+    <link rel="canonical" href="https://mclargo.github.io/machine-learning/algorithms/">
     <link rel="shortcut icon" href="../../img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>Machine Learning - My technical wiki</title>
+    <title>Algorithms - My technical wiki</title>
     <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="../../css/base.css" rel="stylesheet">
@@ -33,9 +33,9 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "Machine Learning", url: "#_top", children: [
-              {title: "Input data", url: "#input-data" },
-              {title: "Algorithms", url: "#algorithms" },
+          {title: "Algorithms", url: "#_top", children: [
+              {title: "Two Tower Neural Networks", url: "#two-tower-neural-networks" },
+              {title: "Collaborative Filtering", url: "#collaborative-filtering" },
               {title: "References", url: "#references" },
           ]},
         ];
@@ -63,20 +63,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../openapi/" class="btn btn-xs btn-default pull-right">
+      <a href="../deep-learning/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../openapi/" class="btn btn-xs btn-link">
-        OpenAPI Specification
+      <a href="../deep-learning/" class="btn btn-xs btn-link">
+        Deep Learning
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../golang/" class="btn btn-xs btn-default pull-left">
+      <a href="../../devops/versioning/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../golang/" class="btn btn-xs btn-link">
-        Golang
+        Previous</a><a href="../../devops/versioning/" class="btn btn-xs btn-link">
+        Versioning
       </a>
     </div>
     
@@ -84,26 +84,8 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     
 
-    <h1 id="machine-learning">Machine Learning</h1>
-<p>Machine learning is a field of computer science that uses statistical techniques
-to give computer systems the ability to "learn" (e.g., progressively improve
-performance on a specific task) with data, without being explicitly programmed.</p>
-<h2 id="input-data">Input data</h2>
-<p>In order to train a machine learning model, you need to provide it with input
-data. Usually, data is divided into sets:</p>
-<ul>
-<li>training data: set of examples used to fit the parameters of the model.</li>
-<li>validation data: set used to provide an evaluation of a model fit on
-  the training dataset while tuning model parameters.</li>
-<li>testing data: set used to provide an evaluation of a final model fit on the
-  training dataset.</li>
-</ul>
-<p>Be aware of overfitting: when a model learns the detail and noise in the
-training, it can be less flexible when it comes to new data.</p>
-<p>A popular file format to store input data is
-<a href="https://parquet.apache.org/docs/">Parquet</a>.</p>
-<h2 id="algorithms">Algorithms</h2>
-<h3 id="two-tower-neural-networks">Two Tower Neural Networks</h3>
+    <h1 id="algorithms">Algorithms</h1>
+<h2 id="two-tower-neural-networks">Two Tower Neural Networks</h2>
 <p>Two Tower Neural Networks are a type of neural network architecture that
 generates embedding vectors for the user and for all the content to
 retrieve/rank. An embedding vector contains the attributes and relationships of
@@ -114,7 +96,7 @@ one for the user and one for the content. With both embedding vectors in place
 will engage with the content.</p>
 <p>This system can be put in place outside regular business hours, and the results
 can be cached, making the inference extremely efficient.</p>
-<h3 id="collaborative-filtering">Collaborative Filtering</h3>
+<h2 id="collaborative-filtering">Collaborative Filtering</h2>
 <p>Collaborative filtering is a technique used by recommender systems to make
 predictions about the interests of a user by collecting preferences from many
 users (collaborating). The underlying assumption is that if a user A has the
@@ -137,20 +119,20 @@ different issue than that of a randomly chosen user.</p>
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../openapi/" class="btn btn-xs btn-default pull-right">
+      <a href="../deep-learning/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../openapi/" class="btn btn-xs btn-link">
-        OpenAPI Specification
+      <a href="../deep-learning/" class="btn btn-xs btn-link">
+        Deep Learning
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../golang/" class="btn btn-xs btn-default pull-left">
+      <a href="../../devops/versioning/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../golang/" class="btn btn-xs btn-link">
-        Golang
+        Previous</a><a href="../../devops/versioning/" class="btn btn-xs btn-link">
+        Versioning
       </a>
     </div>
     

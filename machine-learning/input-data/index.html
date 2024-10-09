@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta name="author" content="Javier Gil">
-    <link rel="canonical" href="https://mclargo.github.io/programming/golang/">
+    <link rel="canonical" href="https://mclargo.github.io/machine-learning/input-data/">
     <link rel="shortcut icon" href="../../img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>Golang - My technical wiki</title>
+    <title>Input Data - My technical wiki</title>
     <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="../../css/base.css" rel="stylesheet">
@@ -33,7 +33,7 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "Golang", url: "#_top", children: [
+          {title: "Input data", url: "#_top", children: [
               {title: "References", url: "#references" },
           ]},
         ];
@@ -61,20 +61,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../openapi/" class="btn btn-xs btn-default pull-right">
+      <a href="../../programming/conventional-commits/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../openapi/" class="btn btn-xs btn-link">
-        OpenAPI Specification
+      <a href="../../programming/conventional-commits/" class="btn btn-xs btn-link">
+        Conventional Commits
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../flask/" class="btn btn-xs btn-default pull-left">
+      <a href="../fundamentals/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../flask/" class="btn btn-xs btn-link">
-        Flask
+        Previous</a><a href="../fundamentals/" class="btn btn-xs btn-link">
+        Fundamentals
       </a>
     </div>
     
@@ -82,24 +82,21 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     
 
-    <h1 id="golang">Golang</h1>
-<p>Golang or commonly known as Go, it is a programming language designed by Google.</p>
+    <h1 id="input-data">Input data</h1>
+<p>In order to train a machine learning model, you need to provide it with input
+data. Usually, data is divided into sets:</p>
 <ul>
-<li>statically typed: once a variable is set, you cannot change its type.</li>
-<li>compiled programming language: Go is compiled directly to machine code, making
-  it faster than interpreted languages.</li>
-<li>garbage-collected: Go has a garbage collector that automatically manages memory.</li>
-<li>concurrent: Go has built-in support for concurrent programming. You can run
-  multiple tasks concurrently, making more efficient code. Go uses goroutines
-  and channels to achieve this. You need to give a little bit of thought how you
-  program your code.</li>
+<li>training data: set of examples used to fit the parameters of the model.</li>
+<li>validation data: set used to provide an evaluation of a model fit on
+  the training dataset while tuning model parameters.</li>
+<li>testing data: set used to provide an evaluation of a final model fit on the
+  training dataset.</li>
 </ul>
+<p>Be aware of overfitting: when a model learns the detail and noise in the
+training, it can be less flexible when it comes to new data.</p>
 <h2 id="references">References</h2>
 <ul>
-<li><a href="https://golang.org/">Golang official website</a></li>
-<li><a href="https://github.com/cosmtrek/air">Go live reload</a></li>
-<li><a href="https://github.com/uber-go/guide/blob/master/style.md">Go Style Guide</a></li>
-<li><a href="https://gobyexample.com/">Go by example</a></li>
+<li><a href="https://parquet.apache.org/docs/">Parquet</a>.</li>
 </ul>
 
   <br>
@@ -113,20 +110,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../openapi/" class="btn btn-xs btn-default pull-right">
+      <a href="../../programming/conventional-commits/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../openapi/" class="btn btn-xs btn-link">
-        OpenAPI Specification
+      <a href="../../programming/conventional-commits/" class="btn btn-xs btn-link">
+        Conventional Commits
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../flask/" class="btn btn-xs btn-default pull-left">
+      <a href="../fundamentals/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../flask/" class="btn btn-xs btn-link">
-        Flask
+        Previous</a><a href="../fundamentals/" class="btn btn-xs btn-link">
+        Fundamentals
       </a>
     </div>
     

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Javier Gil">
+    <link rel="canonical" href="https://mclargo.github.io/machine-learning/deep-learning/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Deep Learning - My technical wiki</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <link href="../../assets/css/extra.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Deep Learning", url: "#_top", children: [
+              {title: "Neural Networks", url: "#neural-networks" },
+              {title: "Training a Neural Network", url: "#training-a-neural-network" },
+              {title: "How does a Neural Network Learn?", url: "#how-does-a-neural-network-learn" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../fundamentals/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../fundamentals/" class="btn btn-xs btn-link">
+        Fundamentals
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../algorithms/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../algorithms/" class="btn btn-xs btn-link">
+        Algorithms
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="deep-learning">Deep Learning</h1>
+<p>Deep learning is an advance machine learning technique that emulates the way the
+human brain learns. The key is to create an artificial neural network, which is
+a mathematical model that is inspired by the structure and function of
+biological neural networks.</p>
+<h2 id="neural-networks">Neural Networks</h2>
+<p>Are make of several layers of interconnected nodes, called neurons. As other
+machine learning models, neural networks are trained on a set of data to learn
+the relationship between the input data and the output and predict new values.
+Each layer of the network is made of nodes that are connected to the nodes in
+the previous layer. The first layer is called the <strong>input layer</strong>, the last
+layer is called the <strong>output layer</strong>, and the layers in between are called
+<strong>hidden layers</strong>.</p>
+<h2 id="training-a-neural-network">Training a Neural Network</h2>
+<p>The algorithm used to train the model involves iteratively feeding the feature
+values <em>x</em> in the training data forward through the layers to calculate output
+values for <em>ŷ</em>, validating the model to evaluate how far off the calculated <em>ŷ</em>
+values are from the known y values (which quantifies the level of error, or
+loss, in the model), and then modifying the weights (<em>w</em>) to reduce the loss.</p>
+<p>The process for inferencing a predicted class using this network is:</p>
+<ul>
+<li>The feature vector observation is fed into the input layer of the neural
+  network, which consists of a neuron for each x value.</li>
+<li>The functions for the first layer of neurons each calculate a weighted sum by
+  combining the <em>x</em> value and <em>w</em> weight, and pass it to an activation function
+  that determines if it meets the threshold to be passed on to the next layer.</li>
+<li>Each neuron in a layer is connected to all of the neurons in the next layer
+  and the results of each layer are fed forward through the network until they
+  reach the output layer.</li>
+<li>The output layer produces a vector of values; in this case, using a softmax or
+  similar function to calculate the probability distribution for the classes.
+  The model predicts the value with the highest probability.</li>
+</ul>
+<h2 id="how-does-a-neural-network-learn">How does a Neural Network Learn?</h2>
+<p>Weights are the key to the learning process in a neural network. Initially,
+weights are assigned randomly. During training, the model learns the weights
+that will result in the most accurate predictions. A loss function is used to
+compare the predicted output with the actual output (loss is the absolute
+difference between the predicted and actual values).</p>
+<p>With an optimization algorithm, it evaluates the influence of the weights on the
+loss, and adjusted the weights (up or down) to minimize the error between the
+predicted output and the actual output. The process of adjusting the weights is
+called <strong>backpropagation</strong>, replacing the previous weights with the new ones.
+The process is repeat until the loss is minimized and the model predicts the
+output with the highest accuracy.</p>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../fundamentals/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../fundamentals/" class="btn btn-xs btn-link">
+        Fundamentals
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../algorithms/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../algorithms/" class="btn btn-xs btn-link">
+        Algorithms
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content"><p>Copyright &copy; 2024 <a href="https://github.com/McLargo">Javier Gil</a>.</p>
+  <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>
