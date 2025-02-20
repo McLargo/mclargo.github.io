@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta name="author" content="Javier Gil">
-    <link rel="canonical" href="https://mclargo.github.io/utils/working-environment/">
+    <link rel="canonical" href="https://mclargo.github.io/architecture/abs/">
     <link rel="shortcut icon" href="../../img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>Working Environment - My technical wiki</title>
+    <title>Adaptive Bitrate Streaming - My technical wiki</title>
     <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="../../css/base.css" rel="stylesheet">
@@ -33,9 +33,9 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "Working Environment", url: "#_top", children: [
-              {title: "Structure", url: "#structure" },
-              {title: "References", url: "#references" },
+          {title: "Adaptive Bitrate Streaming", url: "#_top", children: [
+              {title: "Fundamentals", url: "#fundamentals" },
+              {title: "Protocols", url: "#protocols" },
           ]},
         ];
 
@@ -61,11 +61,13 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
-    <div class="wm-article-nav">
-      <a href="../ubuntu/" class="btn btn-xs btn-default pull-left">
-        <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../ubuntu/" class="btn btn-xs btn-link">
-        Ubuntu
+    <div class="wm-article-nav pull-right">
+      <a href="../api-gateway/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../api-gateway/" class="btn btn-xs btn-link">
+        API Gateway
       </a>
     </div>
     
@@ -73,25 +75,28 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     
 
-    <h1 id="working-environment">Working Environment</h1>
-<h2 id="structure">Structure</h2>
-<p>Create a folder named <strong>work</strong> in home directory:</p>
+    <h1 id="adaptive-bitrate-streaming">Adaptive Bitrate Streaming</h1>
+<p>Adaptive Bitrate Streaming (ABS) is a streaming technique used to deliver video
+to the users.</p>
+<p>The video is encoded in multiple bitrates and resolutions in the server. Not
+only user can switch between qualities manually. It allows the client who
+dynamically choose the best quality based on the network conditions. If quality
+is poor, low quality video is streamed. When network conditions improve, the
+quality is increased dynamically.</p>
+<h2 id="fundamentals">Fundamentals</h2>
+<p>Some of the key concepts in ABS are:</p>
 <ul>
-<li><code>mkdir $HOME/work</code></li>
+<li><strong>Chunk</strong>: small segment of video file. Usually, between 2-10 seconds.</li>
+<li><strong>Manifest</strong>: file that contains information about the video chunks.</li>
+<li><strong>Multiple bitrates</strong>: video is encoded in multiple bitrates and resolutions.</li>
+<li><strong>Adaptive algorithm</strong>: algorithm executed by the client video player that
+  decides which quality to stream based on network conditions.</li>
 </ul>
-<p>Inside, create following structure:</p>
+<h2 id="protocols">Protocols</h2>
+<p>Some of the most popular protocols used for ABS are:</p>
 <ul>
-<li><code>mkdir $HOME/work/src</code>: to store repositories</li>
-<li><code>mkdir $HOME/work/projects/&lt;company&gt;</code>: to store info from company, onboarding,
-  one to one... folder for Company. Store date in the name of the file, such as
-  <code>meeting-20XX-XX-XX.md</code></li>
-<li><code>mkdir $HOME/work/projects/&lt;project-name&gt;</code>: One extra folder for each project.
-  Some common subfolder may be: <code>scripts</code>, <code>documents</code>, <code>sublime</code></li>
-<li><code>mkdir $HOME/work/utils</code>: to store programs, binary, or other packages</li>
-</ul>
-<h2 id="references">References</h2>
-<ul>
-<li><a href="https://gist.github.com/McLargo/9cdf3a921326be679fe09e0fbd8297d4">Project template</a></li>
+<li><strong>HTTP Live Streaming (HLS)</strong>: Developed by Apple.</li>
+<li><strong>Dynamic Adaptive Streaming over HTTP (DASH)</strong>: Developed by MPEG.</li>
 </ul>
 
   <br>
@@ -104,11 +109,13 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
-    <div class="wm-article-nav">
-      <a href="../ubuntu/" class="btn btn-xs btn-default pull-left">
-        <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../ubuntu/" class="btn btn-xs btn-link">
-        Ubuntu
+    <div class="wm-article-nav pull-right">
+      <a href="../api-gateway/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../api-gateway/" class="btn btn-xs btn-link">
+        API Gateway
       </a>
     </div>
     
