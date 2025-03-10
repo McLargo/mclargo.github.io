@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Javier Gil">
+    <link rel="canonical" href="https://mclargo.github.io/utils/db-table-indexes/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Database table indexes - My technical wiki</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <link href="../../assets/css/extra.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Database Table Indexes", url: "#_top", children: [
+              {title: "UUIDs", url: "#uuids" },
+              {title: "Auto-incrementing IDs", url: "#auto-incrementing-ids" },
+              {title: "UUIDsv7", url: "#uuidsv7" },
+              {title: "ULID", url: "#ulid" },
+              {title: "References", url: "#references" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../databases/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../databases/" class="btn btn-xs btn-link">
+        Databases
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../daemon/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../daemon/" class="btn btn-xs btn-link">
+        Daemon
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="database-table-indexes">Database Table Indexes</h1>
+<p>An important aspect of <a href="../databases/">database</a> design is the creation
+of indexes, specially those ones that are unique.</p>
+<h2 id="uuids">UUIDs</h2>
+<p>UUIDS are a 128-bit number used to uniquely identify objects in a computer.</p>
+<p>In a database, UUIDs can be used as primary keys for tables. But the are some
+issues to take a look at:</p>
+<ul>
+<li><strong>Performance</strong>: to organize indexes, the database needs to sort the data.
+  This is a problem when using UUIDs because they are not sequential.</li>
+<li><strong>Storage</strong>: UUIDs are 128 bits long, which is more than the 32 bits used by
+  by auto-incrementing IDs. In a large database, this can lead to a significant
+  amount of storage.</li>
+</ul>
+<p>On the other hand, UUIDs are unique across different databases and can be
+generated in different machines without the need to coordinate with each other.</p>
+<h2 id="auto-incrementing-ids">Auto-incrementing IDs</h2>
+<p>Auto-incrementing IDs are a good choice for primary keys in a database. They are
+sequential and can be used to organize indexes quickly and efficiently. They
+don't take up much storage space.</p>
+<p>It is a natural sequence which is easy to predict and identify. Ideally, when
+those ids are not exposed to the user.</p>
+<h2 id="uuidsv7">UUIDsv7</h2>
+<p>UUIDv7 is a new version of UUIDs that are sequential, solving performance issue
+on insert new records. It offers the best of both worlds: the uniqueness of
+UUIDs and the performance of auto-incrementing IDs.</p>
+<h2 id="ulid">ULID</h2>
+<p>ULID offers a timestamp prefix followed by random characters. It allows
+efficient sorting and is more compact than UUIDs.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://medium.com/@rabinarayandev/should-you-use-uuids-for-database-keys-597b15b000bb">Usage of uuids for database keys</a></li>
+</ul>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../databases/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../databases/" class="btn btn-xs btn-link">
+        Databases
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../daemon/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../daemon/" class="btn btn-xs btn-link">
+        Daemon
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content"><p>Copyright &copy; 2025 <a href="https://github.com/McLargo">Javier Gil</a>.</p>
+  <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>
