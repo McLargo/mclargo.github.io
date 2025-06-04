@@ -34,7 +34,7 @@
         
         var pageToc = [
           {title: "Versioning", url: "#_top", children: [
-              {title: "Common versioning", url: "#common-versioning" },
+              {title: "Semantic versioning", url: "#semantic-versioning" },
               {title: "Calendar versioning", url: "#calendar-versioning" },
               {title: "References", url: "#references" },
           ]},
@@ -87,17 +87,21 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     <h1 id="versioning">Versioning</h1>
 <p>Versioning releases is important to handle dependencies with new code. Each
 version must be tagged with an unique identifier.</p>
-<h2 id="common-versioning">Common versioning</h2>
+<h2 id="semantic-versioning">Semantic versioning</h2>
+<p>Semantic versioning is a standard for versioning software. It is based on three
+numbers separated by dots: <code>MAJOR.MINOR.PATCH</code>. The version number is increased
+when:</p>
 <ul>
-<li><strong>Major</strong> - The first number in the version. 2 and 3 are Python's famous major
-  versions. The major segment is the most common calendar-based component.</li>
-<li><strong>Minor</strong> - The second number in the version. 7 is the most popular minor
-  version of Python.</li>
-<li><strong>Micro</strong> - The third and usually final number in the version. Sometimes
-  referred to as the "patch" segment.</li>
-<li><strong>Modifier</strong> - An optional text tag, such as "dev", "alpha", "beta", "rc1",
-  and so on.</li>
+<li><strong>Major</strong> - Breaking changes are introduced.</li>
+<li><strong>Minor</strong> - New features are added in a backwards-compatible manner.</li>
+<li><strong>Patch</strong> - Backwards-compatible bug fixes are introduced.</li>
 </ul>
+<p>Additional labels can be added to the version number, such as "dev", "alpha",
+"beta", "rc1", and so on.</p>
+<p>Usually , you can start from <code>0.1.0</code> and increment the version number as you
+develop the software. When you are ready to release the first stable version,
+you can change the version number to <code>1.0.0</code>, and follow the semantic versioning
+rules from there.</p>
 <h2 id="calendar-versioning">Calendar versioning</h2>
 <ul>
 <li><strong>YYYY</strong> - Full year - 2006, 2016, 2106</li>
@@ -110,9 +114,9 @@ version must be tagged with an unique identifier.</p>
 <li><strong>DD</strong> - Short day - 1, 2 ... 30, 31</li>
 <li><strong>0D</strong> - Zero-padded day - 01, 02 ... 30, 31</li>
 </ul>
-<p>For reference, both versioning can be mixed.</p>
 <h2 id="references">References</h2>
 <ul>
+<li><a href="https://semver.org/">Semantic versioning</a></li>
 <li><a href="https://calver.org/">Calendar versioning</a></li>
 </ul>
 

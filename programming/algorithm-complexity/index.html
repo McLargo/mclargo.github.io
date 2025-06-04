@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Javier Gil">
+    <link rel="canonical" href="https://mclargo.github.io/programming/algorithm-complexity/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Algorithm Complexity - My technical wiki</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <link href="../../assets/css/extra.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Algorithm complexity", url: "#_top", children: [
+              {title: "Time complexity", url: "#time-complexity" },
+              {title: "Space complexity", url: "#space-complexity" },
+              {title: "Big O notation", url: "#big-o-notation" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../conventional-commits/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../conventional-commits/" class="btn btn-xs btn-link">
+        Conventional Commits
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../../machine-learning/responsibilities/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../machine-learning/responsibilities/" class="btn btn-xs btn-link">
+        Responsibilities
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="algorithm-complexity">Algorithm complexity</h1>
+<p>Algorithm complexity is how we can measure the resource an algorithm uses to
+executes.</p>
+<h2 id="time-complexity">Time complexity</h2>
+<p>How much time takes an algorithm to complete its execution.</p>
+<h3 id="constant-time-o1">Constant time - O(1)</h3>
+<p>Execution time does not depend on the size of the input data.</p>
+<ul>
+<li>Access an element in an array by index.</li>
+<li>Insert/delete an element at the end of an array.</li>
+<li>Math operations.</li>
+</ul>
+<h3 id="logarithmic-time-olog-n">Logarithmic time - O(log n)</h3>
+<p>Execution times decrease by half with each iteration, as algorithm eliminates
+half of the input data at each step.</p>
+<ul>
+<li>Binary search in a sorted array.</li>
+</ul>
+<h3 id="linear-time-on">Linear time - O(n)</h3>
+<p>Execution time increases linearly with the size of the input data.
+(in the worst case, we need to check every item in the input data).</p>
+<ul>
+<li>Iterate through an array.</li>
+<li>Find an item in an unsorted array.</li>
+<li>Count frequency of items in an array.</li>
+</ul>
+<h3 id="log-linear-time-on-log-n">Log-linear time - O(n log n)</h3>
+<p>Algorithms that divide the input data into smaller parts and then combine the
+results.</p>
+<ul>
+<li>Merge sort.</li>
+<li>Quick sort.</li>
+</ul>
+<h3 id="quadratic-time-on2">Quadratic time - O(n^2)</h3>
+<p>Execution time increases quadratically with the size of the input data (if data
+is double, execution time is quadrupled).</p>
+<ul>
+<li>Nested loops iterating through the same input data.</li>
+<li>Bubble sort.</li>
+<li>Selection sort.</li>
+</ul>
+<h3 id="exponential-time-o2n">Exponential time - O(2^n)</h3>
+<p>Execution time doubles with each additional item in the input data.</p>
+<h3 id="on">O(n!)</h3>
+<p>Execution time increases factorially with the size of the input data.</p>
+<ul>
+<li>Calculating permutations of a set of items.</li>
+</ul>
+<h2 id="space-complexity">Space complexity</h2>
+<p>How much additional memory an algorithm uses to complete its execution.</p>
+<h3 id="constant-space-o1">Constant space - O(1)</h3>
+<p>Execution space does not depend on the size of the input data.</p>
+<ul>
+<li>Using a fixed number of variables.</li>
+</ul>
+<h3 id="linear-space-olog-n">Linear space - O(log n)</h3>
+<p>Execution space increases slowly with the size of the input data.</p>
+<h3 id="linear-space-on">Linear space - O(n)</h3>
+<p>Execution space increases linearly with the size of the input data.</p>
+<ul>
+<li>Copying an array.</li>
+<li>Using a dict/set to store all input data.</li>
+</ul>
+<h3 id="quadratic-space-on2">Quadratic space - O(n^2)</h3>
+<p>Execution space increases quadratically with the size of the input data.</p>
+<ul>
+<li>Creating a 2D array to store results of operations on pairs of items.</li>
+</ul>
+<h2 id="big-o-notation">Big O notation</h2>
+<p>When we talk about algorithm complexity, we use Big O notation to describe the
+worst-case scenario of an algorithm's performance. It offers a high-level
+understanding of how an algorithm behaves as the input size grows.</p>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../conventional-commits/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../conventional-commits/" class="btn btn-xs btn-link">
+        Conventional Commits
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../../machine-learning/responsibilities/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../machine-learning/responsibilities/" class="btn btn-xs btn-link">
+        Responsibilities
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content"><p>Copyright &copy; 2025 <a href="https://github.com/McLargo">Javier Gil</a>.</p>
+  <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>

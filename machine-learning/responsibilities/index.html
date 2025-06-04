@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Javier Gil">
+    <link rel="canonical" href="https://mclargo.github.io/machine-learning/responsibilities/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Responsibilities - My technical wiki</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <link href="../../assets/css/extra.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "MLE Responsibilities", url: "#_top", children: [
+              {title: "Data collection", url: "#data-collection" },
+              {title: "Data preprocessing", url: "#data-preprocessing" },
+              {title: "Feature engineering", url: "#feature-engineering" },
+              {title: "Model training", url: "#model-training" },
+              {title: "Model evaluation", url: "#model-evaluation" },
+              {title: "Production/model deployment", url: "#productionmodel-deployment" },
+              {title: "Observability", url: "#observability" },
+              {title: "References", url: "#references" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../../programming/algorithm-complexity/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../../programming/algorithm-complexity/" class="btn btn-xs btn-link">
+        Algorithm Complexity
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../input-data/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../input-data/" class="btn btn-xs btn-link">
+        Input Data
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="mle-responsibilities">MLE Responsibilities</h1>
+<p>The responsibilities of a machine learning engineer (MLE) can vary depending on
+the organization and the specific role. See below a list of the most frequent
+responsibilities of a MLE.</p>
+<h2 id="data-collection">Data collection</h2>
+<p>The data collection is the first step in the machine learning process. Where and
+how is the data coming from, how is it collected, and how is it stored.</p>
+<p>It is important to understand the data, the raw material. First phase is to
+analyze the data, confirm data is heterogeneous, diverse and with quality.</p>
+<p>The data can come from many different sources, such as databases, APIs, or
+events.</p>
+<h2 id="data-preprocessing">Data preprocessing</h2>
+<p>Cleaning, transforming, and preparing the data for training the model.
+Optimizing the data for the model, by removing duplicates, handling missing
+values, coherence and normalize the data.</p>
+<p>Registry how the data is cleaned and transformed, so that it can be reproduced
+and used in the future. This can include things like data validation,
+transformation...</p>
+<p>Dataset versioning is important, to keep track of the different versions of the
+data and how they are used in the model. Tools like MLFlow can help with this.</p>
+<h2 id="feature-engineering">Feature engineering</h2>
+<p>Select the features that are going to be used in the model. It is the process of
+using domain knowledge to extract features from the data. This can involve
+selecting, modifying, or creating new features that will help the model learn
+better.</p>
+<p>Things like the importance of the features, how they are going to be used in the
+model, defining the weights of the features when making the inference.</p>
+<p>Also, categorizing the data, so that the model can process it correctly (models
+works better with numbers rather than strings).</p>
+<p>Again, registry and versioning the features is vital that are going to be used
+by the model, so that they can be reproduced and used in the future.</p>
+<p>hyperparameters are parameters set before the training process begins and are
+not learned from the data.</p>
+<h2 id="model-training">Model training</h2>
+<p>Same logic that applies to the training has to be applied to the inference in
+production. It must be the same distribution of data.</p>
+<p>Classic models are deterministic. The model is not going to work the same way if
+the data is not the same.</p>
+<p>Other models are probabilistic, like neural networks. The model is going to
+work the same way, but the predictions are going to be different.</p>
+<p>A model cannot do predictions of what it has not seen.</p>
+<p>Some models/algorithms are:</p>
+<ul>
+<li>decision trees</li>
+<li>random forest</li>
+<li>linear regression</li>
+<li><a href="../algorithms/#two-tower-neural-networks">neural networks</a></li>
+</ul>
+<p>More common frameworks for training the models are:</p>
+<ul>
+<li>scikit-learn</li>
+<li>tensorflow</li>
+<li>pytorch</li>
+</ul>
+<h2 id="model-evaluation">Model evaluation</h2>
+<p>Evaluate the model to see how well it is performing. This can include metrics
+and other things like:</p>
+<ul>
+<li>accuracy</li>
+<li>precision</li>
+<li>recall</li>
+<li>F1 score</li>
+<li>auc</li>
+<li>confusion matrix</li>
+</ul>
+<p>The interpretability on ML models is the ability to understand how a complex
+model takes their decisions.</p>
+<ul>
+<li>LIME: Local Interpretable Model-Agnostic Explanations is a technique that provides
+  explanations at the individual level about the predictions of any machine
+  learning classifier, helping to understand which features influence a specific
+  prediction.</li>
+<li>SHAP: SHapley Additive exPlanations is a unified approach to explain the
+  output of any machine learning model. It connects game theory with local
+  explanations, providing a way to understand the contribution of each feature
+  to the final prediction.</li>
+</ul>
+<h2 id="productionmodel-deployment">Production/model deployment</h2>
+<p>Not only the model, but the whole process of deploying the solution in
+production. How the inference is going to be done, where the model is going to
+be stored, how to registry the inference, how is exposed the model (api,
+events...)</p>
+<p>Model packaging is the process of taking the trained model and preparing it for
+deployment. Some common formats for model packaging include:</p>
+<ul>
+<li>pickle (is just a serialization format, it doesn't have to be a model only, it
+  can be anything.)</li>
+<li>onnx</li>
+<li>torchscript</li>
+</ul>
+<p>Inference is the process of using the trained model to make predictions on new
+data. This can be done in real-time or in batch mode, depending on the
+requirements of the application. Registry each inference, so it can be measured
+and evaluated. This can include things like logging the input data, the
+predictions, and the performance of the model.</p>
+<p>Again, versioning is important, to keep track of the different versions of the
+model and how they are used in the application. Some common tools for model
+versioning are: MLFlow, BentoML, TorchServe...</p>
+<p>There are different ways to deploy the model:</p>
+<ul>
+<li><a href="../../devops/deployment-strategies/#blue-green-deployment">blue/green</a></li>
+<li><a href="../../devops/deployment-strategies/#canary-deployment">canary</a></li>
+<li>shadow deployment: both models are deployed in production, but results are not
+  exposed to users, just to get and analyze metrics.</li>
+<li><a href="../../devops/deployment-strategies/#A/B-testing">A/B testing</a></li>
+</ul>
+<h3 id="feedback-loop">Feedback loop</h3>
+<p>Feedback loop is the way to improve the model in production, with new data. It
+is the process to evaluate the model, seeing if the predictions are correct or
+not.</p>
+<p>THe retraining/feedback loop can be done in different ways:</p>
+<ul>
+<li>online</li>
+<li>batch</li>
+<li>incremental</li>
+</ul>
+<h2 id="observability">Observability</h2>
+<p>As we discussed in the previous sections, registry is key to be able to evaluate
+the model. With all the monitoring and observability, we can see how the model is
+performing in production.</p>
+<p>Over the time, models can degrade, and the performance can be affected. This is
+important to monitor, so that we can take action and retrain the model if
+necessary.</p>
+<p>With the registry predictions of the model yo are able to evaluate the model at
+any time and prevent model drift.</p>
+<ul>
+<li>data drift: when the input data changes or the distribution of the data
+  changes.</li>
+<li>concept drift: when it is a change between the input and output data.</li>
+<li>model drift: degradation of the model over time.</li>
+<li>covariate shift: when properties of the input data change between the training
+  and testing phases of a model.</li>
+</ul>
+<p>Having this in mind, add alerts, dashboards, and other tools to monitor the
+model in production to prevent this from happening.</p>
+<h2 id="references">References</h2>
+<p><a href="https://huggingface.co/">Machine learning community</a></p>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../../programming/algorithm-complexity/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../../programming/algorithm-complexity/" class="btn btn-xs btn-link">
+        Algorithm Complexity
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../input-data/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../input-data/" class="btn btn-xs btn-link">
+        Input Data
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content"><p>Copyright &copy; 2025 <a href="https://github.com/McLargo">Javier Gil</a>.</p>
+  <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>
