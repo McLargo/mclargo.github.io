@@ -93,6 +93,17 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 performance of applications. However, it can also introduce a lot of complexity
 and potential bugs. We will discuss some common concurrency patterns that can be
 used to simplify concurrent development.</p>
+<p>It is important to understand some concepts before diving into concurrency.</p>
+<ul>
+<li><strong>Concurrency</strong>: The ability of a system to execute multiple tasks at the same
+  time. CPU decides how to allocate resources to tasks, which can lead to tasks
+  being executed in unpredictable order.</li>
+<li><strong>Parallelism</strong>: an application divides tasks into smaller subtasks that can
+  be executed in parallel, in different CPU cores. Tasks are executed
+  simultaneously.</li>
+</ul>
+<p>Concurrency is about dealing with lots of things at once. Parallelism is about
+ doing lots of things at once.</p>
 <p>In Go, concurrency is achieved using goroutines and channels.</p>
 <h2 id="worker-pool">Worker Pool</h2>
 <p>Worker pools involve creating a fixed number of workers that process tasks from
@@ -119,6 +130,7 @@ time. It is useful to control concurrent access to shared resources.</p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://cgarciarosales97.medium.com/7-concurrency-patterns-in-go-you-should-know-4796e19ee7d4">Concurrency patterns in Go</a></li>
+<li><a href="https://medium.com/@itIsMadhavan/concurrency-vs-parallelism-a-brief-review-b337c8dac350">Concurrency vs parallelism</a></li>
 </ul>
 
   <br>
