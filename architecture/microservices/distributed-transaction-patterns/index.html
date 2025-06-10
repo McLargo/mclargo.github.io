@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Javier Gil">
+    <link rel="canonical" href="https://mclargo.github.io/architecture/microservices/distributed-transaction-patterns/">
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Distributed Transactions Patterns - My technical wiki</title>
+    <link href="../../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/highlight.css">
+    <link href="../../../assets/css/extra.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Distributed Transaction Patterns", url: "#_top", children: [
+              {title: "Challenges", url: "#challenges" },
+              {title: "Outbox pattern", url: "#outbox-pattern" },
+              {title: "Raw events pattern", url: "#raw-events-pattern" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../event-driven/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../event-driven/" class="btn btn-xs btn-link">
+        Event Driven
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../database-per-service/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../database-per-service/" class="btn btn-xs btn-link">
+        Database Per Microservice Pattern
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="distributed-transaction-patterns">Distributed Transaction Patterns</h1>
+<p>In microservices architecture, we usually have the same problem. How to handle
+distributed transactions?</p>
+<p>As contrary to monolithic applications, where we can use a single database,
+microservices can have different databases. So managing transactions, rollbacks,
+and consistency across multiple services becomes a challenge.</p>
+<h2 id="challenges">Challenges</h2>
+<ul>
+<li><strong>Data Consistency</strong>: Ensuring that all services have a consistent view of the
+  data.</li>
+<li><strong>Idempotency</strong>: Ensuring that operations can be retried without causing
+  unintended side effects.</li>
+<li><strong>Failure Handling</strong>: Dealing with partial failures where some services succeed
+  while others fail.</li>
+</ul>
+<h2 id="outbox-pattern">Outbox pattern</h2>
+<p>It store the event in same database as the original data with a single
+transaction. Then, create an event with CDC
+(<a href="../event-driven/#database-events">Change Data Capture</a>) to send
+the event to the message broker, which later can be consumed by other services.</p>
+<h2 id="raw-events-pattern">Raw events pattern</h2>
+<p>All changes in a table are monitored via CDC, and events are sent to the message
+broker.</p>
+<ul>
+<li>Reading yourself pattern: services create events, to be consumed for
+  themselves and possible other services.</li>
+</ul>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../event-driven/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../event-driven/" class="btn btn-xs btn-link">
+        Event Driven
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../database-per-service/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../database-per-service/" class="btn btn-xs btn-link">
+        Database Per Microservice Pattern
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content"><p>Copyright &copy; 2025 <a href="https://github.com/McLargo">Javier Gil</a>.</p>
+  <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>

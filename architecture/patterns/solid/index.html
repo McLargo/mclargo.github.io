@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Javier Gil">
+    <link rel="canonical" href="https://mclargo.github.io/architecture/patterns/solid/">
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Solid Principles - My technical wiki</title>
+    <link href="../../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/highlight.css">
+    <link href="../../../assets/css/extra.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "SOLID Principles", url: "#_top", children: [
+              {title: "Single-Responsibility Principle", url: "#single-responsibility-principle" },
+              {title: "Open/Closed Principle", url: "#openclosed-principle" },
+              {title: "Liskov Substitution Principle", url: "#liskov-substitution-principle" },
+              {title: "Interface Segregation Principle", url: "#interface-segregation-principle" },
+              {title: "Dependency Inversion Principle", url: "#dependency-inversion-principle" },
+              {title: "References", url: "#references" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../state-pattern/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../state-pattern/" class="btn btn-xs btn-link">
+        State Pattern
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../monolithic/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../monolithic/" class="btn btn-xs btn-link">
+        Monolithic Architecture
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="solid-principles">SOLID Principles</h1>
+<p>SOLID is an acronym of the first five object-oriented design (OOD) principles.
+These principles establish practices that lend to developing software with
+considerations for maintaining and extending as the project grows. Adopting
+these practices can also contribute to avoiding code smells, refactoring code,
+and Agile or Adaptive software development.</p>
+<h2 id="single-responsibility-principle">Single-Responsibility Principle</h2>
+<p>A class should have only a single responsibility. Only one potential change in
+the software’s specification should be able to affect the specification of the
+class.</p>
+<h2 id="openclosed-principle">Open/Closed Principle</h2>
+<p>Software entities should be open for EXTENSION, but closed for MODIFICATION.
+Allow behavior to be extended without modifying the source code.</p>
+<h2 id="liskov-substitution-principle">Liskov Substitution Principle</h2>
+<p>Objects in a program should be replaceable with instances of their subtypes
+without altering the correctness of that program.</p>
+<h2 id="interface-segregation-principle">Interface Segregation Principle</h2>
+<p>Many client-specific interfaces are better than one general-purpose interface.
+No client should be forced to depend on methods it does not use.</p>
+<h2 id="dependency-inversion-principle">Dependency Inversion Principle</h2>
+<p>One should depend upon abstractions, not concretions.</p>
+<ul>
+<li>High-level modules should not depend on low-level modules. Both should depend
+  on abstractions.</li>
+<li>Abstractions should not depend on details. Details should depend on
+  abstractions.</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://okso.app/showcase/solid">Sketches for the SOLID principles</a></li>
+<li><a href="https://forreya.medium.com/the-solid-principles-writing-scalable-maintainable-code-13040ada3bca">Writing code with SOLID</a></li>
+<li><a href="https://blog.stackademic.com/mastering-solid-principles-with-go-examples-71db32b8c990">SOLID in Golang</a></li>
+</ul>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../state-pattern/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../state-pattern/" class="btn btn-xs btn-link">
+        State Pattern
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../monolithic/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../monolithic/" class="btn btn-xs btn-link">
+        Monolithic Architecture
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content"><p>Copyright &copy; 2025 <a href="https://github.com/McLargo">Javier Gil</a>.</p>
+  <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>

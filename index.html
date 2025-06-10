@@ -102,46 +102,89 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 </li>
 <li class="wm-toc-li-nested collapse">
   <ul class="wm-toctree">
-      <li class="wm-toc-li wm-toc-lev2 "><a href="architecture/abs/" class="wm-article-link wm-toc-text">Adaptive Bitrate Streaming</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="architecture/api-gateway/" class="wm-article-link wm-toc-text">API Gateway</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="architecture/architecture-patterns/" class="wm-article-link wm-toc-text">Architecture Patterns</a>
-</li>
       <li class="wm-toc-li wm-toc-lev2 "><a href="architecture/architecture-decision-record/" class="wm-article-link wm-toc-text">Architecture Decision Records</a>
 </li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="architecture/asynchronous-messaging/" class="wm-article-link wm-toc-text">Asynchronous Messaging</a>
+      <li class="wm-toc-li wm-toc-lev2 wm-toc-opener"><span class="wm-toc-text">Communication</span>
 </li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="architecture/concurrency-patterns/" class="wm-article-link wm-toc-text">Concurrency patterns</a>
+<li class="wm-toc-li-nested collapse">
+  <ul class="wm-toctree">
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/communication/abs/" class="wm-article-link wm-toc-text">Adaptive Bitrate Streaming</a>
 </li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="architecture/data-storage/" class="wm-article-link wm-toc-text">Data Storage</a>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/communication/asynchronous-messaging/" class="wm-article-link wm-toc-text">Asynchronous Messaging</a>
 </li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="architecture/database-patterns/" class="wm-article-link wm-toc-text">Database Patterns</a>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/communication/grpc/" class="wm-article-link wm-toc-text">gRPC</a>
 </li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="architecture/design-patterns/" class="wm-article-link wm-toc-text">Design Patterns</a>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/communication/rest/" class="wm-article-link wm-toc-text">REST</a>
 </li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="architecture/distributed-transaction-patterns/" class="wm-article-link wm-toc-text">Distributed Transactions Patterns</a>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/communication/websocket/" class="wm-article-link wm-toc-text">Websocket</a>
 </li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="architecture/event-driven/" class="wm-article-link wm-toc-text">Event Driven</a>
+  </ul>
 </li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="architecture/grpc/" class="wm-article-link wm-toc-text">gRPC</a>
+
+      <li class="wm-toc-li wm-toc-lev2 wm-toc-opener"><span class="wm-toc-text">Microservices</span>
 </li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="architecture/hexagonal-architecture/" class="wm-article-link wm-toc-text">Hexagonal Architecture</a>
+<li class="wm-toc-li-nested collapse">
+  <ul class="wm-toctree">
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/microservices/" class="wm-article-link wm-toc-text">101 Microservices</a>
 </li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="architecture/microservices/" class="wm-article-link wm-toc-text">Microservices</a>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/aggregator/" class="wm-article-link wm-toc-text">Aggregator Pattern</a>
 </li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="architecture/monolithic/" class="wm-article-link wm-toc-text">Monolithic Architecture</a>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/anti-corruption-layer/" class="wm-article-link wm-toc-text">Anti-Corruption Layer</a>
 </li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="architecture/rest/" class="wm-article-link wm-toc-text">REST</a>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/api-gateway/" class="wm-article-link wm-toc-text">API Gateway</a>
 </li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="architecture/service-mesh/" class="wm-article-link wm-toc-text">Service Mesh</a>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/bff/" class="wm-article-link wm-toc-text">Backend For Frontend</a>
 </li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="architecture/solid/" class="wm-article-link wm-toc-text">Solid Principles</a>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/bulkhead/" class="wm-article-link wm-toc-text">Bulkhead Pattern</a>
 </li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="architecture/state-pattern/" class="wm-article-link wm-toc-text">State Pattern</a>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/circuit-breaker/" class="wm-article-link wm-toc-text">Circuit Breaker Pattern</a>
 </li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="architecture/websocket/" class="wm-article-link wm-toc-text">Websocket</a>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/cqrs/" class="wm-article-link wm-toc-text">Command Query Responsibility Segregation Pattern</a>
 </li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/database-per-service/" class="wm-article-link wm-toc-text">Database Per Microservice Pattern</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/distributed-transaction-patterns/" class="wm-article-link wm-toc-text">Distributed Transactions Patterns</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/event-driven/" class="wm-article-link wm-toc-text">Event Driven</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/saga-pattern/" class="wm-article-link wm-toc-text">Saga Pattern</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/service-mesh/" class="wm-article-link wm-toc-text">Service Mesh</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/sidecar/" class="wm-article-link wm-toc-text">Sidecar Pattern</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/strangler-fig/" class="wm-article-link wm-toc-text">Strangler Fig Pattern</a>
+</li>
+  </ul>
+</li>
+
+      <li class="wm-toc-li wm-toc-lev2 wm-toc-opener"><span class="wm-toc-text">Patterns</span>
+</li>
+<li class="wm-toc-li-nested collapse">
+  <ul class="wm-toctree">
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/patterns/concurrency-patterns/" class="wm-article-link wm-toc-text">Concurrency patterns</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/patterns/data-storage/" class="wm-article-link wm-toc-text">Data Storage</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/patterns/database-patterns/" class="wm-article-link wm-toc-text">Database Patterns</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/patterns/domain-driven/" class="wm-article-link wm-toc-text">Domain Driven Architecture</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/patterns/design-patterns/" class="wm-article-link wm-toc-text">Design Patterns</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/patterns/hexagonal-architecture/" class="wm-article-link wm-toc-text">Hexagonal Architecture</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/patterns/monolithic/" class="wm-article-link wm-toc-text">Monolithic Architecture</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/patterns/solid/" class="wm-article-link wm-toc-text">Solid Principles</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/patterns/state-pattern/" class="wm-article-link wm-toc-text">State Pattern</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/patterns/vertical-slice/" class="wm-article-link wm-toc-text">Vertical Slice</a>
+</li>
+  </ul>
+</li>
+
   </ul>
 </li>
 
@@ -368,5 +411,5 @@ github pages, making it 100% online.</p>
 </html>
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-06-09 14:24:56.918107+00:00
+Build Date UTC : 2025-06-10 10:36:26.663162+00:00
 -->

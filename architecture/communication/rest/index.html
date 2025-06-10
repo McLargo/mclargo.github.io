@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Javier Gil">
+    <link rel="canonical" href="https://mclargo.github.io/architecture/communication/rest/">
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>REST - My technical wiki</title>
+    <link href="../../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/highlight.css">
+    <link href="../../../assets/css/extra.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "REST", url: "#_top", children: [
+              {title: "RESTful API", url: "#restful-api" },
+              {title: "References", url: "#references" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../websocket/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../websocket/" class="btn btn-xs btn-link">
+        Websocket
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../grpc/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../grpc/" class="btn btn-xs btn-link">
+        gRPC
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="rest">REST</h1>
+<p>REST (Representational State Transfer) is an architectural style that defines a
+set of constraints to be used for creating web services. RESTful web services
+allow clients to access and manipulate resources using a uniform and predefined
+set of stateless operations. It uses standard HTTP methods (GET, POST, PUT,
+DELETE) to interact with resources.</p>
+<p>It is commonly used to build RESTful Apis. Design/develop good API from starters
+is important, as they can grow quickly and it is hard to change them later.
+Also, new developers can have a quicker ramp up to the project.</p>
+<h2 id="restful-api">RESTful API</h2>
+<h3 id="making-requests">Making Requests</h3>
+<p>Rest requires the client to send a request to the server to execute an action. A
+request is made up of:</p>
+<ul>
+<li>HTTP verb, which defines what kind of operation to perform.</li>
+<li>headers, which allows the client to pass along information about the request.</li>
+<li>path to a resource.</li>
+<li>message /payload containing data (optional).</li>
+</ul>
+<h4 id="http-verbs">HTTP Verbs</h4>
+<p>There are 4 basic HTTP verbs (commonly called CRUD) used in requests:</p>
+<ul>
+<li>GET: retrieve a specific resource (by id) or a collection of resources</li>
+<li>POST: create a new resource</li>
+<li>PUT: update a specific resource (by id)</li>
+<li>DELETE: remove a specific resource by id</li>
+</ul>
+<h4 id="headers-and-accept-parameters">Headers and Accept parameters</h4>
+<p>In the header of the request, you can specify the type of data you want to send
+or receive. Or any other metadata you want to pass along with the request, such
+as authentication token.</p>
+<h4 id="paths">Paths</h4>
+<p>A path to the resource you want to interact with. It is a string that follows
+the URL. Aside from the ids of the resources, it can contain parameters to
+filter, sort or paginate the results.</p>
+<h4 id="message-payload">Message / Payload</h4>
+<p>The message is the data you want to send to the server. It can be in different
+formats, such as JSON, XML, or form data. The format send is specified in the
+headers.</p>
+<h3 id="responses">Responses</h3>
+<h4 id="content-types">Content Types</h4>
+<p>When the server sends a response, it includes a content type header that tells
+the client what kind of data is being sent.</p>
+<h4 id="http-status-code">HTTP Status Code</h4>
+<p>There are several
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">HTTP status codes</a>
+that the server can send back to the client. They are divided into ranges:</p>
+<ul>
+<li>2XX -&gt; success codes range</li>
+<li>200 OK</li>
+<li>201 Created</li>
+<li>202 Accepted</li>
+<li>204 No Content</li>
+<li>3XX -&gt; redirect codes range</li>
+<li>4XX -&gt; client error codes range</li>
+<li>400 Bad Request</li>
+<li>401 Unauthorized</li>
+<li>403 Forbidden</li>
+<li>404 Not Found</li>
+<li>405 Method Not Allowed</li>
+<li>409 Conflict</li>
+<li>429 Too Many Requests</li>
+<li>5XX -&gt; server error codes range</li>
+</ul>
+<p>But, HTTP status codes are not enough to explain what went wrong. To help your
+API consumers, include a structured JSON error message, like:</p>
+<ul>
+<li>Error code: A machine-readable error code that identifies the specific error
+  condition.</li>
+<li>Error message: A human-readable message that provides a detailed explanation
+  of the error.</li>
+<li>Error context: Additional information related to the error, such as the
+  request ID, the request parameters that caused the error, or the field(s) in
+  the request that caused the error.</li>
+<li>Error links: URLs to resources or documentation that provide additional
+  information about the error and how it can be resolved.</li>
+<li>Timestamp: The time when the error occurred.</li>
+</ul>
+<h3 id="good-practices-restful-api">Good practices RESTful API</h3>
+<ul>
+<li>parametrize your API endpoints to version them. e.g. <code>/api/v1/users</code></li>
+<li>group your endpoints by resources and scopes (e.g. <code>/api/v1/users</code>,
+  <code>/api/v1/admin/users</code>)</li>
+<li>resources in plural. e.g. <code>/users</code>, <code>/products</code></li>
+<li>use <code>-</code> instead of <code>_</code></li>
+<li>don't use verbs, use names. Actions are implicit in HTTP methods</li>
+<li>basic structure</li>
+</ul>
+<pre><code class="language-text">GET ALL
+`api/&lt;resources&gt;`
+
+HTTP status code 200 OK for a successful GET of resource, or empty results.
+
+GET BY ID
+`api/&lt;resources&gt;/&lt;id&gt;`
+
+HTTP status code 200 OK for a successful GET of resource.
+HTTP status code 404 KO for a KO GET of a not found resource.
+
+POST
+`api/&lt;resources&gt;`
+
+If a resource has been created on the origin server, the response SHOULD be 201
+(Created) and contain an entity which describes the status of the request and
+refers to the new resource, and a Location header (see section 14.30).
+
+PUT
+`api/&lt;resources&gt;/&lt;id&gt;`
+
+HTTP status code 200 OK for a successful PUT of an update to an existing
+resource. No response body needed. (Per Section 9.6, 204 No Content is even more
+appropriate.)
+
+HTTP status code 400 Bad Request for an unsuccessful PUT, with natural-language
+text (such as English) in the response body that explains why the PUT failed.
+(RFC 2616 Section 10.4)
+</code></pre>
+<h3 id="secrets">Secrets</h3>
+<p>Never store unencrypted secrets in <code>.git</code> repositories. If a secret enters a
+repository, private or public, then it should be considered compromised.</p>
+<p><strong>Add sensitive files in <a href="https://github.com/github/gitignore/blob/main/Python.gitignore">.gitignore</a></strong></p>
+<p>Store secrets safely. Encrypting your secrets using common tools, such as git
+secret. Storing them within a git repository can be beneficial when working in
+teams as it keeps secrets synced.</p>
+<p>A better solution is to use a "Secrets as a service", such as AWS Secrets
+Manager, Vault, <a href="https://github.com/Infisical/infisical">infiscal</a>, Google
+Secrets Manager...and forget about secrets management.</p>
+<p>Good to implement a secret rotation policy. This is a good practice to avoid
+security issues.</p>
+<p>Finally, in pre-commit you can add a hook to check if there are secrets in the
+code you are trying to push to the repository.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="http://apistylebook.com/design/topics/">API Design</a></li>
+<li><a href="https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api">Pragmatic restful API</a></li>
+<li><a href="https://blog.dreamfactory.com/best-practices-for-naming-rest-api-endpoints/">Naming rest API endpoints</a></li>
+<li><a href="https://restfulapi.net/rest-put-vs-post/">PUT vs POST</a></li>
+</ul>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../websocket/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../websocket/" class="btn btn-xs btn-link">
+        Websocket
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../grpc/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../grpc/" class="btn btn-xs btn-link">
+        gRPC
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content"><p>Copyright &copy; 2025 <a href="https://github.com/McLargo">Javier Gil</a>.</p>
+  <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>
