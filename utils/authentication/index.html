@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta name="author" content="Javier Gil">
-    <link rel="canonical" href="https://mclargo.github.io/utils/daemon/">
+    <link rel="canonical" href="https://mclargo.github.io/utils/authentication/">
     <link rel="shortcut icon" href="../../img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>Daemon - My technical wiki</title>
+    <title>Authentication - My technical wiki</title>
     <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="../../css/base.css" rel="stylesheet">
@@ -33,9 +33,8 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "Linux Daemon", url: "#_top", children: [
-              {title: "How to create a daemon in linux", url: "#how-to-create-a-daemon-in-linux" },
-              {title: "References", url: "#references" },
+          {title: "Authentication Utilities", url: "#_top", children: [
+              {title: "Time-based one-time password (TOTP)", url: "#time-based-one-time-password-totp" },
           ]},
         ];
 
@@ -62,20 +61,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../db-table-indexes/" class="btn btn-xs btn-default pull-right">
+      <a href="../daemon/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../db-table-indexes/" class="btn btn-xs btn-link">
-        Database table indexes
+      <a href="../daemon/" class="btn btn-xs btn-link">
+        Daemon
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../authentication/" class="btn btn-xs btn-default pull-left">
+      <a href="../../project-management/work-remotely/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../authentication/" class="btn btn-xs btn-link">
-        Authentication
+        Previous</a><a href="../../project-management/work-remotely/" class="btn btn-xs btn-link">
+        Work Remotely
       </a>
     </div>
     
@@ -83,21 +82,18 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     
 
-    <h1 id="linux-daemon">Linux Daemon</h1>
-<h2 id="how-to-create-a-daemon-in-linux">How to create a daemon in linux</h2>
-<p>Create new file in path <code>/etc/init.d/</code></p>
-<p>Open and copy sample in url. Update some of the variables, like name description
-and path to python file. On python path, point to the python created in the
-virtualenv, so it will have installed corresponding libraries. <strong>All operations
-below may be required to be executed with sudo</strong></p>
-<p>Give writes privileges: <code>chmod +x /etc/init.d/&lt;daemon-name&gt; -v</code></p>
-<p>Reload daemon configuration: <code>systemctl daemon-reload</code></p>
-<p>Start service: <code>service &lt;daemon-name&gt; start</code></p>
-<h2 id="references">References</h2>
-<ul>
-<li><a href="https://www.scalescale.com/tips/nginx/create-linux-daemon-service/">Instructions</a></li>
-<li><a href="https://kitcharoenp.github.io/celery/2019/05/15/supervisor_running_on_startup.html">Running on startup</a></li>
-</ul>
+    <h1 id="authentication-utilities">Authentication Utilities</h1>
+<p>This document highlight some algorithms to authenticate users in a system.</p>
+<h2 id="time-based-one-time-password-totp">Time-based one-time password (TOTP)</h2>
+<p>It is an algorithm that generates a one time password based on the current time
+and a shared secret key. It is widely used in two-factor authentication (2FA)
+systems.</p>
+<p>Both client and server must share the secret key. The client generates the code
+based on the current time and the shared secret key, and sends it to the server.
+The server then generates their own code, and compares it with the code sent by
+the client. If they match, the authentication is successful.</p>
+<p>TOTP codes works only for certain period of time, usually 30 seconds. After
+that, the code is no longer valid and a new one is generated.</p>
 
   <br>
     
@@ -110,20 +106,20 @@ below may be required to be executed with sudo</strong></p>
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../db-table-indexes/" class="btn btn-xs btn-default pull-right">
+      <a href="../daemon/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../db-table-indexes/" class="btn btn-xs btn-link">
-        Database table indexes
+      <a href="../daemon/" class="btn btn-xs btn-link">
+        Daemon
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../authentication/" class="btn btn-xs btn-default pull-left">
+      <a href="../../project-management/work-remotely/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../authentication/" class="btn btn-xs btn-link">
-        Authentication
+        Previous</a><a href="../../project-management/work-remotely/" class="btn btn-xs btn-link">
+        Work Remotely
       </a>
     </div>
     
