@@ -1,332 +1,253 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="writer-html5" lang="en" >
 <head>
-  
-  
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mix of features, good practices, tools and utils useful in my professional environment">
-    <meta name="author" content="Javier Gil">
-    <link rel="canonical" href="https://mclargo.github.io/">
-    <link rel="shortcut icon" href="./img/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="Mix of features, good practices, tools and utils useful in my professional environment" /><meta name="author" content="Javier Gil" /><link rel="canonical" href="https://mclargo.github.io/" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
     <title>My technical wiki</title>
-    <link href="./css/bootstrap-3.3.7.min.css" rel="stylesheet">
-    <link href="./css/font-awesome-4.7.0.css" rel="stylesheet">
-    <link href="./css/base.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/highlight.css">
-    <link href="assets/css/extra.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="assets/css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Welcome to McLargo\u0027s technical wiki";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = "/";
+      </script>
+    
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <script src="js/html5shiv.min.js"></script>
     <![endif]-->
-
-    <script src="./js/jquery-3.2.1.min.js"></script>
-    <script src="./js/bootstrap-3.3.7.min.js"></script>
-    <script src="./js/highlight.pack.js"></script>
-    
-      <script src="./js/elasticlunr.min.js"></script>
-    
-    <base target="_top">
-    <script>
-      var base_url = '.';
-      var is_top_frame = (window === window.parent);
-        
-        var pageToc = [
-          {title: "Welcome to McLargo\u0027s technical wiki", url: "#_top", children: [
-              {title: "What you can find in here", url: "#what-you-can-find-in-here" },
-              {title: "Tools", url: "#tools" },
-              {title: "What you cannot find in here", url: "#what-you-cannot-find-in-here" },
-              {title: "References", url: "#references" },
-          ]},
-        ];
-
-    </script>
-    <script src="./js/base.js"></script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
-<body>
-<script>
-if (is_top_frame) { $('body').addClass('wm-top-page'); }
-</script>
+<body class="wy-body-for-nav" role="document">
 
-<nav class="navbar wm-page-top-frame">
-  <div class="container-fluid wm-top-container">
-    
-    <div class="wm-top-tool pull-right wm-vcenter">
-      <form class="dropdown wm-vcentered" id="wm-search-form" action="./search.html">
-        
-        <button id="wm-search-show" class="btn btn-sm btn-default" type="submit"
-          ><i class="fa fa-search" aria-hidden="true"></i></button>
-
-        <div class="input-group input-group-sm wm-top-search">
-          <input type="text" name="q" class="form-control" id="mkdocs-search-query" placeholder="Search" autocomplete="off">
-          <span class="input-group-btn" role="search">
-            
-            <button class="btn btn-default dropdown-toggle collapse" data-toggle="dropdown" type="button"><span class="caret"></span></button>
-            <ul id="mkdocs-search-results" class="dropdown-menu dropdown-menu-right"></ul>
-            <button id="wm-search-go" class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-          </span>
-        </div>
-      </form>
-    </div>
-
-    
-    <div class="wm-top-tool wm-vcenter pull-right wm-small-left">
-      <button id="wm-toc-button" type="button" class="btn btn-sm btn-default wm-vcentered"><i class="fa fa-th-list" aria-hidden="true"></i></button>
-    </div>
-
-    
-    
-
-    
-    <a href="" class="wm-top-brand wm-top-link wm-vcenter">
-      
-      <div class="wm-top-title">
-        My technical wiki<br>
-        
-          <span class="wm-top-version">2025.06</span>
-        
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> My technical wiki
+        </a>
+        <div class="version">
+          2025.06
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
-    </a>
-  </div>
-</nav>
 
-  <div id="main-content" class="wm-page-top-frame">
-    
-<nav class="wm-toc-pane">
-  
-  <ul class="wm-toctree">
-        <li class="wm-toc-li wm-toc-lev1 wm-toc-opener"><span class="wm-toc-text">Architecture</span>
-</li>
-<li class="wm-toc-li-nested collapse">
-  <ul class="wm-toctree">
-      <li class="wm-toc-li wm-toc-lev2 "><a href="architecture/architecture-decision-record/" class="wm-article-link wm-toc-text">Architecture Decision Records</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 wm-toc-opener"><span class="wm-toc-text">Communication</span>
-</li>
-<li class="wm-toc-li-nested collapse">
-  <ul class="wm-toctree">
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/communication/abs/" class="wm-article-link wm-toc-text">Adaptive Bitrate Streaming</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/communication/asynchronous-messaging/" class="wm-article-link wm-toc-text">Asynchronous Messaging</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/communication/grpc/" class="wm-article-link wm-toc-text">gRPC</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/communication/rest/" class="wm-article-link wm-toc-text">REST</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/communication/websocket/" class="wm-article-link wm-toc-text">Websocket</a>
-</li>
-  </ul>
-</li>
-
-      <li class="wm-toc-li wm-toc-lev2 wm-toc-opener"><span class="wm-toc-text">Microservices</span>
-</li>
-<li class="wm-toc-li-nested collapse">
-  <ul class="wm-toctree">
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/microservices/" class="wm-article-link wm-toc-text">101 Microservices</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/aggregator/" class="wm-article-link wm-toc-text">Aggregator Pattern</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/anti-corruption-layer/" class="wm-article-link wm-toc-text">Anti-Corruption Layer</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/api-gateway/" class="wm-article-link wm-toc-text">API Gateway</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/bff/" class="wm-article-link wm-toc-text">Backend For Frontend</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/bulkhead/" class="wm-article-link wm-toc-text">Bulkhead Pattern</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/circuit-breaker/" class="wm-article-link wm-toc-text">Circuit Breaker Pattern</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/cqrs/" class="wm-article-link wm-toc-text">Command Query Responsibility Segregation Pattern</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/database-per-service/" class="wm-article-link wm-toc-text">Database Per Microservice Pattern</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/distributed-transaction-patterns/" class="wm-article-link wm-toc-text">Distributed Transactions Patterns</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/event-driven/" class="wm-article-link wm-toc-text">Event Driven</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/saga-pattern/" class="wm-article-link wm-toc-text">Saga Pattern</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/service-mesh/" class="wm-article-link wm-toc-text">Service Mesh</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/sidecar/" class="wm-article-link wm-toc-text">Sidecar Pattern</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/microservices/strangler-fig/" class="wm-article-link wm-toc-text">Strangler Fig Pattern</a>
-</li>
-  </ul>
-</li>
-
-      <li class="wm-toc-li wm-toc-lev2 wm-toc-opener"><span class="wm-toc-text">Patterns</span>
-</li>
-<li class="wm-toc-li-nested collapse">
-  <ul class="wm-toctree">
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/patterns/concurrency-patterns/" class="wm-article-link wm-toc-text">Concurrency patterns</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/patterns/data-storage/" class="wm-article-link wm-toc-text">Data Storage</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/patterns/database-patterns/" class="wm-article-link wm-toc-text">Database Patterns</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/patterns/domain-driven/" class="wm-article-link wm-toc-text">Domain Driven Architecture</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/patterns/design-patterns/" class="wm-article-link wm-toc-text">Design Patterns</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/patterns/hexagonal-architecture/" class="wm-article-link wm-toc-text">Hexagonal Architecture</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/patterns/monolithic/" class="wm-article-link wm-toc-text">Monolithic Architecture</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/patterns/solid/" class="wm-article-link wm-toc-text">Solid Principles</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/patterns/state-pattern/" class="wm-article-link wm-toc-text">State Pattern</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="architecture/patterns/vertical-slice/" class="wm-article-link wm-toc-text">Vertical Slice</a>
-</li>
-  </ul>
-</li>
-
-  </ul>
-</li>
-
-        <li class="wm-toc-li wm-toc-lev1 wm-toc-opener"><span class="wm-toc-text">DevOps</span>
-</li>
-<li class="wm-toc-li-nested collapse">
-  <ul class="wm-toctree">
-      <li class="wm-toc-li wm-toc-lev2 "><a href="devops/continuous-integration/" class="wm-article-link wm-toc-text">Continuous Integration</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="devops/deployment-strategies/" class="wm-article-link wm-toc-text">Deployment Strategies</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="devops/docker/" class="wm-article-link wm-toc-text">Docker</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="devops/features-toggles/" class="wm-article-link wm-toc-text">Features Toggles</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="devops/helm/" class="wm-article-link wm-toc-text">Helm Charts</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="devops/k8s/" class="wm-article-link wm-toc-text">Kubernetes</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="devops/load-shedding/" class="wm-article-link wm-toc-text">Load Shedding</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="devops/observability/" class="wm-article-link wm-toc-text">Observability</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="devops/serverless/" class="wm-article-link wm-toc-text">Serverless Computing</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="devops/versioning/" class="wm-article-link wm-toc-text">Versioning</a>
-</li>
-  </ul>
-</li>
-
-        <li class="wm-toc-li wm-toc-lev1 wm-toc-opener"><span class="wm-toc-text">Machine Learning</span>
-</li>
-<li class="wm-toc-li-nested collapse">
-  <ul class="wm-toctree">
-      <li class="wm-toc-li wm-toc-lev2 "><a href="machine-learning/algorithms/" class="wm-article-link wm-toc-text">Algorithms</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="machine-learning/deep-learning/" class="wm-article-link wm-toc-text">Deep Learning</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="machine-learning/fundamentals/" class="wm-article-link wm-toc-text">Fundamentals</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="machine-learning/input-data/" class="wm-article-link wm-toc-text">Input Data</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="machine-learning/responsibilities/" class="wm-article-link wm-toc-text">Responsibilities</a>
-</li>
-  </ul>
-</li>
-
-        <li class="wm-toc-li wm-toc-lev1 wm-toc-opener"><span class="wm-toc-text">Programming</span>
-</li>
-<li class="wm-toc-li-nested collapse">
-  <ul class="wm-toctree">
-      <li class="wm-toc-li wm-toc-lev2 "><a href="programming/algorithm-complexity/" class="wm-article-link wm-toc-text">Algorithm Complexity</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="programming/conventional-commits/" class="wm-article-link wm-toc-text">Conventional Commits</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="programming/development-workflows/" class="wm-article-link wm-toc-text">Development Workflows</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="programming/django/" class="wm-article-link wm-toc-text">Django</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="programming/fastapi/" class="wm-article-link wm-toc-text">FastApi</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="programming/flask/" class="wm-article-link wm-toc-text">Flask</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="programming/golang/" class="wm-article-link wm-toc-text">Golang</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="programming/openapi/" class="wm-article-link wm-toc-text">OpenAPI Specification</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="programming/python/" class="wm-article-link wm-toc-text">Python</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="programming/sqlalchemy/" class="wm-article-link wm-toc-text">SQLAlchemy</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="programming/virtualenvs/" class="wm-article-link wm-toc-text">Virtualenvs</a>
-</li>
-  </ul>
-</li>
-
-        <li class="wm-toc-li wm-toc-lev1 wm-toc-opener"><span class="wm-toc-text">Project Management</span>
-</li>
-<li class="wm-toc-li-nested collapse">
-  <ul class="wm-toctree">
-      <li class="wm-toc-li wm-toc-lev2 "><a href="project-management/c4-model/" class="wm-article-link wm-toc-text">C4 Model</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="project-management/diagram-flows/" class="wm-article-link wm-toc-text">Diagram Flows</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="project-management/scrum/" class="wm-article-link wm-toc-text">SCRUM</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="project-management/tech-lead/" class="wm-article-link wm-toc-text">Technical Leader</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="project-management/waterfall-methodology/" class="wm-article-link wm-toc-text">Waterfall Methodology</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="project-management/work-remotely/" class="wm-article-link wm-toc-text">Work Remotely</a>
-</li>
-  </ul>
-</li>
-
-        <li class="wm-toc-li wm-toc-lev1 wm-toc-opener"><span class="wm-toc-text">Utils</span>
-</li>
-<li class="wm-toc-li-nested collapse">
-  <ul class="wm-toctree">
-      <li class="wm-toc-li wm-toc-lev2 "><a href="utils/authentication/" class="wm-article-link wm-toc-text">Authentication</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="utils/daemon/" class="wm-article-link wm-toc-text">Daemon</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="utils/db-table-indexes/" class="wm-article-link wm-toc-text">Database table indexes</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="utils/databases/" class="wm-article-link wm-toc-text">Databases</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="utils/ide/" class="wm-article-link wm-toc-text">IDE</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="utils/regex/" class="wm-article-link wm-toc-text">Regex</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="utils/supervisor/" class="wm-article-link wm-toc-text">Supervisor</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="utils/task-runner/" class="wm-article-link wm-toc-text">Task runner</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="utils/transmission/" class="wm-article-link wm-toc-text">Transmission</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="utils/testing/" class="wm-article-link wm-toc-text">Testing</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="utils/ubuntu/" class="wm-article-link wm-toc-text">Ubuntu</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="utils/working-environment/" class="wm-article-link wm-toc-text">Working Environment</a>
-</li>
-  </ul>
-</li>
-
-  </ul>
-</nav>
-
-    <div class="wm-content-pane">
-      <iframe class="wm-article" name="article"></iframe>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Architecture</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="architecture/architecture-decision-record/">Architecture Decision Records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Communication</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/communication/abs/">Adaptive Bitrate Streaming</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/communication/asynchronous-messaging/">Asynchronous Messaging</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/communication/grpc/">gRPC</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/communication/rest/">REST</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/communication/websocket/">Websocket</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Microservices</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/microservices/microservices/">101 Microservices</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/microservices/aggregator/">Aggregator Pattern</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/microservices/anti-corruption-layer/">Anti-Corruption Layer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/microservices/api-gateway/">API Gateway</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/microservices/bff/">Backend For Frontend</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/microservices/bulkhead/">Bulkhead Pattern</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/microservices/circuit-breaker/">Circuit Breaker Pattern</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/microservices/cqrs/">Command Query Responsibility Segregation Pattern</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/microservices/database-per-service/">Database Per Microservice Pattern</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/microservices/distributed-transaction-patterns/">Distributed Transactions Patterns</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/microservices/event-driven/">Event Driven</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/microservices/saga-pattern/">Saga Pattern</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/microservices/service-mesh/">Service Mesh</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/microservices/sidecar/">Sidecar Pattern</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/microservices/strangler-fig/">Strangler Fig Pattern</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Patterns</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/patterns/concurrency-patterns/">Concurrency patterns</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/patterns/data-storage/">Data Storage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/patterns/database-patterns/">Database Patterns</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/patterns/domain-driven/">Domain Driven Architecture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/patterns/design-patterns/">Design Patterns</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/patterns/hexagonal-architecture/">Hexagonal Architecture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/patterns/monolithic/">Monolithic Architecture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/patterns/solid/">Solid Principles</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/patterns/state-pattern/">State Pattern</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="architecture/patterns/vertical-slice/">Vertical Slice</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">DevOps</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="devops/continuous-integration/">Continuous Integration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="devops/deployment-strategies/">Deployment Strategies</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="devops/docker/">Docker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="devops/features-toggles/">Features Toggles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="devops/helm/">Helm Charts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="devops/k8s/">Kubernetes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="devops/load-shedding/">Load Shedding</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="devops/observability/">Observability</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="devops/serverless/">Serverless Computing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="devops/versioning/">Versioning</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Machine Learning</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="machine-learning/algorithms/">Algorithms</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="machine-learning/deep-learning/">Deep Learning</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="machine-learning/fundamentals/">Fundamentals</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="machine-learning/input-data/">Input Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="machine-learning/responsibilities/">Responsibilities</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Programming</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="programming/algorithm-complexity/">Algorithm Complexity</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="programming/conventional-commits/">Conventional Commits</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="programming/development-workflows/">Development Workflows</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="programming/django/">Django</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="programming/fastapi/">FastApi</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="programming/flask/">Flask</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="programming/golang/">Golang</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="programming/openapi/">OpenAPI Specification</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="programming/python/">Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="programming/sqlalchemy/">SQLAlchemy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="programming/virtualenvs/">Virtualenvs</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project Management</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="project-management/c4-model/">C4 Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="project-management/diagram-flows/">Diagram Flows</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="project-management/scrum/">SCRUM</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="project-management/tech-lead/">Technical Leader</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="project-management/waterfall-methodology/">Waterfall Methodology</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="project-management/work-remotely/">Work Remotely</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Utils</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="utils/authentication/">Authentication</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="utils/daemon/">Daemon</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="utils/db-table-indexes/">Database table indexes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="utils/databases/">Databases</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="utils/ide/">IDE</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="utils/regex/">Regex</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="utils/supervisor/">Supervisor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="utils/task-runner/">Task runner</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="utils/transmission/">Transmission</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="utils/testing/">Testing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="utils/ubuntu/">Ubuntu</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="utils/working-environment/">Working Environment</a>
+                  </li>
+              </ul>
+      </div>
     </div>
-  </div>
+    </nav>
 
-<div class="container-fluid wm-page-content">
-  <a name="_top"></a>
-    
-
-    
-
-    <h1 id="welcome-to-mclargos-technical-wiki">Welcome to McLargo's technical wiki</h1>
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">My technical wiki</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Welcome to McLargo's technical wiki</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="welcome-to-mclargos-technical-wiki">Welcome to McLargo's technical wiki</h1>
 <h2 id="what-you-can-find-in-here">What you can find in here</h2>
 <p>This <strong>MUST</strong> be a dynamic documentation, constantly updated. Any new tool learn
 or good practice to include in my daily work must have a space in this project.
@@ -405,20 +326,49 @@ github pages, making it 100% online.</p>
 <li><a href="https://mkdocstrings.github.io/">mkdocs</a></li>
 <li><a href="https://github.com/mkdocs/catalog">mkdocs catalog</a></li>
 </ul>
+              
+            </div>
+          </div><footer>
 
-  <br>
-    
+  <hr/>
 
-    <br>
-</div>
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright &copy; 2025 <a href="https://github.com/McLargo">Javier Gil</a>.</p>
+  </div>
 
-<footer class="container-fluid wm-page-content"><p>Copyright &copy; 2025 <a href="https://github.com/McLargo">Javier Gil</a>.</p>
-  <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
 
 </body>
 </html>
+
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-06-23 13:39:30.451774+00:00
+Build Date UTC : 2025-06-25 08:36:53.057286+00:00
 -->

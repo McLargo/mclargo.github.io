@@ -1,90 +1,254 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="writer-html5" lang="en" >
 <head>
-  
-  
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta name="author" content="Javier Gil">
-    <link rel="canonical" href="https://mclargo.github.io/utils/ide/">
-    <link rel="shortcut icon" href="../../img/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Javier Gil" /><link rel="canonical" href="https://mclargo.github.io/utils/ide/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
     <title>IDE - My technical wiki</title>
-    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
-    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
-    <link href="../../css/base.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/highlight.css">
-    <link href="../../assets/css/extra.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-
-    <script src="../../js/jquery-3.2.1.min.js"></script>
-    <script src="../../js/bootstrap-3.3.7.min.js"></script>
-    <script src="../../js/highlight.pack.js"></script>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/css/extra.css" rel="stylesheet" />
     
-    <base target="_top">
-    <script>
-      var base_url = '../..';
-      var is_top_frame = false;
-        
-        var pageToc = [
-          {title: "IDE (Integrated Development Environment)", url: "#_top", children: [
-              {title: "Sublime", url: "#sublime" },
-              {title: "VS Code", url: "#vs-code" },
-              {title: "References", url: "#references" },
-          ]},
-        ];
-
-    </script>
-    <script src="../../js/base.js"></script> 
+      <script>
+        // Current page data
+        var mkdocs_page_name = "IDE";
+        var mkdocs_page_input_path = "utils/ide.md";
+        var mkdocs_page_url = "/utils/ide/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
-<body>
-<script>
-if (is_top_frame) { $('body').addClass('wm-top-page'); }
-</script>
+<body class="wy-body-for-nav" role="document">
 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> My technical wiki
+        </a>
+        <div class="version">
+          2025.06
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
 
-
-<div class="container-fluid wm-page-content">
-  <a name="_top"></a>
-    
-
-    
-    
-      
-    
-
-  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
-    
-    <div class="wm-article-nav pull-right">
-      <a href="../regex/" class="btn btn-xs btn-default pull-right">
-        Next
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-      </a>
-      <a href="../regex/" class="btn btn-xs btn-link">
-        Regex
-      </a>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Architecture</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../architecture/architecture-decision-record/">Architecture Decision Records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Communication</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/communication/abs/">Adaptive Bitrate Streaming</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/communication/asynchronous-messaging/">Asynchronous Messaging</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/communication/grpc/">gRPC</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/communication/rest/">REST</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/communication/websocket/">Websocket</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Microservices</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/microservices/microservices/">101 Microservices</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/microservices/aggregator/">Aggregator Pattern</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/microservices/anti-corruption-layer/">Anti-Corruption Layer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/microservices/api-gateway/">API Gateway</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/microservices/bff/">Backend For Frontend</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/microservices/bulkhead/">Bulkhead Pattern</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/microservices/circuit-breaker/">Circuit Breaker Pattern</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/microservices/cqrs/">Command Query Responsibility Segregation Pattern</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/microservices/database-per-service/">Database Per Microservice Pattern</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/microservices/distributed-transaction-patterns/">Distributed Transactions Patterns</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/microservices/event-driven/">Event Driven</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/microservices/saga-pattern/">Saga Pattern</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/microservices/service-mesh/">Service Mesh</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/microservices/sidecar/">Sidecar Pattern</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/microservices/strangler-fig/">Strangler Fig Pattern</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Patterns</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/patterns/concurrency-patterns/">Concurrency patterns</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/patterns/data-storage/">Data Storage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/patterns/database-patterns/">Database Patterns</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/patterns/domain-driven/">Domain Driven Architecture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/patterns/design-patterns/">Design Patterns</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/patterns/hexagonal-architecture/">Hexagonal Architecture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/patterns/monolithic/">Monolithic Architecture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/patterns/solid/">Solid Principles</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/patterns/state-pattern/">State Pattern</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../architecture/patterns/vertical-slice/">Vertical Slice</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">DevOps</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../devops/continuous-integration/">Continuous Integration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../devops/deployment-strategies/">Deployment Strategies</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../devops/docker/">Docker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../devops/features-toggles/">Features Toggles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../devops/helm/">Helm Charts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../devops/k8s/">Kubernetes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../devops/load-shedding/">Load Shedding</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../devops/observability/">Observability</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../devops/serverless/">Serverless Computing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../devops/versioning/">Versioning</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Machine Learning</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../machine-learning/algorithms/">Algorithms</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../machine-learning/deep-learning/">Deep Learning</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../machine-learning/fundamentals/">Fundamentals</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../machine-learning/input-data/">Input Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../machine-learning/responsibilities/">Responsibilities</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Programming</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../programming/algorithm-complexity/">Algorithm Complexity</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../programming/conventional-commits/">Conventional Commits</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../programming/development-workflows/">Development Workflows</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../programming/django/">Django</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../programming/fastapi/">FastApi</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../programming/flask/">Flask</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../programming/golang/">Golang</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../programming/openapi/">OpenAPI Specification</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../programming/python/">Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../programming/sqlalchemy/">SQLAlchemy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../programming/virtualenvs/">Virtualenvs</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project Management</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project-management/c4-model/">C4 Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project-management/diagram-flows/">Diagram Flows</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project-management/scrum/">SCRUM</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project-management/tech-lead/">Technical Leader</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project-management/waterfall-methodology/">Waterfall Methodology</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project-management/work-remotely/">Work Remotely</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Utils</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../daemon/">Daemon</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../db-table-indexes/">Database table indexes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../databases/">Databases</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">IDE</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../regex/">Regex</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../supervisor/">Supervisor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../task-runner/">Task runner</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../transmission/">Transmission</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ubuntu/">Ubuntu</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../working-environment/">Working Environment</a>
+                  </li>
+              </ul>
+      </div>
     </div>
-    
-    <div class="wm-article-nav">
-      <a href="../databases/" class="btn btn-xs btn-default pull-left">
-        <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../databases/" class="btn btn-xs btn-link">
-        Databases
-      </a>
-    </div>
-    
-  </div>
+    </nav>
 
-    
-
-    <h1 id="ide-integrated-development-environment">IDE (Integrated Development Environment)</h1>
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">My technical wiki</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Utils</li>
+      <li class="breadcrumb-item active">IDE</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="ide-integrated-development-environment">IDE (Integrated Development Environment)</h1>
 <p>An IDE, or Integrated Development Environment, enables programmers to
 consolidate the different aspects of writing a computer program. It helps you
 editing your source code, debugging, and auto-completing.</p>
@@ -101,43 +265,52 @@ it includes a terminal, and it is very fast.</p>
 <li><a href="https://fredrikaverpil.github.io/posts/2016-05-20-my-sublime-3-setup/">Sublime setup</a></li>
 <li><a href="https://gist.github.com/McLargo/ae633d1ff481c20c21433074169d283c#file-sublime-cheatsheet">Sublime cheatsheet</a></li>
 </ul>
-
-  <br>
-    
-
-    
-    
-      
-    
-
-  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
-    
-    <div class="wm-article-nav pull-right">
-      <a href="../regex/" class="btn btn-xs btn-default pull-right">
-        Next
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-      </a>
-      <a href="../regex/" class="btn btn-xs btn-link">
-        Regex
-      </a>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../databases/" class="btn btn-neutral float-left" title="Databases"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../regex/" class="btn btn-neutral float-right" title="Regex">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
-    
-    <div class="wm-article-nav">
-      <a href="../databases/" class="btn btn-xs btn-default pull-left">
-        <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../databases/" class="btn btn-xs btn-link">
-        Databases
-      </a>
-    </div>
-    
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright &copy; 2025 <a href="https://github.com/McLargo">Javier Gil</a>.</p>
   </div>
 
-    <br>
-</div>
-
-<footer class="container-fluid wm-page-content"><p>Copyright &copy; 2025 <a href="https://github.com/McLargo">Javier Gil</a>.</p>
-  <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../databases/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../regex/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
 
 </body>
 </html>
