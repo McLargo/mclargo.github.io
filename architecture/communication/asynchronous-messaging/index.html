@@ -112,6 +112,8 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../patterns/monolithic/">Monolithic Architecture</a>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../patterns/retry-mechanism/">Retry Mechanism</a>
+                </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../patterns/solid/">Solid Principles</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../patterns/state-pattern/">State Pattern</a>
@@ -251,27 +253,44 @@
               
                 <h1 id="asynchronous-messaging">Asynchronous Messaging</h1>
 <p>An asynchronous messaging system is a system that allows communication between
-two or more parties without the need for the sender to wait for the receiver to
-respond. The sender sends the message and continues with its own processing. The
-receiver receives the message and processes it. The receiver can then send a
-response message to the sender, which can be processed by the sender. Producer
-and consumer are different processes. There are two main messaging patterns:
-message queuing and publish/subscribe.</p>
+two or more applications in your system without the need for the sender to wait
+for the receiver to respond.</p>
+<p>The sender sends the message and continues with its own processing. The receiver
+receives the message and processes it. The receiver can then send an ACK
+response message to the sender, which can be processed by the sender.</p>
+<p>This is used in
+<a href="../../microservices/microservices/">microservices architectures</a> to decouple
+services and applications.</p>
+<p>A key concept in asynchronous communication is that
+<a href="../../patterns/retry-mechanism/">messages consumption must be idempotent</a>,
+meaning that the same message can be processed multiple times without causing
+unintended side effects, and keeping the system in the same state.</p>
+<p>There are two main messaging patterns: message queuing and publish/subscribe.</p>
 <h2 id="message-queuing">Message queuing</h2>
 <p>Multiple producers can send message to the same queue, but once the message is
 consumed, is removed. Only one consumer consume a specific message.</p>
 <h2 id="publishsubscribe">Publish/subscribe</h2>
-<p>Multiple produced can publish a message to a topic, and several consumers can
+<p>Multiple producers can publish a message to a topic, and several consumers can
 subscribe to the same topic, consuming and handle the message in different ways.
 Messages can be ephemeral or durable. Used for
 <a href="../../microservices/event-driven/">event-driven architecture</a>.</p>
-<h2 id="rabbitmq">RabbitMQ</h2>
+<p>Usually the message have a schema, which is the contract defined between
+producers and consumers. Json and Avro are some of the most common formats used
+to define the schema.</p>
+<h2 id="tools">Tools</h2>
+<h3 id="rabbitmq">RabbitMQ</h3>
 <p>RabbitMQ supports classic message queuing out of the box. A developer defines
 named queues, and then publishers can send messages to that named queue.
-Consumers, in turn, use the same queue to retrieve messages to process them.</p>
-<h2 id="kafka-topics">Kafka Topics</h2>
+Consumers, in turns, use the same queue to retrieve messages to process them.</p>
+<h3 id="apache-kafka">Apache Kafka</h3>
 <p>Kafka doesn’t implement the notion of a queue. Instead, Kafka stores collections
 of records in categories called <strong>topics</strong>.</p>
+<p>Topics can be partitioned, allowing multiple consumers to read from the same
+topic in parallel.</p>
+<p>Topics have a retention policy, which means that messages are not deleted
+immediately after being consumed. Instead, they are kept for a certain period of
+time and in some scenarios, forever. So all messages can be consumed again by
+moving the consumer offset to the desired position of the topic.</p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://betterprogramming.pub/rabbitmq-vs-kafka-1ef22a041793">RabbitMQ vs Kafka</a></li>

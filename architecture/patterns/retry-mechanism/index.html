@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Javier Gil" /><link rel="canonical" href="https://mclargo.github.io/architecture/patterns/design-patterns/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Javier Gil" /><link rel="canonical" href="https://mclargo.github.io/architecture/patterns/retry-mechanism/" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>Design Patterns - My technical wiki</title>
+    <title>Retry Mechanism - My technical wiki</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,9 +13,9 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Design Patterns";
-        var mkdocs_page_input_path = "architecture/patterns/design-patterns.md";
-        var mkdocs_page_url = "/architecture/patterns/design-patterns/";
+        var mkdocs_page_name = "Retry Mechanism";
+        var mkdocs_page_input_path = "architecture/patterns/retry-mechanism.md";
+        var mkdocs_page_url = "/architecture/patterns/retry-mechanism/";
       </script>
     
     <!--[if lt IE 9]>
@@ -106,13 +106,13 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../domain-driven/">Domain Driven Architecture</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="#">Design Patterns</a>
+                <li class="toctree-l2"><a class="reference internal" href="../design-patterns/">Design Patterns</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../hexagonal-architecture/">Hexagonal Architecture</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../monolithic/">Monolithic Architecture</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../retry-mechanism/">Retry Mechanism</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Retry Mechanism</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../solid/">Solid Principles</a>
                 </li>
@@ -242,7 +242,7 @@
     <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Architecture</li>
           <li class="breadcrumb-item">Patterns</li>
-      <li class="breadcrumb-item active">Design Patterns</li>
+      <li class="breadcrumb-item active">Retry Mechanism</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -251,102 +251,54 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="design-patterns">Design Patterns</h1>
-<p>In software engineering, a design pattern is a general repeatable solution to a
-commonly occurring problem in software design. A design pattern isn't a finished
-design that can be transformed directly into code. It is a description or
-template for how to solve a problem that can be used in many different
-situations.</p>
-<h2 id="uses-of-design-patterns">Uses of design patterns</h2>
-<p>Utilizing design patterns in the development process can accelerate progress by
-offering tried-and-tested development models. Effective software design
-necessitates the consideration of issues that may only surface during later
-implementation stages. The utilization of design patterns aids in mitigating
-subtle problems that can lead to significant complications, and it enhances code
-readability for developers and architects who are acquainted with these
-patterns. These design patterns offer general solutions, presented in a format
-that is not bound to specific problems. They serve as templates or blueprints
-for structuring code to address specific challenges.</p>
-<p>Furthermore, design patterns enable developers to communicate using widely
-recognized and comprehensible terms for software interactions. Over time, common
-design patterns can be refined, rendering them more robust compared to
-improvised design approaches.</p>
-<p>Design patterns can be categorized into several different types based on their
-primary purpose and the problems they solve. Here are some of the most
-well-known design pattern categories:</p>
-<h2 id="creational-patterns">Creational Patterns</h2>
-<p>These patterns focus on object creation mechanisms, abstracting the process of
-object instantiation. Common creational patterns include:</p>
+                <h1 id="retry-mechanism">Retry Mechanism</h1>
+<p>In <a href="../../communication/asynchronous-messaging/">asynchronous communication</a>,
+where events and messages are processed by different applications, it is
+important to decide what happens and how when a message cannot be processed
+successfully.</p>
+<h2 id="patterns">Patterns</h2>
+<p>There are several patterns to implement a retry mechanism in your system. All of
+this can be mixed together, depending on your needs.</p>
+<h3 id="in-place-retry">In-place retry</h3>
+<p>It is a very simple solution to implement. Essentially, consumer retry again to
+process the event after a certain amount of time. Backoff time can be applied,
+either linear or exponential.</p>
+<p>This approach have two main side effect. One is that the consumer is blocked.
+And second, when an error is persistent, retry wont't work and all messages will
+be retried, affecting consumer's performance.</p>
+<h3 id="decoupled-retry">Decoupled retry</h3>
+<p>While processing an error of a message, add message to a retry topic/queue.</p>
+<p>A retry consumer can read from there, tracking retry attempts using message
+headers. This approach doesn't block the main consumer.</p>
+<h3 id="circuit-breaker-implementation">Circuit breaker implementation</h3>
+<p>If a third-party service is completely down (like connection to database is
+lost), avoid sending retries until a certain period.</p>
+<p>Consumer can be blocked in this scenario, as none of the messages will be
+successfully processed until the service is back up.
+<a href="../../microservices/circuit-breaker/">Circuit breaker</a> avoids further problems
+and performance issues.</p>
+<h3 id="dead-queue-letter-dql">Dead-queue letter (DQL)</h3>
+<p>To avoid retrying forever, send your message to a DQL to investigate further why
+message failed. DLQ have no consumer, so it is not processed automatically.</p>
+<h2 id="considerations">Considerations</h2>
 <ul>
-<li><strong>Singleton Pattern</strong>: Ensures a class has only one instance and provides a
-  global point of access to it.</li>
-<li><strong>Factory Method Pattern</strong>: Defines an interface for creating objects, but
-  allows subclasses to alter the type of objects that will be created.</li>
-<li><strong>Abstract Factory Pattern</strong>: Provides an interface for creating families of
-  related or dependent objects without specifying their concrete classes.</li>
+<li>Consumers must be idempotent.</li>
+<li>Track retry attempts/metadata.</li>
+<li>Add error metadata to the message when sending to retry/DLQ.</li>
+<li>Add Monitoring and logging.</li>
+<li>You need to identify which messages can be retry and which not.</li>
 </ul>
-<h2 id="structural-patterns">Structural Patterns</h2>
-<p>These patterns deal with the composition of classes or objects to form larger
-structures. They help in defining how objects and classes can be combined to
-form more complex structures. Common structural patterns include:</p>
-<ul>
-<li><strong>Adapter Pattern</strong>: Allows the interface of an existing class to be used as
-  another interface.</li>
-<li><strong>Decorator Pattern</strong>: Attaches additional responsibilities to an object
-  dynamically. Decorators provide a flexible alternative to subclassing for
-  extending functionality.</li>
-<li><strong>Composite Pattern</strong>: Composes objects into tree structures to represent
-  part-whole hierarchies. Clients can treat individual objects and compositions
-  of objects uniformly.</li>
-</ul>
-<h2 id="behavioral-patterns">Behavioral Patterns</h2>
-<p>These patterns focus on the communication between objects, defining how they
-interact and distribute responsibilities. Common behavioral patterns include:</p>
-<ul>
-<li><strong>Observer Pattern</strong>: Defines a one-to-many dependency between objects so that
-  when one object changes state, all its dependents are notified and updated
-  automatically.</li>
-<li><strong>Strategy Pattern</strong>: Defines a family of algorithms, encapsulates each one,
-  and makes them interchangeable. It allows the algorithm to vary independently
-  from clients that use it.</li>
-<li><strong>Command Pattern</strong>: Encapsulates a request as an object, thereby allowing for
-  parameterization of clients with queues, requests, and operations.</li>
-<li><strong>Chain of Responsibility Pattern</strong>: Passes a request along a chain of
-  handlers, allowing multiple objects to handle the request without the sender
-  needing to know which object will handle it.</li>
-</ul>
-<h2 id="architectural-patterns">Architectural Patterns</h2>
-<p>These are higher-level patterns that guide the overall structure and
-organization of software systems. Examples include:</p>
-<ul>
-<li><strong>Model-View-Controller (MVC)</strong>: Separates an application into three
-  interconnected components - Model (data and business logic), View (user
-  interface), and Controller (user input handling).</li>
-<li><strong>Model-View-ViewModel (MVVM)</strong>: An architectural pattern often used in
-  GUI-based applications, similar to MVC but tailored for modern UI frameworks.</li>
-</ul>
-<h2 id="concurrency-patterns">Concurrency Patterns</h2>
-<p><a href="../concurrency-patterns/">Concurrency patterns</a> address
-multi-threading and concurrent programming challenges. Examples include the
-"Thread Pool" and "Producer-Consumer" patterns.</p>
-<h2 id="anti-patterns">Anti-Patterns</h2>
-<p>While not traditional design patterns, anti-patterns describe common mistakes or
-pitfalls in software design and development. Recognizing and avoiding these
-anti-patterns is crucial for writing maintainable and efficient code.</p>
-<p>These design patterns are valuable tools for software developers to enhance code
-quality, maintainability, and reusability by providing well-established
-solutions to recurring design problems.</p>
-<h2 id="references">References</h2>
-<ul>
-<li><a href="https://sourcemaking.com/design_patterns">Design patterns</a></li>
-<li><a href="https://refactoring.guru/design-patterns/python">Design pattern Python</a></li>
-</ul>
+<h2 id="kafka-redelivery">Kafka Redelivery</h2>
+<p>Kafka redelivery is a different concept. It means that after a Kafka consumer
+pulls for a number of records, if something happens before committing the
+offset, Kafka re-delivers the same message.</p>
+<p>Kafka producers can be configured for retry and idempotent.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../domain-driven/" class="btn btn-neutral float-left" title="Domain Driven Architecture"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../hexagonal-architecture/" class="btn btn-neutral float-right" title="Hexagonal Architecture">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../monolithic/" class="btn btn-neutral float-left" title="Monolithic Architecture"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../solid/" class="btn btn-neutral float-right" title="Solid Principles">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -370,10 +322,10 @@ solutions to recurring design problems.</p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../domain-driven/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../monolithic/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../hexagonal-architecture/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../solid/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
