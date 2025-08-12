@@ -279,9 +279,23 @@ collector. Logs are collected in a central location, where they can be
 displayed. A good tool for this is <a href="https://www.elastic.co/kibana">Kibana</a>, with
 <a href="https://www.elastic.co/es/elasticsearch">ElasticSearch</a> for data storage.</p>
 <h2 id="metrics">Metrics</h2>
-<p>Gathering and analyzing various metrics such as CPU utilization, memory usage,
-disk I/O, network traffic, and application-specific performance indicators.
-These metrics provide a real-time view of the server's health and performance.
+<p>A metric is a numerical measurement easily understandable by humans. It helps
+humans to understand the system's behavior and performance, from a technical and
+a business point of view.</p>
+<p>Gathering and analyzing various metrics is essential to find quickly if your
+system is behaving as expected. Metrics can include various performance
+indicators, such as:</p>
+<ul>
+<li>CPU utilization</li>
+<li>memory usage</li>
+<li>disk I/O bottleneck</li>
+<li>connectivity and performance (database, 3rd party services, cache...)</li>
+<li>network traffic and latency</li>
+<li>http request/response times</li>
+<li>error rates</li>
+<li>application-specific metrics (e.g., user sign-ups, transactions processed)</li>
+</ul>
+<p>These metrics provide a real-time view of the server's health and performance.
 <a href="https://prometheus.io/">Prometheus</a> is an open-source systems monitoring and
 alerting toolkit. It comes with a query language built-in, where powerful
 queries can be written to gain insight into the system's behavior. Alerts
@@ -289,45 +303,35 @@ regarding this metrics can be send to another system like
 <a href="https://sentry.io/welcome/">Sentry</a> or <a href="https://www.nagios.org/">Nagios</a>.</p>
 <p>For metrics visualization, <a href="https://grafana.com/">Grafana</a> is a good option.</p>
 <h3 id="how-to-useanalyze-metrics">How to use/analyze metrics</h3>
-<ul>
-<li>Don't use averages, use percentiles. Average doesn't show the real picture of
-  the system, because it can be skewed by a few outliers. For this reason, we
-  use percentiles, like P50, P90, P99, etc. How to get the value, just by
-  throwing out the bottom <em>XX</em>% of the points and looking the first point that
-  remains.</li>
-</ul>
+<p><strong>Don't use averages, use percentiles.</strong></p>
+<p>Average doesn't show the real picture of the system, because it can be skewed by
+a few outliers. For this reason, we use percentiles, like P50, P90, P99, etc.
+How to get the value, just by throwing out the bottom <em>XX</em>% of the points and
+looking the first point that remains.</p>
 <p>From a list of sorted latency times [20, 37, 45, 62, 850, 920], the average is
-  312.3ms. But the <strong>P50 is 62ms</strong> and the <strong>P90 is 920ms</strong>. This means that 50%
-  of the requests are below 62ms and 90% of the requests are below 920ms.</p>
-<ul>
-<li>Set alarms. Manual look to metrics or schedule checks is not enough, specially
-  if the system is quite big. You need to be notified when something goes
-  wrong.For each metric, you should set a period to measure, a threshold (limit)
-  and a grace period (in case error recover by itself) before triggering the
-  alarm.</li>
-</ul>
+312.3ms. But the <strong>P50 is 62ms</strong> and the <strong>P90 is 920ms</strong>. This means that 50%
+of the requests are below 62ms and 90% of the requests are below 920ms.</p>
+<p><strong>Set alarms.</strong></p>
+<p>Manual look to metrics or schedule checks is not enough, specially if the system
+is quite big. You need to be notified when something goes wrong.For each metric,
+you should set a period to measure, a threshold (limit) and a grace period (in
+case error recover by itself) before triggering the alarm.</p>
 <p>You can also set Working Day Alarms, alarms that indicates early warning
-  indicators. During a working day, people can look into the issue, but if same
-  happens during night or weekend, no need to wake up people (until the alarm is
-  critical).</p>
-<ul>
-<li>
-<p>Adapt limits to cycles. It's not the same traffic during the day than during
-  the night, or in load peaks (if you are a retailer, during Black Friday you
-  should expect a lot of traffic). You should set different threshold for
-  different situation (hour, day of the week, season...).</p>
-</li>
-<li>
-<p>Not having metrics is as bad as a bad metric. If you don't have metrics, you
-  can't know what is happening in your system. Create alarms to alert if metrics
-  are not present.</p>
-</li>
-<li>
-<p>Periodically review your metrics. The system is not static, it changes over
-  time. You should review your metrics periodically to ensure they are still
-  relevant and useful. If this process can be automated, better.</p>
-</li>
-</ul>
+indicators. During a working day, people can look into the issue, but if same
+happens during night or weekend, no need to wake up people (until the alarm is
+critical).</p>
+<p><strong>Adapt limits to cycles.</strong></p>
+<p>It's not the same traffic during the day than during the night, or in load peaks
+(if you are a retailer, during Black Friday you should expect a lot of traffic).
+You should set different threshold for different situation (hour, day of the
+week, season...).</p>
+<p><strong>Periodically review your metrics.</strong></p>
+<p>The system is not static, it changes over time. You should review your metrics
+periodically to ensure they are still relevant and useful. If this process can
+be automated, better.</p>
+<p>Remember that not having metrics is as bad as a bad metric. If you don't have
+metrics, you can't know what is happening in your system. Create alarms to alert
+if metrics are not present.</p>
 <h2 id="tracing">Tracing</h2>
 <p>Tracing requests as they traverse through various components of a distributed
 system. Distributed tracing helps in identifying latency bottlenecks and
@@ -343,6 +347,7 @@ maintain and improve server performance and reliability.</p>
 <ul>
 <li><a href="https://www.ibm.com/topics/observability">Observability</a></li>
 <li><a href="https://medium.com/@djsmith42/how-to-metric-edafaf959fc7">Metric</a></li>
+<li><a href="https://github.com/McLargo/observability-playground">Observability playground</a></li>
 </ul>
               
             </div>
