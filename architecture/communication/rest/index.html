@@ -312,6 +312,7 @@ that the server can send back to the client. They are divided into ranges:</p>
 <li>404 Not Found</li>
 <li>405 Method Not Allowed</li>
 <li>409 Conflict</li>
+<li>422 Unprocessable Entity</li>
 <li>429 Too Many Requests</li>
 <li>5XX -&gt; server error codes range</li>
 </ul>
@@ -331,18 +332,31 @@ API consumers, include a structured JSON error message, like:</p>
 </ul>
 <h3 id="good-practices-restful-api">Good practices RESTful API</h3>
 <ul>
-<li>parametrize your API endpoints to version them. e.g. <code>/api/v1/users</code></li>
+<li>parametrize your API endpoints to version them. e.g. <code>/api/v1/users</code>.</li>
 <li>group your endpoints by resources and scopes (e.g. <code>/api/v1/users</code>,
-  <code>/api/v1/admin/users</code>)</li>
+  <code>/api/v1/admin/users</code>).</li>
 <li>resources in plural. e.g. <code>/users</code>, <code>/products</code></li>
-<li>use <code>-</code> instead of <code>_</code></li>
-<li>don't use verbs, use names. Actions are implicit in HTTP methods</li>
-<li>basic structure</li>
+<li>use <code>-</code> instead of <code>_</code>.</li>
+<li>don't use verbs, use names. Actions are implicit in HTTP methods.</li>
+<li>basic structure.</li>
+<li>keep naming consistency across your API (paths, query parameters, payload,
+  response...).</li>
+<li>validate your inputs and outputs.</li>
+<li>secure your API with authentication and authorization.</li>
+<li>use pagination for large datasets.</li>
+<li>document your API. Tools like <a href="../../../programming/openapi/">OpenAPI</a> can help
+  you to document your API in a standard way.</li>
+<li>usage of Enum type instead of bool for query parameters.</li>
+<li>public id should be UUID instead of an integer. More secure and less
+  predictable.</li>
+<li>don't expose internal database structure in your API.</li>
+<li>log each request with unique request ID.</li>
 </ul>
 <pre><code class="language-text">GET ALL
 `api/&lt;resources&gt;`
 
-HTTP status code 200 OK for a successful GET of resource, or empty results.
+HTTP status code 200 OK for a successful GET of resource, or empty results. It
+should include pagination by default.
 
 GET BY ID
 `api/&lt;resources&gt;/&lt;id&gt;`
