@@ -213,6 +213,8 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../../utils/regex/">Regex</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../utils/runbooks/">Runbooks</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../../utils/supervisor/">Supervisor</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../../utils/task-runner/">Task runner</a>
@@ -267,8 +269,9 @@ request is made up of:</p>
 <ul>
 <li>HTTP verb, which defines what kind of operation to perform.</li>
 <li>headers, which allows the client to pass along information about the request.</li>
-<li>path to a resource.</li>
-<li>message /payload containing data (optional).</li>
+<li>path to a resource, including any identifiers.</li>
+<li>query parameters (optional).</li>
+<li>message/payload containing data (optional).</li>
 </ul>
 <h4 id="http-verbs">HTTP Verbs</h4>
 <p>There are 4 basic HTTP verbs (commonly called CRUD) used in requests:</p>
@@ -282,11 +285,14 @@ request is made up of:</p>
 <p>In the header of the request, you can specify the type of data you want to send
 or receive. Or any other metadata you want to pass along with the request, such
 as authentication token.</p>
-<h4 id="paths">Paths</h4>
+<h4 id="path">Path</h4>
 <p>A path to the resource you want to interact with. It is a string that follows
-the URL. Aside from the ids of the resources, it can contain parameters to
-filter, sort or paginate the results.</p>
-<h4 id="message-payload">Message / Payload</h4>
+the URL. It can contain identifiers for the resource you want to access, such as
+<code>/users/123</code> to access the user with id 123.</p>
+<h4 id="query-parameters">Query Parameters</h4>
+<p>Query parameters are optional and are used to filter, sort, or paginate the
+results.</p>
+<h4 id="messagepayload">Message/Payload</h4>
 <p>The message is the data you want to send to the server. It can be in different
 formats, such as JSON, XML, or form data. The format send is specified in the
 headers.</p>
@@ -338,7 +344,6 @@ API consumers, include a structured JSON error message, like:</p>
 <li>resources in plural. e.g. <code>/users</code>, <code>/products</code></li>
 <li>use <code>-</code> instead of <code>_</code>.</li>
 <li>don't use verbs, use names. Actions are implicit in HTTP methods.</li>
-<li>basic structure.</li>
 <li>keep naming consistency across your API (paths, query parameters, payload,
   response...).</li>
 <li>validate your inputs and outputs.</li>
@@ -351,6 +356,7 @@ API consumers, include a structured JSON error message, like:</p>
   predictable.</li>
 <li>don't expose internal database structure in your API.</li>
 <li>log each request with unique request ID.</li>
+<li>create common error response.</li>
 </ul>
 <pre><code class="language-text">GET ALL
 `api/&lt;resources&gt;`
