@@ -264,11 +264,32 @@ The server then generates their own code, and compares it with the code sent by
 the client. If they match, the authentication is successful.</p>
 <p>TOTP codes works only for certain period of time, usually 30 seconds. After
 that, the code is no longer valid and a new one is generated.</p>
+<h2 id="oauth-20">Oauth 2.0</h2>
+<p>It is a protocol for authorization, to enable 3pp applications to obtain limited
+access to a HTTP service.</p>
+<p>When trying to access a protected resource, the client must present an access
+token to the server. The token is issued by an authorization server, after a
+successful login. Then, the client uses the token to access protected resources
+by including it in the <code>Authorization: Bearer &lt;token&gt;</code> header of HTTP requests.</p>
+<p>When a client makes a request, server side does couple of checks of the token.
+Check if the token is valid (correct structure, format, content and token is not
+expired...) and verified (signature is using expected algorithm, issuer and
+audience claims are the expected), the server grants access to the requested
+resource. It returns an error status code otherwise.</p>
+<p>Aside from access tokens, refresh tokens can also be issued. They are used to
+obtain a new access token when the current one expires, without requiring the
+user to log in again.</p>
+<blockquote>
+<p>Tokens are credentials, so they need to be treated with care.</p>
+</blockquote>
+<p>Scopes can be associated to the token, to limit the access to certain resources.</p>
+<p>Keycloak and Okta are popular identity providers that support OAuth2.</p>
 <h2 id="jwt">JWT</h2>
 <p><a href="https://www.jwt.io/introduction#what-is-json-web-token">JWT</a> is an
-authentication mechanism to transmit information via JSON objects in a secure
-way. Used to authenticate user in web applications, specially REST APIs. The
-information is digitally signed, so it can be verified and trusted.</p>
+authentication mechanism used in OAuth 2.0 to transmit information via JSON
+objects in a secure way. Used to authenticate user in web applications,
+specially REST APIs. The information is digitally signed, so it can be verified
+and trusted.</p>
 <p>A JWT token is composed by three parts, encoded using Base64Url and concatenated
 with dots.</p>
 <ul>
@@ -279,15 +300,6 @@ with dots.</p>
   private (custom) claims are supported.</li>
 <li><strong>Signature</strong>: used to verify that the token hasn't been altered.</li>
 </ul>
-<p>When a user logs in, the server generates a JWT token and sends it back to the
-client. Tokens are credentials, so they need to be treated with care.</p>
-<p>The clients uses the token to access protected resources by including it in the
-<code>Authorization: Bearer &lt;token&gt;</code> header of HTTP requests. If the token is valid
-(correct structure, format, content and token is not expired...) and verified
-(signature is using expected algorithm, issuer and audience claims are the
-expected), the server grants access to the requested resource. It returns an
-error status code otherwise.</p>
-<p>Keycloak and Okta are popular identity providers that support JWT.</p>
               
             </div>
           </div><footer>
