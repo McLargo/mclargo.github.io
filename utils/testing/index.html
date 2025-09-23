@@ -351,6 +351,26 @@ application:</p>
 <li><a href="https://www.selenium.dev/">Selenium</a>: open source tool to automate browsers.
   It can be used to create end-to-end tests for web applications.</li>
 </ul>
+<h2 id="uat">UAT</h2>
+<p>User Acceptance Testing (UAT) is the last phase of the software testing process,
+the last step before a feature/application can be live. Ideally, UAT should be
+done in an environment that resembles the production environment, with real data
+and real users. This way, it is possible to catch any issues that may arise in
+the production environment.</p>
+<p>A proper UAT should include different test executions, each representing a Use
+Case or User Story. Each test execution is divided in different steps, where
+input and expected results are defined prior to execution. UAT should cover
+happy path and edge cases. A good practice is to create a document, written in a
+non-technical language, like
+<a href="https://cucumber.io/docs/gherkin/reference">Gherkin</a> that can be shared with
+all teams involved. Each test execution should be traceable to a requirement,
+user story or use case. Evidence of test execution should be recorded, either
+with screenshots, video or logs, and should be approved by
+<a href="../../project-management/product-owner/">product owners</a> and/or stakeholders.</p>
+<p>During UAT, not just development team or QA should perform tests, but also
+actual software users. They will be working daily with the software, so they
+need to make sure it can handle required tasks in real-world scenarios,
+according to specifications.</p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://testdriven.io/blog/testing-python/">Testing in python</a></li>
