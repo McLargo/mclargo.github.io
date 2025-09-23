@@ -274,27 +274,25 @@ test the code in isolation, without any dependencies. Making sure any changes in
 the code will not break the expected behavior.</p>
 <p>Test should be fast and deterministic (same result over and over). It should not
 depend on any external resource, such as a database, network, or file system.</p>
-<h3 id="coverage">Coverage</h3>
-<p>Coverage is a metric that measures the amount of code that is covered by tests.
-It generates a report showing which are the total lines of code, which are
-covered by tests and which are not.</p>
-<p>The higher the coverage, the better. But it is important to note that 100%
-coverage does not mean that the code is bug free. It only means that all lines
-are covered by tests.</p>
 <p>It is a good idea to check the coverage on your tests. If any line is not
 covered, means that test may not be completed or that the code is not being
 used, given you the opportunity to remove it.</p>
-<h3 id="mocking">Mocking</h3>
-<p>When testing logic that depends on external resources, such as a database or a
-external HTTP request, it is a good practice to mock the response. This way, the
-test is not dependent on the external resource, giving faster and deterministic
-tests.</p>
-<h3 id="fixtures">Fixtures</h3>
-<p>Fixtures are a way to set up and tear down resources that are used in the tests.
-It is a way to avoid code repetition and to keep the tests clean, ensuring that
-data is consistent across all tests.</p>
-<h3 id="parametrized-tests">Parametrized tests</h3>
-<p>Parametrized tests are a way to run the same test with different inputs.</p>
+<p>Some concepts commonly used in unit testing:</p>
+<ul>
+<li><strong>Coverage</strong>: metric that measures the amount of code that is covered by
+  tests. It generates a report showing which are the total lines of code, which
+  are covered by tests and which are not. The higher the coverage, the better.
+  But it is important to note that 100% coverage does not mean that the code is
+  bug free, it only means that all lines are covered by tests.</li>
+<li><strong>Mocking</strong>: when testing logic that depends on external resources, such as a
+  database or a external HTTP request, it is a good practice to mock the
+  response. This way, the test is not dependent on the external resource, giving
+  faster and deterministic tests.</li>
+<li><strong>Fixtures</strong>: common way to set up and tear down resources that are used in
+  the tests. It is a way to avoid code repetition and to keep the tests clean,
+  ensuring that data is consistent across all tests.</li>
+<li><strong>Parametrized tests</strong>: procedure to run the same test with different inputs.</li>
+</ul>
 <h2 id="integration-test">Integration test</h2>
 <p>Integration tests are used to test the interaction between different parts of
 the application. It is a way to ensure that the different parts are working
@@ -307,27 +305,52 @@ Selenium. In case of an API, you can automate with Postman. If is not possible
 to automate, it can be done manually.</p>
 <p>These tests are slow and hard to create and maintain, but are important to
 ensure that the application is working as expected.</p>
-<h3 id="smoke-test">Smoke test</h3>
-<p>Smoke tests are a subset of end-to-end tests. They are used to ensure that the
-the most important features of the application are working as expected,
-preventing the application to be usable. Smoked tests have a limited scope,
-completed in a short time.</p>
-<h3 id="regression-test">Regression test</h3>
-<p>Confirms that previously developed and tested features in an application still
-works correctly after any changes are introduced. Regression tests have wider
-scope and covers all areas in the application, taking longer to complete.</p>
+<ul>
+<li><strong>Smoke test</strong>: are a subset of end-to-end tests. They are used to ensure that
+  the the most important features of the application are working as expected,
+  preventing the application to be usable. Smoked tests have a limited scope,
+  completed in a short time.</li>
+<li><strong>Regression test</strong>: confirms that previously developed and tested features in
+  an application still works correctly after any changes are introduced.
+  Regression tests have wider scope and covers all areas in the application,
+  taking longer to complete.</li>
+</ul>
 <h2 id="performance-test">Performance test</h2>
 <p>Performance tests are testing methods to measure how the system behaves and
 performs under a particular load.</p>
-<h3 id="load-test">Load test</h3>
-<p>Load testing is the process of checking the behavior of the system under an
-anticipated load.</p>
-<h3 id="stress-test">Stress test</h3>
-<p>The goal of stress testing is to identify the saturation point and the first
-bottleneck of the application under test. Once is identified, it is possible to
-patch that part of the system to avoid the bottleneck.</p>
-<h3 id="spike-tests">Spike Tests</h3>
-<p>Test the system's reaction to sudden and extreme changes in load.</p>
+<ul>
+<li><strong>Load test</strong>: load testing is the process of checking the behavior of the
+  system under an anticipated load.</li>
+<li><strong>Stress test</strong>: the goal of stress testing is to identify the saturation
+  point and the first bottleneck of the application under test. Once is
+  identified, it is possible to patch that part of the system to avoid the
+  bottleneck.</li>
+<li><strong>Spike Tests</strong>: test the system's reaction to sudden and extreme changes in
+  load.</li>
+</ul>
+<h2 id="tools">Tools</h2>
+<p>Aside from unit and integration tests that can be implemented in the repository
+in any language, there are other tools that can be used to test your
+application:</p>
+<ul>
+<li><a href="https://www.postman.com/">Postman</a>: allows to create collection of requests
+  (REST, graphql, gRPC...) that can be run manually or automated. You can also
+  set authorization, environment variables, pre-request scripts and complex
+  flows.</li>
+<li><a href="https://getbruno.io/">Bruno</a>: similar to Postman, but simpler and open
+  source. Collection are files that can be stored in the repository.</li>
+<li><a href="https://jmeter.apache.org/">JMeter</a>: open source tool to perform load testing
+  and measure performance. It can simulate a heavy load on a server, group of
+  servers, network or object to test its strength or to analyze overall
+  performance under different load types.</li>
+<li><a href="https://locust.io/">Locust</a>: open source load testing tool that allows
+  writing test scenarios in Python. It is easy to use and can be integrated with
+  CI/CD pipelines.</li>
+<li><a href="https://www.npmjs.com/package/newman">Newman</a>: command line tool to run
+  Postman collections. It can be integrated with CI/CD pipelines.</li>
+<li><a href="https://www.selenium.dev/">Selenium</a>: open source tool to automate browsers.
+  It can be used to create end-to-end tests for web applications.</li>
+</ul>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://testdriven.io/blog/testing-python/">Testing in python</a></li>
