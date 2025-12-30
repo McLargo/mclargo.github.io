@@ -200,6 +200,8 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../project-management/tech-lead/">Technical Leader</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project-management/user-stories/">User Stories</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../project-management/waterfall-methodology/">Waterfall Methodology</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../project-management/work-remotely/">Work Remotely</a>
@@ -230,8 +232,6 @@
                   <li class="toctree-l1"><a class="reference internal" href="../supervisor/">Supervisor</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../task-runner/">Task runner</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../transmission/">Transmission</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Testing</a>
                   </li>
@@ -299,6 +299,15 @@ used, given you the opportunity to remove it.</p>
   ensuring that data is consistent across all tests.</li>
 <li><strong>Parametrized tests</strong>: procedure to run the same test with different inputs.</li>
 </ul>
+<h2 id="mutation-test">Mutation test</h2>
+<p>Mutation testing is a technique to measure the quality of the tests. Even if you
+have a 100% coverage, it doesn't mean that your tests are good enough. Mutation
+testing changes your code in tiny ways called mutations, and then runs your
+tests to see if they catch the changes. If your tests fail, it means they caught
+the mutation, so mutant is killed. If your tests pass, it means they didn't
+catch the mutation, so mutant survived. The goal is to identify weak spots in
+your code by having a high mutation score. The higher the score, the better your
+tests are at catching bugs.</p>
 <h2 id="integration-test">Integration test</h2>
 <p>Integration tests are used to test the interaction between different parts of
 the application. It is a way to ensure that the different parts are working
@@ -386,7 +395,7 @@ according to specifications.</p>
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../transmission/" class="btn btn-neutral float-left" title="Transmission"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../task-runner/" class="btn btn-neutral float-left" title="Task runner"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../ubuntu/" class="btn btn-neutral float-right" title="Ubuntu">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -411,7 +420,7 @@ according to specifications.</p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../transmission/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../task-runner/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../ubuntu/" style="color: #fcfcfc">Next &raquo;</a></span>
