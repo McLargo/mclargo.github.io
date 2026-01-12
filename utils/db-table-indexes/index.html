@@ -213,6 +213,8 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../authorization/">Authorization</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../cache/">Cache</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../daemon/">Daemon</a>
@@ -268,8 +270,13 @@
               
                 <h1 id="database-table-indexes">Database Table Indexes</h1>
 <p>An important aspect of <a href="../databases/">database</a> design is the creation
-of indexes, specially those ones that are unique.</p>
-<h2 id="uuids">UUIDs</h2>
+of indexes, specially those ones that are unique. Indexes are use to improve the
+speed of data retrieval operations. It affects the performance of write
+operations, such as insert, update, and delete, because the indexes need to be
+updated whenever the data in the table changes.</p>
+<h2 id="types">Types</h2>
+<p>There are several types of indexes that can be used in a database table:</p>
+<h3 id="uuids">UUIDs</h3>
 <p>UUIDS are a 128-bit number used to uniquely identify objects in a computer.</p>
 <p>In a database, UUIDs can be used as primary keys for tables. But the are some
 issues to take a look at:</p>
@@ -282,17 +289,17 @@ issues to take a look at:</p>
 </ul>
 <p>On the other hand, UUIDs are unique across different databases and can be
 generated in different machines without the need to coordinate with each other.</p>
-<h2 id="auto-incrementing-ids">Auto-incrementing IDs</h2>
+<h3 id="auto-incrementing-ids">Auto-incrementing IDs</h3>
 <p>Auto-incrementing IDs are a good choice for primary keys in a database. They are
 sequential and can be used to organize indexes quickly and efficiently. They
 don't take up much storage space.</p>
 <p>It is a natural sequence which is easy to predict and identify. Ideally, when
 those ids are not exposed to the user.</p>
-<h2 id="uuidsv7">UUIDsv7</h2>
+<h3 id="uuidsv7">UUIDsv7</h3>
 <p>UUIDv7 is a new version of UUIDs that are sequential, solving performance issue
 on insert new records. It offers the best of both worlds: the uniqueness of
 UUIDs and the performance of auto-incrementing IDs.</p>
-<h2 id="ulid">ULID</h2>
+<h3 id="ulid">ULID</h3>
 <p>ULID offers a timestamp prefix followed by random characters. It allows
 efficient sorting and is more compact than UUIDs.</p>
 <h2 id="references">References</h2>

@@ -213,6 +213,8 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../authorization/">Authorization</a>
+                  </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Cache</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../daemon/">Daemon</a>
@@ -269,7 +271,7 @@
                 <h1 id="cache">Cache</h1>
 <p>Cache storage is used as a layer to store temporary data that needs to be
 accessed quickly. It can be implemented at any layer of an infrastructure, from
-the database, application, gateway, or even the client side.</p>
+the database, application (server side), gateway, or even the client side.</p>
 <h2 id="how-it-works">How it works</h2>
 <p>A cache works as a temporary storage for data that are frequently accessed or
 can be reused multiple times. When a requests is made, the system first checks
@@ -278,6 +280,16 @@ retrieved from the cache, which is much faster than fetching it from the
 original source (database, API, etc.). If the item is not in the cache (<strong>cache
 miss</strong>), it is fetched from the original source, stored in the cache for future
 requests, and then returned to the requester.</p>
+<p>Some types of cache include:</p>
+<ul>
+<li><strong>In-Memory Cache</strong>: Data is stored in the RAM of the server, providing
+  extremely fast access times. Examples include Redis and Memcached.</li>
+<li><strong>Distributed Cache</strong>: A cache that is shared across multiple servers or
+  instances, allowing for scalability and high availability. Examples include
+  Amazon ElastiCache and Apache Ignite.</li>
+<li><strong>Client-Side Cache</strong>: Data is stored on the client side, such as in browsers
+  or mobile devices, to reduce latency and improve user experience.</li>
+</ul>
 <h2 id="advantages">Advantages</h2>
 <ul>
 <li><strong>Speed</strong>: Accessing data from a cache is significantly faster than
@@ -298,17 +310,7 @@ requests, and then returned to the requester.</p>
 <li><strong>Complexity</strong>: Implementing and managing a cache adds complexity to the
   system, including the need for cache invalidation strategies.</li>
 </ul>
-<h2 id="types-of-cache">Types of Cache</h2>
-<ul>
-<li><strong>In-Memory Cache</strong>: Data is stored in the RAM of the server, providing
-  extremely fast access times. Examples include Redis and Memcached.</li>
-<li><strong>Distributed Cache</strong>: A cache that is shared across multiple servers or
-  instances, allowing for scalability and high availability. Examples include
-  Amazon ElastiCache and Apache Ignite.</li>
-<li><strong>Client-Side Cache</strong>: Data is stored on the client side, such as in browsers
-  or mobile devices, to reduce latency and improve user experience.</li>
-</ul>
-<h2 id="invalidation-strategies">Invalidation Strategies</h2>
+<h2 id="invalidationeviction-strategies">Invalidation/Eviction Strategies</h2>
 <p>Cache invalidation is the process of removing or updating data in the cache, to
 make sure data is up-to-date. Common strategies include:</p>
 <ul>
@@ -318,6 +320,10 @@ make sure data is up-to-date. Common strategies include:</p>
   application, specially when original data is modified/removed.</li>
 <li><strong>Least Recently Used (LRU)</strong>: The least recently accessed items are removed
   when the cache reaches its capacity.</li>
+<li><strong>Least Frequently Used (LFU)</strong>: The least frequently accessed items are
+  removed when the cache reaches its capacity.</li>
+<li><strong>First In First Out (FIFO)</strong>: The oldest items are removed first when the
+  cache reaches its capacity. This is risky, as old data may still be relevant.</li>
 </ul>
 <h2 id="cache-database-strategies">Cache Database Strategies</h2>
 <p>One common scenario to use cache is to reduce queries to a database. See below
@@ -346,7 +352,7 @@ database and may require additional implementation in your application logic.</p
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../authentication/" class="btn btn-neutral float-left" title="Authentication"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../authorization/" class="btn btn-neutral float-left" title="Authorization"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../daemon/" class="btn btn-neutral float-right" title="Daemon">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -371,7 +377,7 @@ database and may require additional implementation in your application logic.</p
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../authentication/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../authorization/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../daemon/" style="color: #fcfcfc">Next &raquo;</a></span>

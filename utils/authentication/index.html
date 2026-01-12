@@ -213,6 +213,8 @@
               <ul class="current">
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Authentication</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../authorization/">Authorization</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../cache/">Cache</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../daemon/">Daemon</a>
@@ -278,32 +280,12 @@ The server then generates their own code, and compares it with the code sent by
 the client. If they match, the authentication is successful.</p>
 <p>TOTP codes works only for certain period of time, usually 30 seconds. After
 that, the code is no longer valid and a new one is generated.</p>
-<h2 id="oauth-20">Oauth 2.0</h2>
-<p>It is a protocol for authorization, to enable 3pp applications to obtain limited
-access to a HTTP service.</p>
-<p>When trying to access a protected resource, the client must present an access
-token to the server. The token is issued by an authorization server, after a
-successful login. Then, the client uses the token to access protected resources
-by including it in the <code>Authorization: Bearer &lt;token&gt;</code> header of HTTP requests.</p>
-<p>When a client makes a request, server side does couple of checks of the token.
-Check if the token is valid (correct structure, format, content and token is not
-expired...) and verified (signature is using expected algorithm, issuer and
-audience claims are the expected), the server grants access to the requested
-resource. It returns an error status code otherwise.</p>
-<p>Aside from access tokens, refresh tokens can also be issued. They are used to
-obtain a new access token when the current one expires, without requiring the
-user to log in again.</p>
-<blockquote>
-<p>Tokens are credentials, so they need to be treated with care.</p>
-</blockquote>
-<p>Scopes can be associated to the token, to limit the access to certain resources.</p>
-<p>Keycloak and Okta are popular identity providers that support OAuth2.</p>
 <h2 id="jwt">JWT</h2>
 <p><a href="https://www.jwt.io/introduction#what-is-json-web-token">JWT</a> is an
-authentication mechanism used in OAuth 2.0 to transmit information via JSON
-objects in a secure way. Used to authenticate user in web applications,
-specially REST APIs. The information is digitally signed, so it can be verified
-and trusted.</p>
+authentication mechanism used in <a href="../authorization/#oauth-20">OAuth 2.0</a>
+to transmit information via JSON objects in a secure way. Used to authenticate
+user in web applications, specially REST APIs. The information is digitally
+signed, so it can be verified and trusted.</p>
 <p>A JWT token is composed by three parts, encoded using Base64Url and concatenated
 with dots.</p>
 <ul>
@@ -319,7 +301,7 @@ with dots.</p>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../../project-management/work-remotely/" class="btn btn-neutral float-left" title="Work Remotely"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../cache/" class="btn btn-neutral float-right" title="Cache">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../authorization/" class="btn btn-neutral float-right" title="Authorization">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -346,7 +328,7 @@ with dots.</p>
       <span><a href="../../project-management/work-remotely/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../cache/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../authorization/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Javier Gil" /><link rel="canonical" href="https://mclargo.github.io/utils/supervisor/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Javier Gil" /><link rel="canonical" href="https://mclargo.github.io/utils/authorization/" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Supervisor - My technical wiki</title>
+    <title>Authorization - My technical wiki</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,9 +13,9 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Supervisor";
-        var mkdocs_page_input_path = "utils/supervisor.md";
-        var mkdocs_page_url = "/utils/supervisor/";
+        var mkdocs_page_name = "Authorization";
+        var mkdocs_page_input_path = "utils/authorization.md";
+        var mkdocs_page_url = "/utils/authorization/";
       </script>
     
     <!--[if lt IE 9]>
@@ -213,7 +213,7 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../authorization/">Authorization</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Authorization</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../cache/">Cache</a>
                   </li>
@@ -233,7 +233,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../scaling/">Scaling</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Supervisor</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../supervisor/">Supervisor</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../task-runner/">Task runner</a>
                   </li>
@@ -259,7 +259,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Utils</li>
-      <li class="breadcrumb-item active">Supervisor</li>
+      <li class="breadcrumb-item active">Authorization</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -268,38 +268,37 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="supervisor-service">Supervisor Service</h1>
-<h2 id="how-to-create-new-supervisor-service">How to create new supervisor service</h2>
-<p>First of all, you need to install supervisor service:</p>
-<pre><code class="language-bash">sudo apt-get install supervisor -y
-</code></pre>
-<p>Path to copy configurations files:</p>
-<pre><code class="language-bash">/etc/supervisor/conf.d/*
-</code></pre>
-<p>After copy file, reread supervisor configuration:</p>
-<pre><code class="language-bash">sudo supervisorctl -c /etc/supervisor/supervisord.conf reread
-sudo supervisorctl -c /etc/supervisor/supervisord.conf reload
-</code></pre>
-<p>If something went wrong, sock may be deleted in /var/run/supervisor.conf, and
-supervisorctl status will show an error. To solve, check new configuration
-files, if something is buggy, fix it or remove conf and run command again.</p>
-<p>Then, run, to reload new configuration and start service again with:</p>
-<pre><code class="language-bash">sudo supervisorctl reload
-</code></pre>
-<p>Now, your supervisor service should be up and running</p>
-<h2 id="references">References</h2>
-<p>Some interesting samples and documentation</p>
-<ul>
-<li><a href="http://supervisord.org/configuration.html">Configuration</a></li>
-<li><a href="https://gist.github.com/didip/802561">Sample</a></li>
-<li><a href="https://gist.github.com/tsabat/1528270">Documentation</a></li>
-</ul>
+                <h1 id="authorization">Authorization</h1>
+<p>Don't confuse <a href="../authentication/">authentication</a> with authorization.
+Authentication is the process of verifying the identity of a user, while
+authorization is the process of determining what actions a user is allowed to
+perform.</p>
+<h2 id="oauth-20">Oauth 2.0</h2>
+<p>It is a protocol for authorization, to enable 3pp applications to obtain limited
+access to a HTTP service.</p>
+<p>When trying to access a protected resource, the client must present an access
+token to the server. The token is issued by an authorization server, after a
+successful login. Then, the client uses the token to access protected resources
+by including it in the <code>Authorization: Bearer &lt;token&gt;</code> header of HTTP requests.</p>
+<p>When a client makes a request, server side does couple of checks of the token.
+Check if the token is valid (correct structure, format, content and token is not
+expired...) and verified (signature is using expected algorithm, issuer and
+audience claims are the expected), the server grants access to the requested
+resource. It returns an error status code otherwise.</p>
+<p>Aside from access tokens, refresh tokens can also be issued. They are used to
+obtain a new access token when the current one expires, without requiring the
+user to log in again.</p>
+<blockquote>
+<p>Tokens are credentials, so they need to be treated with care.</p>
+</blockquote>
+<p>Scopes can be associated to the token, to limit the access to certain resources.</p>
+<p>Keycloak and Okta are popular identity providers that support OAuth2.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../scaling/" class="btn btn-neutral float-left" title="Scaling"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../task-runner/" class="btn btn-neutral float-right" title="Task runner">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../authentication/" class="btn btn-neutral float-left" title="Authentication"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../cache/" class="btn btn-neutral float-right" title="Cache">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -323,10 +322,10 @@ files, if something is buggy, fix it or remove conf and run command again.</p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../scaling/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../authentication/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../task-runner/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../cache/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
