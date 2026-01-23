@@ -272,36 +272,42 @@
                 <h1 id="hexagonal-architecture">Hexagonal Architecture</h1>
 <p>Hexagonal Architecture, also known as Ports and Adapters, it is used in software
 design to create a clear separation between the core logic of an application and
-its external dependencies (input/output mechanisms).</p>
-<p>The business logic doesn't depend in any way on the external dependencies (where
-any dependency can be easily replaced without affecting the core logic).</p>
+its external dependencies (input/output mechanisms). The business logic doesn't
+depend in any way on the external dependencies (where any dependency can be
+easily replaced without affecting the core/domain logic).</p>
 <p>Avoid hexagonal architecture when the application is small or simple, as it can
 add unnecessary complexity.</p>
 <p><img alt="Hexagonal architecture" src="../../../assets/img/hexagonal.png" /></p>
 <h2 id="key-concepts">Key Concepts</h2>
 <ul>
 <li>
-<p>Ports: Interfaces that define how the application interacts with the outside
-  world. They are abstractions that allow the core logic to communicate with
-  external systems.</p>
+<p><strong>Ports</strong>: Interfaces that define how the application interacts with the
+  outside world. They are abstractions that allow the core logic to communicate
+  with external systems.</p>
 </li>
 <li>
-<p>Adapters: Implementations of the ports that connect the core logic to external
-  systems. They translate the data and calls between the core logic and the
-  external systems.</p>
+<p><strong>Adapters</strong>: Implementations of the ports that connect the core logic to
+  external systems. They translate the data and calls between the domain
+  entities and the external systems. It is the application layer, explaining how
+  the pieces fit together and how the flow is orchestrated.</p>
 </li>
 <li>
-<p>Core Logic: The central part of the application that contains the business
-  rules and logic. It is independent of any external systems or frameworks.</p>
+<p><strong>Domain Layer</strong>: Focus on the what, it is the central part of the application
+  that contains the business entities, rules and logic. It is independent of any
+  external systems or frameworks and focuses on the application's functionality.</p>
 </li>
 </ul>
-<p>This gives the flexibility to make changes on the adapters (implementation)
-easily. For example you can swap out Oracle or SQL Server, for Mongo or
-something else. Or enable easily an additional entry point for a new consumer.
-Your business rules are not bound to the any of these changes outside the core.</p>
-<h2 id="performance">Performance</h2>
-<p>Each adapter gather all code related to a specific external system, allowing
-developers to optimize the performance of each adapter independently.</p>
+<p>In a nutshell, hexagonal architecture is designed by layers. The application
+layer from the request coming (Driving adapter), goes to the domain layer, and
+keep going through other infrastructure layer to the final destination (Driven
+adapter). This division into layers gives the flexibility to make changes on the
+adapters easily. For example, you can swap out Oracle by SQL Server (or Mongo),
+or enable easily an additional entry point for a new consumer.</p>
+<p>Technical aspects belongs to the application layer (adapters), while business
+logic belongs to the <a href="../domain-driven/">domain layer</a>. This way, the domain
+layer is not affected by changes in the external systems. Rule of thumb: if you
+swap an external system for a different one, and the core logic is affected,
+then the architecture is not hexagonal.</p>
 <h2 id="benefits">Benefits</h2>
 <ul>
 <li><strong>Separation of Concerns</strong>: The core logic is isolated from external systems,
@@ -310,6 +316,14 @@ developers to optimize the performance of each adapter independently.</p>
   systems, allowing for easier unit testing and mocking of dependencies.</li>
 <li>Developers can work independently on different adapters without affecting the
   core logic.</li>
+<li><strong>Flexibility</strong>: External systems can be changed or replaced without affecting
+  the core logic. Each adapter gather all code related to a specific external
+  system, allowing developers to optimize the performance of each adapter
+  independently.</li>
+<li><strong>Stability</strong>: The core logic remains stable even as external systems evolve
+  or change, reducing the risk of introducing bugs or breaking changes. It is
+  important to avoid tight coupling between the core logic and external systems
+  so breaking changes are minimized.</li>
 </ul>
 <h2 id="references">References</h2>
 <ul>
