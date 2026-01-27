@@ -361,11 +361,13 @@ external to cluster.</p>
   each other. IP address are routable anywhere within the cluster. Not common
   procedure.</li>
 <li>service to pod: service is a resource that provides layer-4 load balancing for
-  a group of pods. Service discovery using the cluster's internal DNS. Types are:</li>
+  a group of pods. Service discovery using the cluster's internal DNS. Types are:<ul>
 <li>ClusterIP (virtual IP address that load balance request to backend pods,
   accessible only in the cluster).</li>
 <li>NodePort: used for external facing service, exposing a port to access
-    externally. K8s will open the port in each worker node.</li>
+externally. K8s will open the port in each worker node.</li>
+</ul>
+</li>
 <li>external to cluster: service type LoadBalancer, external IP address is
   provisioned by the cloud provider. Creates and manages an external load
   balancer, managing traffic across all nodes.</li>

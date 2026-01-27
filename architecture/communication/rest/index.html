@@ -321,13 +321,15 @@ the client what kind of data is being sent.</p>
 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">HTTP status codes</a>
 that the server can send back to the client. They are divided into ranges:</p>
 <ul>
-<li>2XX -&gt; success codes range</li>
+<li>2XX -&gt; success codes range<ul>
 <li>200 OK</li>
 <li>201 Created</li>
 <li>202 Accepted</li>
 <li>204 No Content</li>
+</ul>
+</li>
 <li>3XX -&gt; redirect codes range</li>
-<li>4XX -&gt; client error codes range</li>
+<li>4XX -&gt; client error codes range<ul>
 <li>400 Bad Request</li>
 <li>401 Unauthorized</li>
 <li>403 Forbidden</li>
@@ -336,6 +338,8 @@ that the server can send back to the client. They are divided into ranges:</p>
 <li>409 Conflict</li>
 <li>422 Unprocessable Entity</li>
 <li>429 Too Many Requests</li>
+</ul>
+</li>
 <li>5XX -&gt; server error codes range</li>
 </ul>
 <p>But, HTTP status codes are not enough to explain what went wrong. To help your
