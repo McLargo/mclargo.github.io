@@ -281,10 +281,11 @@ related to the same feature. Same for the <code>so that</code> statement, you ca
 multiple benefits for the same action, but it is not recommended.</p>
 <h2 id="characteristics-of-good-user-stories">Characteristics of Good User Stories</h2>
 <ul>
-<li>Keep it simple and concise. Should be completed in a single sprint (2 weeks)</li>
+<li>Keep it simple and concise. Should be completed in a single sprint (2 weeks).</li>
 <li>Make clear what is the value to the user.</li>
 <li>Independent, so it can be developed and delivered independently.</li>
 <li>Open to discussion and changes.</li>
+<li>Focus on the "why".</li>
 <li>Help to keep the focus on the user needs, by using the user's language.</li>
 <li>Avoid technical specifications.</li>
 <li>Testable, with clear acceptance criteria.</li>
@@ -297,6 +298,41 @@ to verify that the User Story has been implemented correctly and the
 requirements are clear.</p>
 <p>They are also the bridge between all teams involved, from the Product Owner,
 Developers, QA team and the stakeholders.</p>
+<p>They should be clear, concise, and testable. They can be written in a
+Given-When-Then format:</p>
+<pre><code class="language-text">Given [context or preconditions]
+When [action or event]
+Then [expected outcome or result]
+</code></pre>
+<p>At the end of the day, they are the minimum acceptance tests that the QA team
+will use to verify that the implementation is correct. So they should be clear
+and testable.</p>
+<blockquote>
+<p>Note for developers: each acceptance criteria should be testable with an
+integration test. Even, you can write the tests before the implementation,
+following a Test-Driven Development approach.</p>
+</blockquote>
+<h2 id="user-flows">User Flows</h2>
+<p>User Flows are visual representations of the steps a user takes to achieve a
+specific goal within a product. They help to understand the user's journey and
+identify potential pain points/edge cases in the user experience. Not every User
+Story needs a User Flow, but they are highly recommended for complex user
+interactions.</p>
+<h2 id="implementation">Implementation</h2>
+<p>Once the User Story is defined, it is the responsibility of the tech lead to
+divide into smaller tasks (or smaller User Stories) and assign them to the
+development team. The tasks should be clear and specific, with a clear
+<a href="https://github.com/McLargo/project-template/blob/master/technical/definition-of-done.md">definition of
+done</a>
+and acceptance criteria related.</p>
+<h2 id="side-notes">Side notes</h2>
+<p>If you are using AI assistants, consider Spec-Driven development. Plan with the
+AI agent to make a detailed and structured specification of it (markdown format
+is recommended). Then, the AI agent can generate the code based on the
+specification, plus generate test based on the acceptance criteria.</p>
+<p>Planning with the IA is a good idea to avoid assumptions, find edge cases and
+refine requirements. So the implementation can be more efficient and with less
+iterations.</p>
               
             </div>
           </div><footer>
